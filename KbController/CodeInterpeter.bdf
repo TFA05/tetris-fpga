@@ -71,7 +71,7 @@ applicable agreement for further details.
 	(output)
 	(rect 816 56 992 72)
 	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
-	(text "KEYDATA[8..0]" (rect 90 0 166 12)(font "Arial" ))
+	(text "KEYDATA[7..0]" (rect 90 0 166 12)(font "Arial" ))
 	(pt 0 8)
 	(drawing
 		(line (pt 0 8)(pt 52 8))
@@ -1771,12 +1771,6 @@ applicable agreement for further details.
 	(pt 944 376)
 )
 (connector
-	(text "Z, UP, LEFT, DOWN, RIGHT, L, L, L" (rect 647 48 832 60)(font "Arial" ))
-	(pt 640 64)
-	(pt 816 64)
-	(bus)
-)
-(connector
 	(pt 344 40)
 	(pt 320 40)
 	(bus)
@@ -2242,4 +2236,10 @@ applicable agreement for further details.
 	(text "CLK" (rect 1241 504 1261 515)(font "Intel Clear" ))
 	(pt 1280 520)
 	(pt 1241 520)
+)
+(connector
+	(text "Z, UP, LEFT, DOWN, RIGHT, L, L, L" (rect 647 48 832 60)(font "Arial" ))
+	(pt 640 64)
+	(pt 816 64)
+	(bus)
 )

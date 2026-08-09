@@ -47,8 +47,8 @@ applicable agreement for further details.
 	(port
 		(pt 192 32)
 		(output)
-		(text "KEYDATA[8..0]" (rect 0 0 87 14)(font "Arial" (font_size 8)))
-		(text "KEYDATA[8..0]" (rect 84 27 171 41)(font "Arial" (font_size 8)))
+		(text "KEYDATA[7..0]" (rect 0 0 87 14)(font "Arial" (font_size 8)))
+		(text "KEYDATA[7..0]" (rect 84 27 171 41)(font "Arial" (font_size 8)))
 		(line (pt 192 32)(pt 176 32)(line_width 3))
 	)
 	(drawing
