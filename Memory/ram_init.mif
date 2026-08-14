@@ -1,0 +1,41 @@
+-- ram_init.mif -- pocetni sadrzaj RAM-a za simulaciju (Faza 1)
+--
+-- RAM u finalnom sistemu NE mora biti inicijalizovan. Ovaj fajl postoji
+-- samo da bi se u simulaciji razlikovalo 'procitana prava vrednost' od
+-- 'procitana nula jer citanje ne radi'. Pred sintezu se moze iskljuciti.
+--
+-- Vrednosti su namerno drugacije od rom_init.mif: svaka rec pocinje sa
+-- BA, tako da se u talasnom obliku odmah vidi da li dekoder gadja RAM ili ROM.
+
+DEPTH = 8192;
+WIDTH = 32;
+ADDRESS_RADIX = HEX;
+DATA_RADIX = HEX;
+
+CONTENT
+BEGIN
+
+    -- Prvih osam reci: osnovna provera citanja iz RAM-a
+    000 : BA5E0000;
+    001 : BA5E0001;
+    002 : BA5E0002;
+    003 : BA5E0003;
+    004 : BA5EAAAA;
+    005 : BA5E5555;
+    006 : BA5E00FF;
+    007 : BA5EFF00;
+
+    -- Sve ostalo je nula...
+    [008..1FFE] : 00000000;
+
+    -- ...osim markera na stepenima dvojke (provera adresnih linija)
+    0100 : BA5E0100;
+    0200 : BA5E0200;
+    0400 : BA5E0400;
+    0800 : BA5E0800;
+    1000 : BA5E1000;
+
+    -- Poslednja rec u RAM-u (provera gornje granice)
+    1FFF : BA5E1FFF;
+
+END;
