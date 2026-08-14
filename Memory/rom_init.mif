@@ -1,0 +1,35 @@
+-- Test ROM sadrzaj za korak 2 (verifikacija citanja i dekodera)
+-- Vrednosti su izabrane da se lako prepoznaju u talasnom obliku.
+
+DEPTH = 8192;
+WIDTH = 32;
+ADDRESS_RADIX = HEX;
+DATA_RADIX = HEX;
+
+CONTENT
+BEGIN
+
+    -- Prvih osam reci: osnovna provera citanja
+    000 : DEADBEEF;
+    001 : 12345678;
+    002 : AAAA5555;
+    003 : 5555AAAA;
+    004 : 0000000F;
+    005 : F0000000;
+    006 : 00FF00FF;
+    007 : FFFFFFFF;
+
+    -- Sve ostalo je nula...
+    [008..1FFE] : 00000000;
+
+    -- ...osim markera na stepenima dvojke (provera adresnih linija)
+    0100 : C0DE0100;
+    0200 : C0DE0200;
+    0400 : C0DE0400;
+    0800 : C0DE0800;
+    1000 : C0DE1000;
+
+    -- Poslednja rec u ROM-u (provera gornje granice)
+    1FFF : 1A57F00D;
+
+END;
