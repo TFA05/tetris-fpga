@@ -1,5 +1,4 @@
--- Test ROM sadrzaj za korak 2 (verifikacija citanja i dekodera)
--- Vrednosti su izabrane da se lako prepoznaju u talasnom obliku.
+-- Test ROM sadrzaj
 
 DEPTH = 8192;
 WIDTH = 32;
