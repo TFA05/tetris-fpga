@@ -1,0 +1,98 @@
+-- Format reci (8 bita):
+--   [7]   init_done   (zaustavlja seq_cnt)
+--   [6:5] a_sel       (00=nule, 01=0x400, 10=0x223, 11=kontroler)
+--   [4]   cs_n
+--   [3]   ras_n
+--   [2]   cas_n
+--   [1]   we_n
+--   [0]   cke
+--
+-- Komande:
+-- INHIBIT=1E  NOP=0F  PRE_ALL=25  REFRESH=03  LMR=41  DONE=EF
+
+DEPTH = 128;
+WIDTH = 8;
+ADDRESS_RADIX = HEX;
+DATA_RADIX = HEX;
+
+CONTENT
+BEGIN
+
+    00 : 1E;   -- INHIBIT, CKE=0 -- ovde brojac ceka tokom init wait
+    01 : 25;   -- PRECHARGE ALL
+    02 : 0F;
+    03 : 0F;
+    04 : 0F;
+    05 : 03;   -- AUTO REFRESH 1/8
+    06 : 0F;
+    07 : 0F;
+    08 : 0F;
+    09 : 0F;
+    0A : 0F;
+    0B : 0F;
+    0C : 0F;
+    0D : 03;   -- AUTO REFRESH 2/8
+    0E : 0F;
+    0F : 0F;
+    10 : 0F;
+    11 : 0F;
+    12 : 0F;
+    13 : 0F;
+    14 : 0F;
+    15 : 03;   -- AUTO REFRESH 3/8
+    16 : 0F;
+    17 : 0F;
+    18 : 0F;
+    19 : 0F;
+    1A : 0F;
+    1B : 0F;
+    1C : 0F;
+    1D : 03;   -- AUTO REFRESH 4/8
+    1E : 0F;
+    1F : 0F;
+    20 : 0F;
+    21 : 0F;
+    22 : 0F;
+    23 : 0F;
+    24 : 0F;
+    25 : 03;   -- AUTO REFRESH 5/8
+    26 : 0F;
+    27 : 0F;
+    28 : 0F;
+    29 : 0F;
+    2A : 0F;
+    2B : 0F;
+    2C : 0F;
+    2D : 03;   -- AUTO REFRESH 6/8
+    2E : 0F;
+    2F : 0F;
+    30 : 0F;
+    31 : 0F;
+    32 : 0F;
+    33 : 0F;
+    34 : 0F;
+    35 : 03;   -- AUTO REFRESH 7/8
+    36 : 0F;
+    37 : 0F;
+    38 : 0F;
+    39 : 0F;
+    3A : 0F;
+    3B : 0F;
+    3C : 0F;
+    3D : 03;   -- AUTO REFRESH 8/8
+    3E : 0F;
+    3F : 0F;
+    40 : 0F;
+    41 : 0F;
+    42 : 0F;
+    43 : 0F;
+    44 : 0F;
+    45 : 41;   -- LOAD MODE REG = 0x223
+    46 : 0F;
+    47 : 0F;
+    48 : EF;   -- init_done=1, brojac staje
+
+    -- neiskorisceno; drzi done=1 za slucaj da brojac odluta
+    [49..7F] : EF;
+
+END;
