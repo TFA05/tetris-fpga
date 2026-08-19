@@ -53,7 +53,11 @@ set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_RO
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
 set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
-set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
+set_global_assignment -name SEARCH_PATH "c:\\altera\\13.1\\tetris\\tetris-fpga\\components"
+set_global_assignment -name BDF_FILE Components/reg11_sr_ld.bdf
+set_global_assignment -name BDF_FILE Components/reg8_sr_ld.bdf
+set_global_assignment -name BDF_FILE Components/reg4_sr_ld.bdf
+set_global_assignment -name BDF_FILE Components/reg2_sr_ld.bdf
 set_global_assignment -name QIP_FILE Components/init_rom.qip
 set_global_assignment -name VHDL_FILE Components/pixel_cnt.vhd
 set_global_assignment -name QIP_FILE Components/pixel_cnt.qip
@@ -142,4 +146,6 @@ set_global_assignment -name QIP_FILE Memory/refresh_cnt.qip
 set_global_assignment -name QIP_FILE Memory/line_buf.qip
 set_global_assignment -name QIP_FILE Memory/init_wait_cnt.qip
 set_global_assignment -name SMF_FILE Memory/SM1.smf
-set_global_assignment -name SEARCH_PATH "c:\\altera\\13.1\\tetris\\tetris-fpga\\components"
+set_global_assignment -name BDF_FILE Components/mx2x1.bdf
+set_global_assignment -name BDF_FILE Tetris.bdf
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
