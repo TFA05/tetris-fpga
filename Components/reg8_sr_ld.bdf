@@ -133,7 +133,7 @@ applicable agreement for further details.
 )
 (symbol
 	(rect 480 352 640 480)
-	(text "reg4_sr" (rect 5 0 49 14)(font "Arial" (font_size 8)))
+	(text "reg4_sr_ld" (rect 5 0 66 14)(font "Arial" (font_size 8)))
 	(text "inst" (rect 8 112 25 124)(font "Arial" ))
 	(port
 		(pt 0 32)
@@ -190,7 +190,7 @@ applicable agreement for further details.
 )
 (symbol
 	(rect 768 352 928 480)
-	(text "reg4_sr" (rect 5 0 49 14)(font "Arial" (font_size 8)))
+	(text "reg4_sr_ld" (rect 5 0 66 14)(font "Arial" (font_size 8)))
 	(text "inst1" (rect 8 112 31 124)(font "Arial" ))
 	(port
 		(pt 0 32)
