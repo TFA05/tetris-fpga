@@ -1,0 +1,228 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+/*
+Copyright (C) 2025  Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus Prime License Agreement,
+the Altera IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Altera and sold by Altera or its authorized distributors.  Please
+refer to the Altera Software License Subscription Agreements 
+on the Quartus Prime software download page.
+*/
+(header "graphic" (version "1.4"))
+(pin
+	(input)
+	(rect 16 24 184 40)
+	(text "INPUT" (rect 125 0 153 9)(font "Arial" (font_size 6)))
+	(text "INSTR[17..0]" (rect 5 0 65 11)(font "DejaVu Sans Condensed" ))
+	(pt 168 8)
+	(drawing
+		(line (pt 84 12)(pt 109 12))
+		(line (pt 84 4)(pt 109 4))
+		(line (pt 113 8)(pt 168 8))
+		(line (pt 84 12)(pt 84 4))
+		(line (pt 109 4)(pt 113 8))
+		(line (pt 109 12)(pt 113 8))
+	)
+	(text "VCC" (rect 128 7 148 16)(font "Arial" (font_size 6)))
+)
+(pin
+	(output)
+	(rect 608 176 784 192)
+	(text "OUTPUT" (rect 1 0 39 9)(font "Arial" (font_size 6)))
+	(text "IMM_EXT[31..0]" (rect 90 0 166 11)(font "Arial" ))
+	(pt 0 8)
+	(drawing
+		(line (pt 0 8)(pt 52 8))
+		(line (pt 52 4)(pt 78 4))
+		(line (pt 52 12)(pt 78 12))
+		(line (pt 52 12)(pt 52 4))
+		(line (pt 78 4)(pt 82 8))
+		(line (pt 82 8)(pt 78 12))
+		(line (pt 78 12)(pt 82 8))
+	)
+)
+(connector
+	(text "IMM_EXT[29..29]" (rect 422 104 502 115)(font "DejaVu Sans Condensed" ))
+	(pt 408 120)
+	(pt 488 120)
+)
+(connector
+	(text "IMM_EXT[18..18]" (rect 445 376 525 387)(font "DejaVu Sans Condensed" ))
+	(pt 296 392)
+	(pt 488 392)
+)
+(connector
+	(pt 408 56)
+	(pt 408 72)
+)
+(connector
+	(pt 400 88)
+	(pt 400 96)
+)
+(connector
+	(text "IMM_EXT[30..30]" (rect 445 80 525 91)(font "DejaVu Sans Condensed" ))
+	(pt 400 96)
+	(pt 496 96)
+)
+(connector
+	(pt 408 112)
+	(pt 408 120)
+)
+(connector
+	(pt 296 112)
+	(pt 408 112)
+)
+(connector
+	(pt 296 88)
+	(pt 400 88)
+)
+(connector
+	(pt 296 88)
+	(pt 296 112)
+)
+(connector
+	(pt 296 56)
+	(pt 296 88)
+)
+(connector
+	(text "IMM_EXT[27..27]" (rect 417 152 497 163)(font "DejaVu Sans Condensed" ))
+	(pt 296 168)
+	(pt 488 168)
+)
+(connector
+	(text "IMM_EXT[28..28]" (rect 440 136 520 147)(font "DejaVu Sans Condensed" ))
+	(pt 296 152)
+	(pt 512 152)
+)
+(connector
+	(pt 296 152)
+	(pt 296 168)
+)
+(connector
+	(pt 296 56)
+	(pt 408 56)
+)
+(connector
+	(text "IMM_EXT[26..26]" (rect 423 184 503 195)(font "DejaVu Sans Condensed" ))
+	(pt 296 200)
+	(pt 488 200)
+)
+(connector
+	(pt 296 168)
+	(pt 296 200)
+)
+(connector
+	(text "IMM_EXT[25..25]" (rect 409 208 489 219)(font "DejaVu Sans Condensed" ))
+	(pt 296 224)
+	(pt 488 224)
+)
+(connector
+	(text "IMM_EXT[24..24]" (rect 431 232 511 243)(font "DejaVu Sans Condensed" ))
+	(pt 296 248)
+	(pt 488 248)
+)
+(connector
+	(pt 296 200)
+	(pt 296 224)
+)
+(connector
+	(pt 296 224)
+	(pt 296 248)
+)
+(connector
+	(text "IMM_EXT[22..22]" (rect 408 280 488 291)(font "DejaVu Sans Condensed" ))
+	(pt 296 296)
+	(pt 488 296)
+)
+(connector
+	(text "IMM_EXT[23..23]" (rect 425 256 505 267)(font "DejaVu Sans Condensed" ))
+	(pt 296 272)
+	(pt 488 272)
+)
+(connector
+	(pt 296 248)
+	(pt 296 272)
+)
+(connector
+	(pt 296 272)
+	(pt 296 296)
+)
+(connector
+	(text "IMM_EXT[19..19]" (rect 419 352 499 363)(font "DejaVu Sans Condensed" ))
+	(pt 296 368)
+	(pt 488 368)
+)
+(connector
+	(pt 296 368)
+	(pt 296 392)
+)
+(connector
+	(text "IMM_EXT[20..20]" (rect 426 328 506 339)(font "DejaVu Sans Condensed" ))
+	(pt 296 344)
+	(pt 488 344)
+)
+(connector
+	(pt 296 344)
+	(pt 296 368)
+)
+(connector
+	(text "IMM_EXT[21..21]" (rect 416 304 496 315)(font "DejaVu Sans Condensed" ))
+	(pt 296 320)
+	(pt 488 320)
+)
+(connector
+	(pt 296 296)
+	(pt 296 320)
+)
+(connector
+	(pt 296 320)
+	(pt 296 344)
+)
+(connector
+	(text "INSTR[17..17]" (rect 119 120 186 131)(font "DejaVu Sans Condensed" ))
+	(pt 296 136)
+	(pt 112 136)
+)
+(connector
+	(pt 296 112)
+	(pt 296 136)
+)
+(connector
+	(pt 296 136)
+	(pt 296 152)
+)
+(connector
+	(text "IMM_EXT[17..0]" (rect 192 16 266 27)(font "DejaVu Sans Condensed" ))
+	(pt 184 32)
+	(pt 288 32)
+	(bus)
+)
+(connector
+	(text "IMM_EXT[31..31]" (rect 432 56 512 67)(font "DejaVu Sans Condensed" ))
+	(pt 408 72)
+	(pt 496 72)
+)
+(junction (pt 296 136))
+(junction (pt 296 112))
+(junction (pt 296 88))
+(junction (pt 296 168))
+(junction (pt 296 152))
+(junction (pt 296 200))
+(junction (pt 296 224))
+(junction (pt 296 248))
+(junction (pt 296 296))
+(junction (pt 296 272))
+(junction (pt 296 368))
+(junction (pt 296 344))
+(junction (pt 296 320))

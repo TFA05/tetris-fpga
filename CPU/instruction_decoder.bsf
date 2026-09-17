@@ -1,0 +1,107 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+/*
+Copyright (C) 2025  Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus Prime License Agreement,
+the Altera IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Altera and sold by Altera or its authorized distributors.  Please
+refer to the Altera Software License Subscription Agreements 
+on the Quartus Prime software download page.
+*/
+(header "symbol" (version "1.2"))
+(symbol
+	(rect 16 16 224 208)
+	(text "instruction_decoder" (rect 5 0 120 13)(font "DejaVu Sans Condensed" (font_size 8)))
+	(text "inst" (rect 8 177 25 188)(font "DejaVu Sans Condensed" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "OPCODE[5..0]" (rect 0 0 81 13)(font "DejaVu Sans Condensed" (font_size 8)))
+		(text "OPCODE[5..0]" (rect 21 27 102 40)(font "DejaVu Sans Condensed" (font_size 8)))
+		(line (pt 0 32)(pt 16 32)(line_width 3))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "FUNCT[3..0]" (rect 0 0 70 13)(font "DejaVu Sans Condensed" (font_size 8)))
+		(text "FUNCT[3..0]" (rect 21 43 91 56)(font "DejaVu Sans Condensed" (font_size 8)))
+		(line (pt 0 48)(pt 16 48)(line_width 3))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "CLK" (rect 0 0 23 13)(font "DejaVu Sans Condensed" (font_size 8)))
+		(text "CLK" (rect 21 59 44 72)(font "DejaVu Sans Condensed" (font_size 8)))
+		(line (pt 0 64)(pt 16 64))
+	)
+	(port
+		(pt 208 32)
+		(output)
+		(text "ALU_SRC" (rect 0 0 53 13)(font "DejaVu Sans Condensed" (font_size 8)))
+		(text "ALU_SRC" (rect 134 27 187 40)(font "DejaVu Sans Condensed" (font_size 8)))
+		(line (pt 208 32)(pt 192 32))
+	)
+	(port
+		(pt 208 48)
+		(output)
+		(text "ALU_OP[2..0]" (rect 0 0 76 13)(font "DejaVu Sans Condensed" (font_size 8)))
+		(text "ALU_OP[2..0]" (rect 111 43 187 56)(font "DejaVu Sans Condensed" (font_size 8)))
+		(line (pt 208 48)(pt 192 48)(line_width 3))
+	)
+	(port
+		(pt 208 64)
+		(output)
+		(text "ADD_SUB" (rect 0 0 56 13)(font "DejaVu Sans Condensed" (font_size 8)))
+		(text "ADD_SUB" (rect 131 59 187 72)(font "DejaVu Sans Condensed" (font_size 8)))
+		(line (pt 208 64)(pt 192 64))
+	)
+	(port
+		(pt 208 80)
+		(output)
+		(text "REG_WRITE" (rect 0 0 68 13)(font "DejaVu Sans Condensed" (font_size 8)))
+		(text "REG_WRITE" (rect 119 75 187 88)(font "DejaVu Sans Condensed" (font_size 8)))
+		(line (pt 208 80)(pt 192 80))
+	)
+	(port
+		(pt 208 96)
+		(output)
+		(text "MEM_WRITE" (rect 0 0 71 13)(font "DejaVu Sans Condensed" (font_size 8)))
+		(text "MEM_WRITE" (rect 116 91 187 104)(font "DejaVu Sans Condensed" (font_size 8)))
+		(line (pt 208 96)(pt 192 96))
+	)
+	(port
+		(pt 208 112)
+		(output)
+		(text "MEM_READ" (rect 0 0 66 13)(font "DejaVu Sans Condensed" (font_size 8)))
+		(text "MEM_READ" (rect 121 107 187 120)(font "DejaVu Sans Condensed" (font_size 8)))
+		(line (pt 208 112)(pt 192 112))
+	)
+	(port
+		(pt 208 128)
+		(output)
+		(text "BRANCH" (rect 0 0 50 13)(font "DejaVu Sans Condensed" (font_size 8)))
+		(text "BRANCH" (rect 137 123 187 136)(font "DejaVu Sans Condensed" (font_size 8)))
+		(line (pt 208 128)(pt 192 128))
+	)
+	(port
+		(pt 208 144)
+		(output)
+		(text "JUMP" (rect 0 0 29 13)(font "DejaVu Sans Condensed" (font_size 8)))
+		(text "JUMP" (rect 158 139 187 152)(font "DejaVu Sans Condensed" (font_size 8)))
+		(line (pt 208 144)(pt 192 144))
+	)
+	(drawing
+		(rectangle (rect 16 16 192 176))
+	)
+)
