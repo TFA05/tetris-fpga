@@ -1,0 +1,66 @@
+-- Rec (9 bita):
+--   [8] done   [7] rd_capture   [6] dq_oe (takt WRITE komande, izlaz wr_done)
+--   [5:4] addr_sel: 00=ROW, 01=COL+A10, 10=0x400
+--   [3] cs_n  [2] ras_n  [1] cas_n  [0] we_n
+--
+-- Ulazne tacke (ctrl_cnt.data[5:4]):
+--   00=0x00 mirovanje   01=0x10 upis   10=0x20 citanje   11=0x30 refresh
+--
+-- ROM kasni 2 takta, pa tri reci iza done moraju imati done=0.
+
+DEPTH = 64;
+WIDTH = 9;
+ADDRESS_RADIX = HEX;
+DATA_RADIX = HEX;
+
+CONTENT
+BEGIN
+
+    -- === MIROVANJE ===
+    [00..0F] : 007;   -- NOP
+
+    -- === UPIS ===
+    10 : 003;   -- ACTIVATE
+    11 : 007;   -- tRCD
+    12 : 007;
+    13 : 054;   -- WRITE, kolona + A10=1 (auto precharge)
+    14 : 007;   -- tWR
+    15 : 007;
+    16 : 007;   -- tRP
+    17 : 007;
+    18 : 107;   -- done
+    [19..1B] : 007;
+    [1C..1F] : 107;
+
+    -- === CITANJE ===
+    20 : 003;   -- ACTIVATE
+    21 : 007;   -- tRCD (2 takta = 20 ns)
+    22 : 015;   -- READ, kolona + A10=1 (auto precharge)
+    23 : 007;   -- CAS latencija
+    24 : 007;   -- ulazni registar na DRAM_DQ
+    25 : 087;   -- prihvat reci 1/8
+    26 : 087;   -- prihvat reci 2/8
+    27 : 087;   -- prihvat reci 3/8
+    28 : 087;   -- prihvat reci 4/8
+    29 : 087;   -- prihvat reci 5/8
+    2A : 087;   -- prihvat reci 6/8
+    2B : 087;   -- prihvat reci 7/8
+    2C : 187;   -- prihvat reci 8/8 + done
+    [2D..2F] : 007;
+
+    -- === REFRESH ===
+    30 : 022;   -- PRECHARGE ALL (A10=1)
+    31 : 007;   -- tRP
+    32 : 007;
+    33 : 001;   -- AUTO REFRESH
+    34 : 007;   -- tRFC
+    35 : 007;
+    36 : 007;
+    37 : 007;
+    38 : 007;
+    39 : 007;
+    3A : 107;   -- done
+    [3B..3D] : 007;
+    [3E..3F] : 107;
+
+END;
