@@ -53,10 +53,31 @@ set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_RO
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
 set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
-set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
-set_instance_assignment -name FAST_INPUT_REGISTER ON -to *dq_reg*
-
-set_global_assignment -name BDF_FILE GPU/Controller.bdf
+set_global_assignment -name QIP_FILE CPU/pc_register.qip
+set_global_assignment -name QIP_FILE CPU/alu_adder.qip
+set_global_assignment -name QIP_FILE CPU/alu_compare.qip
+set_global_assignment -name QIP_FILE CPU/alu_compare_u.qip
+set_global_assignment -name QIP_FILE CPU/alu_shift.qip
+set_global_assignment -name QIP_FILE CPU/alu_sra.qip
+set_global_assignment -name QIP_FILE CPU/alu_mux.qip
+set_global_assignment -name QIP_FILE CPU/mux4_32.qip
+set_global_assignment -name QIP_FILE CPU/alu_src_mux_ip.qip
+set_global_assignment -name QIP_FILE CPU/mux2_5.qip
+set_global_assignment -name QIP_FILE CPU/mux4_5.qip
+set_global_assignment -name QIP_FILE CPU/mux8_1.qip
+set_global_assignment -name QIP_FILE CPU/reg_mem_a.qip
+set_global_assignment -name QIP_FILE CPU/control_rom.qip
+set_global_assignment -name BDF_FILE CPU/register_file.bdf
+set_global_assignment -name BDF_FILE CPU/imm_gen.bdf
+set_global_assignment -name BDF_FILE CPU/alu.bdf
+set_global_assignment -name BDF_FILE CPU/pc_next.bdf
+set_global_assignment -name BDF_FILE CPU/pc.bdf
+set_global_assignment -name BDF_FILE CPU/instruction.bdf
+set_global_assignment -name BDF_FILE CPU/alu_src_mux.bdf
+set_global_assignment -name BDF_FILE CPU/data_mem.bdf
+set_global_assignment -name BDF_FILE CPU/instruction_decoder.bdf
+set_global_assignment -name BDF_FILE CPU/tetris_cpu.bdf
+set_global_assignment -name MIF_FILE CPU/control_rom.mif
 set_global_assignment -name BDF_FILE GPU/GPU.bdf
 set_global_assignment -name BDF_FILE Components/reg11_sr_ld.bdf
 set_global_assignment -name BDF_FILE Components/reg8_sr_ld.bdf
@@ -162,3 +183,6 @@ set_global_assignment -name BDF_FILE Memory/reg16.bdf
 set_global_assignment -name VHDL_FILE Components/cmp13.vhd
 set_global_assignment -name QIP_FILE Components/mx4x1.qip
 set_global_assignment -name SDC_FILE tetris.sdc
+set_instance_assignment -name FAST_INPUT_REGISTER ON -to *dq_reg*
+
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
