@@ -4,27 +4,26 @@ editor if you plan to continue editing the block that represents it in
 the Block Editor! File corruption is VERY likely to occur.
 */
 /*
-Copyright (C) 2025  Altera Corporation. All rights reserved.
+Copyright (C) 1991-2013 Altera Corporation
 Your use of Altera Corporation's design tools, logic functions 
-and other software and tools, and any partner logic 
+and other software and tools, and its AMPP partner logic 
 functions, and any output files from any of the foregoing 
 (including device programming or simulation files), and any 
 associated documentation or information are expressly subject 
 to the terms and conditions of the Altera Program License 
-Subscription Agreement, the Altera Quartus Prime License Agreement,
-the Altera IP License Agreement, or other applicable license
-agreement, including, without limitation, that your use is for
-the sole purpose of programming logic devices manufactured by
-Altera and sold by Altera or its authorized distributors.  Please
-refer to the Altera Software License Subscription Agreements 
-on the Quartus Prime software download page.
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
 */
 (header "graphic" (version "1.4"))
 (pin
 	(input)
-	(rect 16 24 184 40)
-	(text "INPUT" (rect 125 0 153 9)(font "Arial" (font_size 6)))
-	(text "INSTR[17..0]" (rect 5 0 65 11)(font "DejaVu Sans Condensed" ))
+	(rect 0 0 168 16)
+	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
+	(text "IR[31..0]" (rect 5 0 48 12)(font "Arial" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -34,13 +33,29 @@ on the Quartus Prime software download page.
 		(line (pt 109 4)(pt 113 8))
 		(line (pt 109 12)(pt 113 8))
 	)
-	(text "VCC" (rect 128 7 148 16)(font "Arial" (font_size 6)))
+	(text "VCC" (rect 128 7 148 17)(font "Arial" (font_size 6)))
+)
+(pin
+	(input)
+	(rect 0 32 168 48)
+	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
+	(text "IMM_SEL[2..0]" (rect 5 0 76 12)(font "Arial" ))
+	(pt 168 8)
+	(drawing
+		(line (pt 84 12)(pt 109 12))
+		(line (pt 84 4)(pt 109 4))
+		(line (pt 113 8)(pt 168 8))
+		(line (pt 84 12)(pt 84 4))
+		(line (pt 109 4)(pt 113 8))
+		(line (pt 109 12)(pt 113 8))
+	)
+	(text "VCC" (rect 128 7 148 17)(font "Arial" (font_size 6)))
 )
 (pin
 	(output)
-	(rect 608 176 784 192)
-	(text "OUTPUT" (rect 1 0 39 9)(font "Arial" (font_size 6)))
-	(text "IMM_EXT[31..0]" (rect 90 0 166 11)(font "Arial" ))
+	(rect 744 40 920 56)
+	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
+	(text "IMM[31..0]" (rect 90 0 141 12)(font "Arial" ))
 	(pt 0 8)
 	(drawing
 		(line (pt 0 8)(pt 52 8))
@@ -49,180 +64,201 @@ on the Quartus Prime software download page.
 		(line (pt 52 12)(pt 52 4))
 		(line (pt 78 4)(pt 82 8))
 		(line (pt 82 8)(pt 78 12))
-		(line (pt 78 12)(pt 82 8))
+	)
+)
+(symbol
+	(rect 40 120 72 152)
+	(text "GND" (rect 5 0 29 12)(font "Arial" ))
+	(text "inst1" (rect 8 16 31 28)(font "Arial" ))
+	(port
+		(pt 16 0)
+		(output)
+		(text "1" (rect 18 0 23 12)(font "Courier New" (bold))(invisible))
+		(text "1" (rect 18 0 23 12)(font "Courier New" (bold))(invisible))
+		(line (pt 16 8)(pt 16 0))
+	)
+	(drawing
+		(line (pt 8 8)(pt 16 16))
+		(line (pt 16 16)(pt 24 8))
+		(line (pt 8 8)(pt 24 8))
+	)
+)
+(symbol
+	(rect 144 120 176 152)
+	(text "GND" (rect 5 0 29 12)(font "Arial" ))
+	(text "inst2" (rect 8 16 31 28)(font "Arial" ))
+	(port
+		(pt 16 0)
+		(output)
+		(text "1" (rect 18 0 23 12)(font "Courier New" (bold))(invisible))
+		(text "1" (rect 18 0 23 12)(font "Courier New" (bold))(invisible))
+		(line (pt 16 8)(pt 16 0))
+	)
+	(drawing
+		(line (pt 8 8)(pt 16 16))
+		(line (pt 16 16)(pt 24 8))
+		(line (pt 8 8)(pt 24 8))
+	)
+)
+(symbol
+	(rect 896 200 1040 376)
+	(text "alu_mux" (rect 5 0 46 12)(font "Arial" ))
+	(text "inst3" (rect 8 160 31 172)(font "Arial" ))
+	(port
+		(pt 0 40)
+		(input)
+		(text "data7x[31..0]" (rect 0 0 74 14)(font "Arial" (font_size 8)))
+		(text "data7x[31..0]" (rect 4 26 78 40)(font "Arial" (font_size 8)))
+		(line (pt 0 40)(pt 64 40)(line_width 3))
+	)
+	(port
+		(pt 0 56)
+		(input)
+		(text "data6x[31..0]" (rect 0 0 74 14)(font "Arial" (font_size 8)))
+		(text "data6x[31..0]" (rect 4 42 78 56)(font "Arial" (font_size 8)))
+		(line (pt 0 56)(pt 64 56)(line_width 3))
+	)
+	(port
+		(pt 0 72)
+		(input)
+		(text "data5x[31..0]" (rect 0 0 74 14)(font "Arial" (font_size 8)))
+		(text "data5x[31..0]" (rect 4 58 78 72)(font "Arial" (font_size 8)))
+		(line (pt 0 72)(pt 64 72)(line_width 3))
+	)
+	(port
+		(pt 0 88)
+		(input)
+		(text "data4x[31..0]" (rect 0 0 74 14)(font "Arial" (font_size 8)))
+		(text "data4x[31..0]" (rect 4 74 78 88)(font "Arial" (font_size 8)))
+		(line (pt 0 88)(pt 64 88)(line_width 3))
+	)
+	(port
+		(pt 0 104)
+		(input)
+		(text "data3x[31..0]" (rect 0 0 74 14)(font "Arial" (font_size 8)))
+		(text "data3x[31..0]" (rect 4 90 78 104)(font "Arial" (font_size 8)))
+		(line (pt 0 104)(pt 64 104)(line_width 3))
+	)
+	(port
+		(pt 0 120)
+		(input)
+		(text "data2x[31..0]" (rect 0 0 74 14)(font "Arial" (font_size 8)))
+		(text "data2x[31..0]" (rect 4 106 78 120)(font "Arial" (font_size 8)))
+		(line (pt 0 120)(pt 64 120)(line_width 3))
+	)
+	(port
+		(pt 0 136)
+		(input)
+		(text "data1x[31..0]" (rect 0 0 74 14)(font "Arial" (font_size 8)))
+		(text "data1x[31..0]" (rect 4 122 78 136)(font "Arial" (font_size 8)))
+		(line (pt 0 136)(pt 64 136)(line_width 3))
+	)
+	(port
+		(pt 0 152)
+		(input)
+		(text "data0x[31..0]" (rect 0 0 74 14)(font "Arial" (font_size 8)))
+		(text "data0x[31..0]" (rect 4 138 78 152)(font "Arial" (font_size 8)))
+		(line (pt 0 152)(pt 64 152)(line_width 3))
+	)
+	(port
+		(pt 72 176)
+		(input)
+		(text "sel[2..0]" (rect 0 0 14 44)(font "Arial" (font_size 8))(vertical))
+		(text "sel[2..0]" (rect 65 123 79 167)(font "Arial" (font_size 8))(vertical))
+		(line (pt 72 176)(pt 72 164)(line_width 3))
+	)
+	(port
+		(pt 144 96)
+		(output)
+		(text "result[31..0]" (rect 0 0 67 14)(font "Arial" (font_size 8)))
+		(text "result[31..0]" (rect 84 82 151 96)(font "Arial" (font_size 8)))
+		(line (pt 144 96)(pt 80 96)(line_width 3))
+	)
+	(drawing
+		(line (pt 64 24)(pt 64 168))
+		(line (pt 64 24)(pt 80 32))
+		(line (pt 64 168)(pt 80 160))
+		(line (pt 80 32)(pt 80 160))
+		(line (pt 0 0)(pt 146 0))
+		(line (pt 146 0)(pt 146 178))
+		(line (pt 0 178)(pt 146 178))
+		(line (pt 0 0)(pt 0 178))
+		(line (pt 0 0)(pt 0 0))
+		(line (pt 0 0)(pt 0 0))
+		(line (pt 0 0)(pt 0 0))
+		(line (pt 0 0)(pt 0 0))
 	)
 )
 (connector
-	(text "IMM_EXT[29..29]" (rect 422 104 502 115)(font "DejaVu Sans Condensed" ))
-	(pt 408 120)
-	(pt 488 120)
-)
-(connector
-	(text "IMM_EXT[18..18]" (rect 445 376 525 387)(font "DejaVu Sans Condensed" ))
-	(pt 296 392)
-	(pt 488 392)
-)
-(connector
-	(pt 408 56)
-	(pt 408 72)
-)
-(connector
-	(pt 400 88)
-	(pt 400 96)
-)
-(connector
-	(text "IMM_EXT[30..30]" (rect 445 80 525 91)(font "DejaVu Sans Condensed" ))
-	(pt 400 96)
-	(pt 496 96)
-)
-(connector
-	(pt 408 112)
-	(pt 408 120)
-)
-(connector
-	(pt 296 112)
-	(pt 408 112)
-)
-(connector
-	(pt 296 88)
-	(pt 400 88)
-)
-(connector
-	(pt 296 88)
-	(pt 296 112)
-)
-(connector
-	(pt 296 56)
-	(pt 296 88)
-)
-(connector
-	(text "IMM_EXT[27..27]" (rect 417 152 497 163)(font "DejaVu Sans Condensed" ))
-	(pt 296 168)
-	(pt 488 168)
-)
-(connector
-	(text "IMM_EXT[28..28]" (rect 440 136 520 147)(font "DejaVu Sans Condensed" ))
-	(pt 296 152)
-	(pt 512 152)
-)
-(connector
-	(pt 296 152)
-	(pt 296 168)
-)
-(connector
-	(pt 296 56)
-	(pt 408 56)
-)
-(connector
-	(text "IMM_EXT[26..26]" (rect 423 184 503 195)(font "DejaVu Sans Condensed" ))
-	(pt 296 200)
-	(pt 488 200)
-)
-(connector
-	(pt 296 168)
-	(pt 296 200)
-)
-(connector
-	(text "IMM_EXT[25..25]" (rect 409 208 489 219)(font "DejaVu Sans Condensed" ))
-	(pt 296 224)
-	(pt 488 224)
-)
-(connector
-	(text "IMM_EXT[24..24]" (rect 431 232 511 243)(font "DejaVu Sans Condensed" ))
-	(pt 296 248)
-	(pt 488 248)
-)
-(connector
-	(pt 296 200)
-	(pt 296 224)
-)
-(connector
-	(pt 296 224)
-	(pt 296 248)
-)
-(connector
-	(text "IMM_EXT[22..22]" (rect 408 280 488 291)(font "DejaVu Sans Condensed" ))
-	(pt 296 296)
-	(pt 488 296)
-)
-(connector
-	(text "IMM_EXT[23..23]" (rect 425 256 505 267)(font "DejaVu Sans Condensed" ))
-	(pt 296 272)
-	(pt 488 272)
-)
-(connector
-	(pt 296 248)
-	(pt 296 272)
-)
-(connector
-	(pt 296 272)
-	(pt 296 296)
-)
-(connector
-	(text "IMM_EXT[19..19]" (rect 419 352 499 363)(font "DejaVu Sans Condensed" ))
-	(pt 296 368)
-	(pt 488 368)
-)
-(connector
-	(pt 296 368)
-	(pt 296 392)
-)
-(connector
-	(text "IMM_EXT[20..20]" (rect 426 328 506 339)(font "DejaVu Sans Condensed" ))
-	(pt 296 344)
-	(pt 488 344)
-)
-(connector
-	(pt 296 344)
-	(pt 296 368)
-)
-(connector
-	(text "IMM_EXT[21..21]" (rect 416 304 496 315)(font "DejaVu Sans Condensed" ))
-	(pt 296 320)
-	(pt 488 320)
-)
-(connector
-	(pt 296 296)
-	(pt 296 320)
-)
-(connector
-	(pt 296 320)
-	(pt 296 344)
-)
-(connector
-	(text "INSTR[17..17]" (rect 119 120 186 131)(font "DejaVu Sans Condensed" ))
-	(pt 296 136)
-	(pt 112 136)
-)
-(connector
-	(pt 296 112)
-	(pt 296 136)
-)
-(connector
-	(pt 296 136)
-	(pt 296 152)
-)
-(connector
-	(text "IMM_EXT[17..0]" (rect 192 16 266 27)(font "DejaVu Sans Condensed" ))
-	(pt 184 32)
-	(pt 288 32)
+	(text "NULA[11..1]" (rect 58 68 119 80)(font "Arial" ))
+	(pt 56 80)
+	(pt 56 120)
 	(bus)
 )
 (connector
-	(text "IMM_EXT[31..31]" (rect 432 56 512 67)(font "DejaVu Sans Condensed" ))
-	(pt 408 72)
-	(pt 496 72)
+	(text "IR[31],IR[31],IR[31],IR[31],IR[31],IR[31],IR[31],IR[31],IR[31],IR[31],IR[31],IR[31],IR[31],IR[31],IR[31],IR[31],IR[31],IR[31],IR[31],IR[31],IR[31],IR[30..20]" (rect 338 340 1106 352)(font "Arial" ))
+	(pt 336 352)
+	(pt 896 352)
+	(bus)
 )
-(junction (pt 296 136))
-(junction (pt 296 112))
-(junction (pt 296 88))
-(junction (pt 296 168))
-(junction (pt 296 152))
-(junction (pt 296 200))
-(junction (pt 296 224))
-(junction (pt 296 248))
-(junction (pt 296 296))
-(junction (pt 296 272))
-(junction (pt 296 368))
-(junction (pt 296 344))
-(junction (pt 296 320))
+(connector
+	(text "IR[31],IR[31],IR[31],IR[31],IR[31],IR[31],IR[31],IR[31],IR[31],IR[31],IR[31],IR[31],IR[31],IR[31],IR[31],IR[31],IR[31],IR[31],IR[31],IR[31],IR[31],IR[30..25],IR[11..7]" (rect 338 324 1153 336)(font "Arial" ))
+	(pt 336 336)
+	(pt 896 336)
+	(bus)
+)
+(connector
+	(text "IR[31],IR[31],IR[31],IR[31],IR[31],IR[31],IR[31],IR[31],IR[31],IR[31],IR[31],IR[31],IR[31],IR[31],IR[31],IR[31],IR[31],IR[31],IR[31],IR[31],IR[7],IR[30..25],IR[11..8],NULA[0]" (rect 338 308 1193 320)(font "Arial" ))
+	(pt 336 320)
+	(pt 896 320)
+	(bus)
+)
+(connector
+	(text "IR[31..12],NULA[11..0]" (rect 338 292 452 304)(font "Arial" ))
+	(pt 336 304)
+	(pt 896 304)
+	(bus)
+)
+(connector
+	(text "IR[31],IR[31],IR[31],IR[31],IR[31],IR[31],IR[31],IR[31],IR[31],IR[31],IR[31],IR[31],IR[19..12],IR[20],IR[30..21],NULA[0]" (rect 338 276 931 288)(font "Arial" ))
+	(pt 336 288)
+	(pt 896 288)
+	(bus)
+)
+(connector
+	(text "IR[31],IR[31],IR[31],IR[31],IR[31],IR[31],IR[31],IR[31],IR[31],IR[31],IR[31],IR[31],IR[31],IR[31],IR[31],IR[31],IR[31],IR[31],IR[31],IR[31],IR[31],IR[30..20]" (rect 338 260 1106 272)(font "Arial" ))
+	(pt 336 272)
+	(pt 896 272)
+	(bus)
+)
+(connector
+	(text "IR[31],IR[31],IR[31],IR[31],IR[31],IR[31],IR[31],IR[31],IR[31],IR[31],IR[31],IR[31],IR[31],IR[31],IR[31],IR[31],IR[31],IR[31],IR[31],IR[31],IR[31],IR[30..20]" (rect 338 244 1106 256)(font "Arial" ))
+	(pt 336 256)
+	(pt 896 256)
+	(bus)
+)
+(connector
+	(text "IR[31],IR[31],IR[31],IR[31],IR[31],IR[31],IR[31],IR[31],IR[31],IR[31],IR[31],IR[31],IR[31],IR[31],IR[31],IR[31],IR[31],IR[31],IR[31],IR[31],IR[31],IR[30..20]" (rect 338 228 1106 240)(font "Arial" ))
+	(pt 336 240)
+	(pt 896 240)
+	(bus)
+)
+(connector
+	(text "IMM_SEL[2..0]" (rect 978 380 1049 392)(font "Arial" ))
+	(pt 968 376)
+	(pt 968 424)
+	(bus)
+)
+(connector
+	(text "IMM[31..0]" (rect 1090 284 1141 296)(font "Arial" ))
+	(pt 1040 296)
+	(pt 1184 296)
+	(bus)
+)
+(connector
+	(text "NULA[0]" (rect 162 68 204 80)(font "Arial" ))
+	(pt 160 80)
+	(pt 160 120)
+	(bus)
+)
+(text "Neposredna vrednost iz instrukcije: 0=I 1=S 2=B 3=U 4=J (5..7 = I)" (rect 0 -64 455 -48)(font "Arial" (font_size 10)))
