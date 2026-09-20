@@ -55,7 +55,19 @@ set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 
 set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
 set_instance_assignment -name FAST_INPUT_REGISTER ON -to *dq_reg*
 
-set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
+set_global_assignment -name SOURCE_FILE mx2x1_16.cmp
+set_global_assignment -name QIP_FILE mx2x1_16.qip
+set_global_assignment -name VHDL_FILE mx2x1_16.vhd
+set_global_assignment -name VHDL_FILE Components/mx2x1_22.vhd
+set_global_assignment -name QIP_FILE Components/mx2x1_22.qip
+set_global_assignment -name SOURCE_FILE Components/mx2x1_22.cmp
+set_global_assignment -name BDF_FILE Memory/Arbitrator.bdf
+set_global_assignment -name VHDL_FILE GPU/ram2port.vhd
+set_global_assignment -name QIP_FILE GPU/ram2port.qip
+set_global_assignment -name SOURCE_FILE GPU/ram2port.cmp
+set_global_assignment -name VHDL_FILE GPU/ram_2port.vhd
+set_global_assignment -name QIP_FILE GPU/ram_2port.qip
+set_global_assignment -name SOURCE_FILE GPU/ram_2port.cmp
 set_global_assignment -name BDF_FILE GPU/Controller.bdf
 set_global_assignment -name QIP_FILE CPU/pc_register.qip
 set_global_assignment -name QIP_FILE CPU/alu_adder.qip
@@ -187,3 +199,7 @@ set_global_assignment -name BDF_FILE Memory/reg16.bdf
 set_global_assignment -name VHDL_FILE Components/cmp13.vhd
 set_global_assignment -name QIP_FILE Components/mx4x1.qip
 set_global_assignment -name SDC_FILE tetris.sdc
+set_global_assignment -name QIP_FILE ram_2port.qip
+set_global_assignment -name BDF_FILE GPU/Arbitrator.bdf
+set_global_assignment -name BDF_FILE Components/CD2.bdf
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
