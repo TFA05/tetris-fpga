@@ -14,5 +14,6 @@ void inputRead(void);
 bool_t inputHeld(dword_t bit);
 bool_t inputPressed(dword_t bit);
 bool_t inputReleased(dword_t bit);
+bool_t inputRepeat(dword_t bit,dword_t delayMs,dword_t rateMs);
 
 #endif
