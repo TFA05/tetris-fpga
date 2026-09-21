@@ -1,0 +1,24 @@
+-- Heksadecimalna cifra -> segmenti g..a (0 = segment svetli)
+WIDTH=7;
+DEPTH=16;
+ADDRESS_RADIX=HEX;
+DATA_RADIX=BIN;
+
+CONTENT BEGIN
+	0 : 1000000;
+	1 : 1111001;
+	2 : 0100100;
+	3 : 0110000;
+	4 : 0011001;
+	5 : 0010010;
+	6 : 0000010;
+	7 : 1111000;
+	8 : 0000000;
+	9 : 0010000;
+	A : 0001000;
+	B : 0000011;
+	C : 1000110;
+	D : 0100001;
+	E : 0000110;
+	F : 0001110;
+END;

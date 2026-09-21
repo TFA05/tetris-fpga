@@ -55,9 +55,9 @@ set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 
 set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
 set_instance_assignment -name FAST_INPUT_REGISTER ON -to *dq_reg*
 
-set_global_assignment -name SOURCE_FILE mx2x1_16.cmp
-set_global_assignment -name QIP_FILE mx2x1_16.qip
-set_global_assignment -name VHDL_FILE mx2x1_16.vhd
+set_global_assignment -name SOURCE_FILE Components/mx2x1_16.cmp
+set_global_assignment -name QIP_FILE Components/mx2x1_16.qip
+set_global_assignment -name VHDL_FILE Components/mx2x1_16.vhd
 set_global_assignment -name VHDL_FILE Components/mx2x1_22.vhd
 set_global_assignment -name QIP_FILE Components/mx2x1_22.qip
 set_global_assignment -name SOURCE_FILE Components/mx2x1_22.cmp
@@ -141,6 +141,7 @@ set_global_assignment -name VHDL_FILE Memory/ram.vhd
 set_global_assignment -name QIP_FILE Memory/ram.qip
 set_global_assignment -name BDF_FILE Memory/mem_top.bdf
 set_global_assignment -name BDF_FILE KbController/CodeInterpeter.bdf
+set_global_assignment -name BDF_FILE KbController/KbController.bdf
 set_global_assignment -name BDF_FILE KbController/CodeDetector.bdf
 set_global_assignment -name BDF_FILE Components/RisingEdgeDetector.bdf
 set_global_assignment -name VHDL_FILE Components/RegisterX.vhd
@@ -204,6 +205,7 @@ set_global_assignment -name QIP_FILE Components/seg7_rom.qip
 set_global_assignment -name BDF_FILE Components/seg7_display.bdf
 set_global_assignment -name MIF_FILE Components/seg7_rom.mif
 set_global_assignment -name MIF_FILE Memory/rom_init.mif
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
 
 # Pinovi ploce DE0-CV
 
@@ -404,6 +406,3 @@ set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[12]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[13]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[14]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[15]
-
-set_global_assignment -name BDF_FILE KbController/KbController.bdf
-set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
