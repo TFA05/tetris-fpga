@@ -13,7 +13,7 @@ void gfxWaitVsync(void)
 
 void gfxSwapBuffers(void)
 {
-    out(REG_VGA_CTRL, 1);
+    out(REG_VGA_CTRL, 1);//
 }
 
 void gfxDrawPoint(dword_t x, dword_t y, dword_t color)
