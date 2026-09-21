@@ -28,6 +28,13 @@ typedef byte_t         bool_t;
 #define REG_SEG7        (MMIO_BASE + 0x30)
 #define REG_TIMER       (MMIO_BASE + 0x34)
 
+#define REG_MOUSE_STATUS (MMIO_BASE + 0x38)
+
+#define MOUSE_ACKED_MASK   0x1u
+#define MOUSE_BUTTON_MASK  0x6u
+#define MOUSE_CHANGED_MASK 0x8u
+#define MOUSE_COORD_MASK   0x3FFu
+
 #define STATUS_VSYNC_MASK    0x1u
 #define STATUS_GFX_BUSY_MASK 0x2u
 

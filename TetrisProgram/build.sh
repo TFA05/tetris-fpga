@@ -10,7 +10,7 @@ $RISCV_GCC -g -Wall -Wextra -march=rv32i -mabi=ilp32 -mstrict-align \
     -Wl,--no-dynamic-linker -Wl,-e,_start -Wl,--build-id=none -T tetris.ld \
     -o tetris.elf \
     start.c io.c gfx.c input.c timer.c score.c mathutil.c \
-    main2.c
+    tetromino.c board.c game.c mouse.c main.c
 
 $RISCV_OBJDUMP -d -s tetris.elf > tetris.s
 

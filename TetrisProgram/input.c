@@ -30,7 +30,7 @@ bool_t inputReleased(dword_t bit)
     dword_t prev = (g_prevKeyState >> bit) & 1u;
     return !now && prev;
 }
-//INPUT REPEAT
+
 bool_t inputRepeat(dword_t bit, dword_t delayMs, dword_t rateMs)
 {
     dword_t now = in(REG_TIMER);
