@@ -8,13 +8,11 @@ void gfxWaitReady(void)
 
 void gfxWaitVsync(void)
 {
-    while (in(REG_STATUS) & STATUS_VSYNC_MASK);
     while (!(in(REG_STATUS) & STATUS_VSYNC_MASK));
 }
 
 void gfxSwapBuffers(void)
 {
-    gfxWaitReady();
     out(REG_VGA_CTRL, 1);
 }
 
