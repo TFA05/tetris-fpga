@@ -43,8 +43,8 @@ typedef byte_t         bool_t;
 #define BOARD_ROWS 20
 #define CELL_SIZE  20
 
-#define BOARD_ORIGIN_X 40
-#define BOARD_ORIGIN_Y 20
+#define BOARD_ORIGIN_X ((SCREEN_W - BOARD_COLS * CELL_SIZE) / 2)
+#define BOARD_ORIGIN_Y ((SCREEN_H - BOARD_ROWS * CELL_SIZE) / 2)
 
 #define COLOR_BG     0x000
 #define COLOR_BORDER 0x888
