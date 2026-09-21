@@ -1,0 +1,6 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="KbTest">
+		<CBX_INST_ENTRY INSTANCE_NAME="|TESTTT|KbController:inst|CMP32:inst68|lpm_compare:LPM_COMPARE_component" CBX_FILE_NAME="cmpr_3mg.tdf"/>
+	</PROJECT>
+</LOG_ROOT>

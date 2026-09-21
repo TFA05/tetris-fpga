@@ -1,0 +1,489 @@
+|TESTTT
+LED0 <= data[7].DB_MAX_OUTPUT_PORT_TYPE
+CLK => KbController:inst.CLK
+PS2_DATA => KbController:inst.PS2_DATA
+PS2_CLK => KbController:inst.PS2_CLK
+LED1 <= data[6].DB_MAX_OUTPUT_PORT_TYPE
+LED2 <= data[5].DB_MAX_OUTPUT_PORT_TYPE
+LED3 <= data[4].DB_MAX_OUTPUT_PORT_TYPE
+LED4 <= data[3].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TESTTT|KbController:inst
+DATA[0] <= inst71[0].DB_MAX_OUTPUT_PORT_TYPE
+DATA[1] <= inst71[1].DB_MAX_OUTPUT_PORT_TYPE
+DATA[2] <= inst71[2].DB_MAX_OUTPUT_PORT_TYPE
+DATA[3] <= inst71[3].DB_MAX_OUTPUT_PORT_TYPE
+DATA[4] <= inst71[4].DB_MAX_OUTPUT_PORT_TYPE
+DATA[5] <= inst71[5].DB_MAX_OUTPUT_PORT_TYPE
+DATA[6] <= inst71[6].DB_MAX_OUTPUT_PORT_TYPE
+DATA[7] <= inst71[7].DB_MAX_OUTPUT_PORT_TYPE
+DATA[8] <= inst71[8].DB_MAX_OUTPUT_PORT_TYPE
+DATA[9] <= inst71[9].DB_MAX_OUTPUT_PORT_TYPE
+DATA[10] <= inst71[10].DB_MAX_OUTPUT_PORT_TYPE
+DATA[11] <= inst71[11].DB_MAX_OUTPUT_PORT_TYPE
+DATA[12] <= inst71[12].DB_MAX_OUTPUT_PORT_TYPE
+DATA[13] <= inst71[13].DB_MAX_OUTPUT_PORT_TYPE
+DATA[14] <= inst71[14].DB_MAX_OUTPUT_PORT_TYPE
+DATA[15] <= inst71[15].DB_MAX_OUTPUT_PORT_TYPE
+DATA[16] <= inst71[16].DB_MAX_OUTPUT_PORT_TYPE
+DATA[17] <= inst71[17].DB_MAX_OUTPUT_PORT_TYPE
+DATA[18] <= inst71[18].DB_MAX_OUTPUT_PORT_TYPE
+DATA[19] <= inst71[19].DB_MAX_OUTPUT_PORT_TYPE
+DATA[20] <= inst71[20].DB_MAX_OUTPUT_PORT_TYPE
+DATA[21] <= inst71[21].DB_MAX_OUTPUT_PORT_TYPE
+DATA[22] <= inst71[22].DB_MAX_OUTPUT_PORT_TYPE
+DATA[23] <= inst71[23].DB_MAX_OUTPUT_PORT_TYPE
+DATA[24] <= inst71[24].DB_MAX_OUTPUT_PORT_TYPE
+DATA[25] <= inst71[25].DB_MAX_OUTPUT_PORT_TYPE
+DATA[26] <= inst71[26].DB_MAX_OUTPUT_PORT_TYPE
+DATA[27] <= inst71[27].DB_MAX_OUTPUT_PORT_TYPE
+DATA[28] <= inst71[28].DB_MAX_OUTPUT_PORT_TYPE
+DATA[29] <= inst71[29].DB_MAX_OUTPUT_PORT_TYPE
+DATA[30] <= inst71[30].DB_MAX_OUTPUT_PORT_TYPE
+DATA[31] <= inst71[31].DB_MAX_OUTPUT_PORT_TYPE
+PS2_DATA => CodeDetector:inst1.PS2_DATA
+PS2_CLK => CodeDetector:inst1.PS2_CLK
+CLK => CodeDetector:inst1.CLK
+CLK => CodeInterpreter:inst.CLK
+CLK => inst69.CLK
+ADDR[0] => CMP32:inst68.dataa[0]
+ADDR[1] => CMP32:inst68.dataa[1]
+ADDR[2] => CMP32:inst68.dataa[2]
+ADDR[3] => CMP32:inst68.dataa[3]
+ADDR[4] => CMP32:inst68.dataa[4]
+ADDR[5] => CMP32:inst68.dataa[5]
+ADDR[6] => CMP32:inst68.dataa[6]
+ADDR[7] => CMP32:inst68.dataa[7]
+ADDR[8] => CMP32:inst68.dataa[8]
+ADDR[9] => CMP32:inst68.dataa[9]
+ADDR[10] => CMP32:inst68.dataa[10]
+ADDR[11] => CMP32:inst68.dataa[11]
+ADDR[12] => CMP32:inst68.dataa[12]
+ADDR[13] => CMP32:inst68.dataa[13]
+ADDR[14] => CMP32:inst68.dataa[14]
+ADDR[15] => CMP32:inst68.dataa[15]
+ADDR[16] => CMP32:inst68.dataa[16]
+ADDR[17] => CMP32:inst68.dataa[17]
+ADDR[18] => CMP32:inst68.dataa[18]
+ADDR[19] => CMP32:inst68.dataa[19]
+ADDR[20] => CMP32:inst68.dataa[20]
+ADDR[21] => CMP32:inst68.dataa[21]
+ADDR[22] => CMP32:inst68.dataa[22]
+ADDR[23] => CMP32:inst68.dataa[23]
+ADDR[24] => CMP32:inst68.dataa[24]
+ADDR[25] => CMP32:inst68.dataa[25]
+ADDR[26] => CMP32:inst68.dataa[26]
+ADDR[27] => CMP32:inst68.dataa[27]
+ADDR[28] => CMP32:inst68.dataa[28]
+ADDR[29] => CMP32:inst68.dataa[29]
+ADDR[30] => CMP32:inst68.dataa[30]
+ADDR[31] => CMP32:inst68.dataa[31]
+RD => inst70.IN1
+
+
+|TESTTT|KbController:inst|CodeInterpreter:inst
+KEYDATA[0] <= <GND>
+KEYDATA[1] <= <GND>
+KEYDATA[2] <= <GND>
+KEYDATA[3] <= inst39.DB_MAX_OUTPUT_PORT_TYPE
+KEYDATA[4] <= inst37.DB_MAX_OUTPUT_PORT_TYPE
+KEYDATA[5] <= inst38.DB_MAX_OUTPUT_PORT_TYPE
+KEYDATA[6] <= inst35.DB_MAX_OUTPUT_PORT_TYPE
+KEYDATA[7] <= inst36.DB_MAX_OUTPUT_PORT_TYPE
+KEY[0] => inst4[0].IN0
+KEY[1] => inst4[1].IN0
+KEY[1] => inst5.IN4
+KEY[2] => inst4[2].IN0
+KEY[3] => inst4[3].IN0
+KEY[3] => inst5.IN7
+KEY[4] => inst.IN3
+KEY[4] => inst4[4].IN0
+KEY[4] => inst5.IN3
+KEY[5] => inst.IN1
+KEY[5] => inst4[5].IN0
+KEY[6] => inst.IN2
+KEY[6] => inst4[6].IN0
+KEY[7] => inst.IN0
+KEY[7] => inst4[7].IN0
+CLK => inst2.CLK
+CLK => inst36.CLK
+CLK => inst35.CLK
+CLK => inst38.CLK
+CLK => inst37.CLK
+CLK => inst39.CLK
+KBINTR => inst2.ENA
+KBINTR => inst36.ENA
+KBINTR => inst35.ENA
+KBINTR => inst38.ENA
+KBINTR => inst37.ENA
+KBINTR => inst39.ENA
+
+
+|TESTTT|KbController:inst|CodeInterpreter:inst|DC2:inst11
+D1 <= inst1.DB_MAX_OUTPUT_PORT_TYPE
+E => inst1.IN0
+E => inst2.IN1
+I0 => inst1.IN1
+I0 => inst.IN0
+D0 <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TESTTT|KbController:inst|CodeInterpreter:inst|DC2:inst13
+D1 <= inst1.DB_MAX_OUTPUT_PORT_TYPE
+E => inst1.IN0
+E => inst2.IN1
+I0 => inst1.IN1
+I0 => inst.IN0
+D0 <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TESTTT|KbController:inst|CodeInterpreter:inst|DC2:inst15
+D1 <= inst1.DB_MAX_OUTPUT_PORT_TYPE
+E => inst1.IN0
+E => inst2.IN1
+I0 => inst1.IN1
+I0 => inst.IN0
+D0 <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TESTTT|KbController:inst|CodeInterpreter:inst|DC2:inst14
+D1 <= inst1.DB_MAX_OUTPUT_PORT_TYPE
+E => inst1.IN0
+E => inst2.IN1
+I0 => inst1.IN1
+I0 => inst.IN0
+D0 <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TESTTT|KbController:inst|CodeInterpreter:inst|DC2:inst16
+D1 <= inst1.DB_MAX_OUTPUT_PORT_TYPE
+E => inst1.IN0
+E => inst2.IN1
+I0 => inst1.IN1
+I0 => inst.IN0
+D0 <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TESTTT|KbController:inst|CodeDetector:inst1
+INTR <= inst28.DB_MAX_OUTPUT_PORT_TYPE
+PS2_CLK => Debouncer:inst39.IN
+CLK => Debouncer:inst39.CLK
+CLK => RisingEdgeDetector:inst38.CLK
+CLK => inst28.CLK
+CLK => inst30.CLK
+CLK => inst31.CLK
+CLK => inst32.CLK
+CLK => inst33.CLK
+CLK => inst34.CLK
+CLK => inst35.CLK
+CLK => inst36.CLK
+CLK => inst37.CLK
+PS2_DATA => inst20.IN0
+PS2_DATA => inst23.DATAIN
+PS2_DATA => inst.DATAIN
+CODE[0] <= inst37.DB_MAX_OUTPUT_PORT_TYPE
+CODE[1] <= inst36.DB_MAX_OUTPUT_PORT_TYPE
+CODE[2] <= inst35.DB_MAX_OUTPUT_PORT_TYPE
+CODE[3] <= inst34.DB_MAX_OUTPUT_PORT_TYPE
+CODE[4] <= inst33.DB_MAX_OUTPUT_PORT_TYPE
+CODE[5] <= inst32.DB_MAX_OUTPUT_PORT_TYPE
+CODE[6] <= inst31.DB_MAX_OUTPUT_PORT_TYPE
+CODE[7] <= inst30.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TESTTT|KbController:inst|CodeDetector:inst1|RisingEdgeDetector:inst38
+OUT <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+CLK => inst.CLK
+CLK => inst1.CLK
+IN => inst.DATAIN
+
+
+|TESTTT|KbController:inst|CodeDetector:inst1|Debouncer:inst39
+OUT <= inst1.DB_MAX_OUTPUT_PORT_TYPE
+CLK => inst.CLK
+CLK => inst1.CLK
+CLK => Register:inst2.CLK
+CLK => Register:inst3.CLK
+CLK => Register:inst4.CLK
+IN => inst.DATAIN
+IN => inst6.IN0
+
+
+|TESTTT|KbController:inst|CodeDetector:inst1|Debouncer:inst39|Register:inst2
+OUT <= inst.DB_MAX_OUTPUT_PORT_TYPE
+CL => inst2.IN0
+INC => inst2.IN1
+INC => inst.IN1
+INC => inst1.IN1
+CLK => inst.CLK
+C <= inst1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TESTTT|KbController:inst|CodeDetector:inst1|Debouncer:inst39|Register:inst3
+OUT <= inst.DB_MAX_OUTPUT_PORT_TYPE
+CL => inst2.IN0
+INC => inst2.IN1
+INC => inst.IN1
+INC => inst1.IN1
+CLK => inst.CLK
+C <= inst1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TESTTT|KbController:inst|CodeDetector:inst1|Debouncer:inst39|Register:inst4
+OUT <= inst.DB_MAX_OUTPUT_PORT_TYPE
+CL => inst2.IN0
+INC => inst2.IN1
+INC => inst.IN1
+INC => inst1.IN1
+CLK => inst.CLK
+C <= inst1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TESTTT|KbController:inst|CMP32:inst68
+dataa[0] => lpm_compare:LPM_COMPARE_component.dataa[0]
+dataa[1] => lpm_compare:LPM_COMPARE_component.dataa[1]
+dataa[2] => lpm_compare:LPM_COMPARE_component.dataa[2]
+dataa[3] => lpm_compare:LPM_COMPARE_component.dataa[3]
+dataa[4] => lpm_compare:LPM_COMPARE_component.dataa[4]
+dataa[5] => lpm_compare:LPM_COMPARE_component.dataa[5]
+dataa[6] => lpm_compare:LPM_COMPARE_component.dataa[6]
+dataa[7] => lpm_compare:LPM_COMPARE_component.dataa[7]
+dataa[8] => lpm_compare:LPM_COMPARE_component.dataa[8]
+dataa[9] => lpm_compare:LPM_COMPARE_component.dataa[9]
+dataa[10] => lpm_compare:LPM_COMPARE_component.dataa[10]
+dataa[11] => lpm_compare:LPM_COMPARE_component.dataa[11]
+dataa[12] => lpm_compare:LPM_COMPARE_component.dataa[12]
+dataa[13] => lpm_compare:LPM_COMPARE_component.dataa[13]
+dataa[14] => lpm_compare:LPM_COMPARE_component.dataa[14]
+dataa[15] => lpm_compare:LPM_COMPARE_component.dataa[15]
+dataa[16] => lpm_compare:LPM_COMPARE_component.dataa[16]
+dataa[17] => lpm_compare:LPM_COMPARE_component.dataa[17]
+dataa[18] => lpm_compare:LPM_COMPARE_component.dataa[18]
+dataa[19] => lpm_compare:LPM_COMPARE_component.dataa[19]
+dataa[20] => lpm_compare:LPM_COMPARE_component.dataa[20]
+dataa[21] => lpm_compare:LPM_COMPARE_component.dataa[21]
+dataa[22] => lpm_compare:LPM_COMPARE_component.dataa[22]
+dataa[23] => lpm_compare:LPM_COMPARE_component.dataa[23]
+dataa[24] => lpm_compare:LPM_COMPARE_component.dataa[24]
+dataa[25] => lpm_compare:LPM_COMPARE_component.dataa[25]
+dataa[26] => lpm_compare:LPM_COMPARE_component.dataa[26]
+dataa[27] => lpm_compare:LPM_COMPARE_component.dataa[27]
+dataa[28] => lpm_compare:LPM_COMPARE_component.dataa[28]
+dataa[29] => lpm_compare:LPM_COMPARE_component.dataa[29]
+dataa[30] => lpm_compare:LPM_COMPARE_component.dataa[30]
+dataa[31] => lpm_compare:LPM_COMPARE_component.dataa[31]
+datab[0] => lpm_compare:LPM_COMPARE_component.datab[0]
+datab[1] => lpm_compare:LPM_COMPARE_component.datab[1]
+datab[2] => lpm_compare:LPM_COMPARE_component.datab[2]
+datab[3] => lpm_compare:LPM_COMPARE_component.datab[3]
+datab[4] => lpm_compare:LPM_COMPARE_component.datab[4]
+datab[5] => lpm_compare:LPM_COMPARE_component.datab[5]
+datab[6] => lpm_compare:LPM_COMPARE_component.datab[6]
+datab[7] => lpm_compare:LPM_COMPARE_component.datab[7]
+datab[8] => lpm_compare:LPM_COMPARE_component.datab[8]
+datab[9] => lpm_compare:LPM_COMPARE_component.datab[9]
+datab[10] => lpm_compare:LPM_COMPARE_component.datab[10]
+datab[11] => lpm_compare:LPM_COMPARE_component.datab[11]
+datab[12] => lpm_compare:LPM_COMPARE_component.datab[12]
+datab[13] => lpm_compare:LPM_COMPARE_component.datab[13]
+datab[14] => lpm_compare:LPM_COMPARE_component.datab[14]
+datab[15] => lpm_compare:LPM_COMPARE_component.datab[15]
+datab[16] => lpm_compare:LPM_COMPARE_component.datab[16]
+datab[17] => lpm_compare:LPM_COMPARE_component.datab[17]
+datab[18] => lpm_compare:LPM_COMPARE_component.datab[18]
+datab[19] => lpm_compare:LPM_COMPARE_component.datab[19]
+datab[20] => lpm_compare:LPM_COMPARE_component.datab[20]
+datab[21] => lpm_compare:LPM_COMPARE_component.datab[21]
+datab[22] => lpm_compare:LPM_COMPARE_component.datab[22]
+datab[23] => lpm_compare:LPM_COMPARE_component.datab[23]
+datab[24] => lpm_compare:LPM_COMPARE_component.datab[24]
+datab[25] => lpm_compare:LPM_COMPARE_component.datab[25]
+datab[26] => lpm_compare:LPM_COMPARE_component.datab[26]
+datab[27] => lpm_compare:LPM_COMPARE_component.datab[27]
+datab[28] => lpm_compare:LPM_COMPARE_component.datab[28]
+datab[29] => lpm_compare:LPM_COMPARE_component.datab[29]
+datab[30] => lpm_compare:LPM_COMPARE_component.datab[30]
+datab[31] => lpm_compare:LPM_COMPARE_component.datab[31]
+aeb <= lpm_compare:LPM_COMPARE_component.aeb
+
+
+|TESTTT|KbController:inst|CMP32:inst68|lpm_compare:LPM_COMPARE_component
+dataa[0] => cmpr_3mg:auto_generated.dataa[0]
+dataa[1] => cmpr_3mg:auto_generated.dataa[1]
+dataa[2] => cmpr_3mg:auto_generated.dataa[2]
+dataa[3] => cmpr_3mg:auto_generated.dataa[3]
+dataa[4] => cmpr_3mg:auto_generated.dataa[4]
+dataa[5] => cmpr_3mg:auto_generated.dataa[5]
+dataa[6] => cmpr_3mg:auto_generated.dataa[6]
+dataa[7] => cmpr_3mg:auto_generated.dataa[7]
+dataa[8] => cmpr_3mg:auto_generated.dataa[8]
+dataa[9] => cmpr_3mg:auto_generated.dataa[9]
+dataa[10] => cmpr_3mg:auto_generated.dataa[10]
+dataa[11] => cmpr_3mg:auto_generated.dataa[11]
+dataa[12] => cmpr_3mg:auto_generated.dataa[12]
+dataa[13] => cmpr_3mg:auto_generated.dataa[13]
+dataa[14] => cmpr_3mg:auto_generated.dataa[14]
+dataa[15] => cmpr_3mg:auto_generated.dataa[15]
+dataa[16] => cmpr_3mg:auto_generated.dataa[16]
+dataa[17] => cmpr_3mg:auto_generated.dataa[17]
+dataa[18] => cmpr_3mg:auto_generated.dataa[18]
+dataa[19] => cmpr_3mg:auto_generated.dataa[19]
+dataa[20] => cmpr_3mg:auto_generated.dataa[20]
+dataa[21] => cmpr_3mg:auto_generated.dataa[21]
+dataa[22] => cmpr_3mg:auto_generated.dataa[22]
+dataa[23] => cmpr_3mg:auto_generated.dataa[23]
+dataa[24] => cmpr_3mg:auto_generated.dataa[24]
+dataa[25] => cmpr_3mg:auto_generated.dataa[25]
+dataa[26] => cmpr_3mg:auto_generated.dataa[26]
+dataa[27] => cmpr_3mg:auto_generated.dataa[27]
+dataa[28] => cmpr_3mg:auto_generated.dataa[28]
+dataa[29] => cmpr_3mg:auto_generated.dataa[29]
+dataa[30] => cmpr_3mg:auto_generated.dataa[30]
+dataa[31] => cmpr_3mg:auto_generated.dataa[31]
+datab[0] => cmpr_3mg:auto_generated.datab[0]
+datab[1] => cmpr_3mg:auto_generated.datab[1]
+datab[2] => cmpr_3mg:auto_generated.datab[2]
+datab[3] => cmpr_3mg:auto_generated.datab[3]
+datab[4] => cmpr_3mg:auto_generated.datab[4]
+datab[5] => cmpr_3mg:auto_generated.datab[5]
+datab[6] => cmpr_3mg:auto_generated.datab[6]
+datab[7] => cmpr_3mg:auto_generated.datab[7]
+datab[8] => cmpr_3mg:auto_generated.datab[8]
+datab[9] => cmpr_3mg:auto_generated.datab[9]
+datab[10] => cmpr_3mg:auto_generated.datab[10]
+datab[11] => cmpr_3mg:auto_generated.datab[11]
+datab[12] => cmpr_3mg:auto_generated.datab[12]
+datab[13] => cmpr_3mg:auto_generated.datab[13]
+datab[14] => cmpr_3mg:auto_generated.datab[14]
+datab[15] => cmpr_3mg:auto_generated.datab[15]
+datab[16] => cmpr_3mg:auto_generated.datab[16]
+datab[17] => cmpr_3mg:auto_generated.datab[17]
+datab[18] => cmpr_3mg:auto_generated.datab[18]
+datab[19] => cmpr_3mg:auto_generated.datab[19]
+datab[20] => cmpr_3mg:auto_generated.datab[20]
+datab[21] => cmpr_3mg:auto_generated.datab[21]
+datab[22] => cmpr_3mg:auto_generated.datab[22]
+datab[23] => cmpr_3mg:auto_generated.datab[23]
+datab[24] => cmpr_3mg:auto_generated.datab[24]
+datab[25] => cmpr_3mg:auto_generated.datab[25]
+datab[26] => cmpr_3mg:auto_generated.datab[26]
+datab[27] => cmpr_3mg:auto_generated.datab[27]
+datab[28] => cmpr_3mg:auto_generated.datab[28]
+datab[29] => cmpr_3mg:auto_generated.datab[29]
+datab[30] => cmpr_3mg:auto_generated.datab[30]
+datab[31] => cmpr_3mg:auto_generated.datab[31]
+clock => ~NO_FANOUT~
+aclr => ~NO_FANOUT~
+clken => ~NO_FANOUT~
+alb <= <GND>
+aeb <= cmpr_3mg:auto_generated.aeb
+agb <= <GND>
+aleb <= <GND>
+aneb <= <GND>
+ageb <= <GND>
+
+
+|TESTTT|KbController:inst|CMP32:inst68|lpm_compare:LPM_COMPARE_component|cmpr_3mg:auto_generated
+aeb <= aeb_result_wire[0].DB_MAX_OUTPUT_PORT_TYPE
+dataa[0] => data_wire[4].IN0
+dataa[1] => data_wire[4].IN0
+dataa[2] => data_wire[5].IN0
+dataa[3] => data_wire[5].IN0
+dataa[4] => data_wire[6].IN0
+dataa[5] => data_wire[6].IN0
+dataa[6] => data_wire[7].IN0
+dataa[7] => data_wire[7].IN0
+dataa[8] => data_wire[8].IN0
+dataa[9] => data_wire[8].IN0
+dataa[10] => data_wire[9].IN0
+dataa[11] => data_wire[9].IN0
+dataa[12] => data_wire[10].IN0
+dataa[13] => data_wire[10].IN0
+dataa[14] => data_wire[11].IN0
+dataa[15] => data_wire[11].IN0
+dataa[16] => data_wire[12].IN0
+dataa[17] => data_wire[12].IN0
+dataa[18] => data_wire[13].IN0
+dataa[19] => data_wire[13].IN0
+dataa[20] => data_wire[14].IN0
+dataa[21] => data_wire[14].IN0
+dataa[22] => data_wire[15].IN0
+dataa[23] => data_wire[15].IN0
+dataa[24] => data_wire[16].IN0
+dataa[25] => data_wire[16].IN0
+dataa[26] => data_wire[17].IN0
+dataa[27] => data_wire[17].IN0
+dataa[28] => data_wire[18].IN0
+dataa[29] => data_wire[18].IN0
+dataa[30] => data_wire[19].IN0
+dataa[31] => data_wire[19].IN0
+datab[0] => data_wire[4].IN1
+datab[1] => data_wire[4].IN1
+datab[2] => data_wire[5].IN1
+datab[3] => data_wire[5].IN1
+datab[4] => data_wire[6].IN1
+datab[5] => data_wire[6].IN1
+datab[6] => data_wire[7].IN1
+datab[7] => data_wire[7].IN1
+datab[8] => data_wire[8].IN1
+datab[9] => data_wire[8].IN1
+datab[10] => data_wire[9].IN1
+datab[11] => data_wire[9].IN1
+datab[12] => data_wire[10].IN1
+datab[13] => data_wire[10].IN1
+datab[14] => data_wire[11].IN1
+datab[15] => data_wire[11].IN1
+datab[16] => data_wire[12].IN1
+datab[17] => data_wire[12].IN1
+datab[18] => data_wire[13].IN1
+datab[19] => data_wire[13].IN1
+datab[20] => data_wire[14].IN1
+datab[21] => data_wire[14].IN1
+datab[22] => data_wire[15].IN1
+datab[23] => data_wire[15].IN1
+datab[24] => data_wire[16].IN1
+datab[25] => data_wire[16].IN1
+datab[26] => data_wire[17].IN1
+datab[27] => data_wire[17].IN1
+datab[28] => data_wire[18].IN1
+datab[29] => data_wire[18].IN1
+datab[30] => data_wire[19].IN1
+datab[31] => data_wire[19].IN1
+
+
+|TESTTT|KbController:inst|ConstantX:inst3
+DATA_OUT[0] <= <GND>
+DATA_OUT[1] <= <GND>
+DATA_OUT[2] <= <GND>
+DATA_OUT[3] <= <GND>
+DATA_OUT[4] <= <GND>
+DATA_OUT[5] <= <GND>
+DATA_OUT[6] <= <GND>
+DATA_OUT[7] <= <GND>
+DATA_OUT[8] <= <GND>
+DATA_OUT[9] <= <GND>
+DATA_OUT[10] <= <GND>
+DATA_OUT[11] <= <GND>
+DATA_OUT[12] <= <GND>
+DATA_OUT[13] <= <GND>
+DATA_OUT[14] <= <GND>
+DATA_OUT[15] <= <GND>
+DATA_OUT[16] <= <GND>
+DATA_OUT[17] <= <GND>
+DATA_OUT[18] <= <GND>
+DATA_OUT[19] <= <GND>
+DATA_OUT[20] <= <GND>
+DATA_OUT[21] <= <GND>
+DATA_OUT[22] <= <GND>
+DATA_OUT[23] <= <GND>
+DATA_OUT[24] <= <GND>
+DATA_OUT[25] <= <GND>
+DATA_OUT[26] <= <GND>
+DATA_OUT[27] <= <GND>
+DATA_OUT[28] <= <GND>
+DATA_OUT[29] <= <GND>
+DATA_OUT[30] <= <GND>
+DATA_OUT[31] <= <GND>
+
+
