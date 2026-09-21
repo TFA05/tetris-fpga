@@ -1,0 +1,596 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+/*
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+*/
+(header "graphic" (version "1.4"))
+(text "Registar od 8 bita sa dozvolom upisa (pamti bajt paketa misa)." (rect 0 -80 558 -62)(font "Arial" (font_size 10)))
+(pin
+	(input)
+	(rect 0 0 168 16)
+	(text "INPUT" (rect 125 0 153 9)(font "Arial" (font_size 6)))
+	(text "DIN[7..0]" (rect 5 0 90 11)(font "Arial" ))
+	(pt 168 8)
+	(drawing
+		(line (pt 84 12)(pt 109 12))
+		(line (pt 84 4)(pt 109 4))
+		(line (pt 113 8)(pt 168 8))
+		(line (pt 84 12)(pt 84 4))
+		(line (pt 109 4)(pt 113 8))
+		(line (pt 109 12)(pt 113 8))
+	)
+	(text "VCC" (rect 128 7 148 16)(font "Arial" (font_size 6)))
+)
+(pin
+	(input)
+	(rect 0 32 168 48)
+	(text "INPUT" (rect 125 0 153 9)(font "Arial" (font_size 6)))
+	(text "ENA" (rect 5 0 90 11)(font "Arial" ))
+	(pt 168 8)
+	(drawing
+		(line (pt 84 12)(pt 109 12))
+		(line (pt 84 4)(pt 109 4))
+		(line (pt 113 8)(pt 168 8))
+		(line (pt 84 12)(pt 84 4))
+		(line (pt 109 4)(pt 113 8))
+		(line (pt 109 12)(pt 113 8))
+	)
+	(text "VCC" (rect 128 7 148 16)(font "Arial" (font_size 6)))
+)
+(pin
+	(input)
+	(rect 0 64 168 80)
+	(text "INPUT" (rect 125 0 153 9)(font "Arial" (font_size 6)))
+	(text "CLK" (rect 5 0 90 11)(font "Arial" ))
+	(pt 168 8)
+	(drawing
+		(line (pt 84 12)(pt 109 12))
+		(line (pt 84 4)(pt 109 4))
+		(line (pt 113 8)(pt 168 8))
+		(line (pt 84 12)(pt 84 4))
+		(line (pt 109 4)(pt 113 8))
+		(line (pt 109 12)(pt 113 8))
+	)
+	(text "VCC" (rect 128 7 148 16)(font "Arial" (font_size 6)))
+)
+(pin
+	(input)
+	(rect 0 96 168 112)
+	(text "INPUT" (rect 125 0 153 9)(font "Arial" (font_size 6)))
+	(text "RST_N" (rect 5 0 90 11)(font "Arial" ))
+	(pt 168 8)
+	(drawing
+		(line (pt 84 12)(pt 109 12))
+		(line (pt 84 4)(pt 109 4))
+		(line (pt 113 8)(pt 168 8))
+		(line (pt 84 12)(pt 84 4))
+		(line (pt 109 4)(pt 113 8))
+		(line (pt 109 12)(pt 113 8))
+	)
+	(text "VCC" (rect 128 7 148 16)(font "Arial" (font_size 6)))
+)
+(pin
+	(output)
+	(rect 1200 0 1376 16)
+	(text "OUTPUT" (rect 1 0 39 9)(font "Arial" (font_size 6)))
+	(text "Q[7..0]" (rect 90 0 170 11)(font "Arial" ))
+	(pt 0 8)
+	(drawing
+		(line (pt 0 8)(pt 52 8))
+		(line (pt 52 4)(pt 78 4))
+		(line (pt 52 12)(pt 78 12))
+		(line (pt 52 12)(pt 52 4))
+		(line (pt 78 4)(pt 82 8))
+		(line (pt 82 8)(pt 78 12))
+	)
+)
+(symbol
+	(rect 240 200 272 216)
+	(text "VCC" (rect 5 0 80 12)(font "Arial" ))
+	(text "inst1" (rect 8 0 40 12)(font "Arial" ))
+	(port (pt 16 16)(output)(text "1"(rect 19 7 24 19)(font "Courier New"(bold))(invisible))(text "1"(rect 19 7 24 19)(font "Courier New"(bold))(invisible))
+		(line (pt 16 16)(pt 16 8)(line_width 1)))
+	(drawing 
+		(line (pt 8 8)(pt 24 8)(line_width 1)))
+)
+(connector
+	(text "JEDAN" (rect 258 204 298 215)(font "Arial" ))
+	(pt 256 256)
+	(pt 256 216)
+	
+)
+(symbol
+	(rect 560 320 624 400)
+	(text "DFFE" (rect 5 0 80 12)(font "Arial" ))
+	(text "BIT0" (rect 8 64 40 76)(font "Arial" ))
+	(port (pt 32 0)(input)(text "PRN"(rect 24 13 29 25)(font "Courier New"(bold)))(text "PRN"(rect 24 11 39 23)(font "Courier New"(bold)))
+		(line (pt 32 4)(pt 32 0)(line_width 1)))
+	(port (pt 32 80)(input)(text "CLRN"(rect 21 59 26 71)(font "Courier New"(bold)))(text "CLRN"(rect 21 58 41 70)(font "Courier New"(bold)))
+		(line (pt 32 80)(pt 32 76)(line_width 1)))
+	(port (pt 0 24)(input)(text "D"(rect 14 20 19 32)(font "Courier New"(bold)))(text "D"(rect 14 20 19 32)(font "Courier New"(bold)))
+		(line (pt 0 24)(pt 12 24)(line_width 1)))
+	(port (pt 0 40)(input)(text "CLK"(rect 2 28 7 40)(font "Courier New"(bold))(invisible))(text "CLK"(rect 2 28 17 40)(font "Courier New"(bold))(invisible))
+		(line (pt 0 40)(pt 12 40)(line_width 1)))
+	(port (pt 0 56)(input)(text "ENA"(rect 14 50 19 62)(font "Courier New"(bold)))(text "ENA"(rect 14 50 29 62)(font "Courier New"(bold)))
+		(line (pt 0 56)(pt 12 56)(line_width 1)))
+	(port (pt 64 24)(output)(text "Q"(rect 44 20 49 32)(font "Courier New"(bold)))(text "Q"(rect 44 20 49 32)(font "Courier New"(bold)))
+		(line (pt 53 24)(pt 64 24)(line_width 1)))
+	(drawing 
+		(line (pt 12 68)(pt 52 68)(line_width 1))
+		(line (pt 12 12)(pt 52 12)(line_width 1))
+		(line (pt 52 68)(pt 52 12)(line_width 1))
+		(line (pt 12 68)(pt 12 12)(line_width 1))
+		(line (pt 12 34)(pt 19 41)(line_width 1))
+		(line (pt 18 41)(pt 12 47)(line_width 1))(circle (rect 28 4 36 12)(line_width 1))(circle (rect 28 68 36 76)(line_width 1)))
+)
+(connector
+	(text "DIN[0]" (rect 530 332 578 343)(font "Arial" ))
+	(pt 528 344)
+	(pt 560 344)
+	(bus)
+)
+(connector
+	(text "ENA" (rect 530 364 554 375)(font "Arial" ))
+	(pt 528 376)
+	(pt 560 376)
+	
+)
+(connector
+	(text "CLK" (rect 530 348 554 359)(font "Arial" ))
+	(pt 528 360)
+	(pt 560 360)
+	
+)
+(connector
+	(text "RST_N" (rect 594 388 634 399)(font "Arial" ))
+	(pt 592 432)
+	(pt 592 400)
+	
+)
+(connector
+	(text "JEDAN" (rect 594 276 634 287)(font "Arial" ))
+	(pt 592 288)
+	(pt 592 320)
+	
+)
+(connector
+	(text "Q[0]" (rect 626 332 658 343)(font "Arial" ))
+	(pt 656 344)
+	(pt 624 344)
+	(bus)
+)
+(symbol
+	(rect 560 544 624 624)
+	(text "DFFE" (rect 5 0 80 12)(font "Arial" ))
+	(text "BIT1" (rect 8 64 40 76)(font "Arial" ))
+	(port (pt 32 0)(input)(text "PRN"(rect 24 13 29 25)(font "Courier New"(bold)))(text "PRN"(rect 24 11 39 23)(font "Courier New"(bold)))
+		(line (pt 32 4)(pt 32 0)(line_width 1)))
+	(port (pt 32 80)(input)(text "CLRN"(rect 21 59 26 71)(font "Courier New"(bold)))(text "CLRN"(rect 21 58 41 70)(font "Courier New"(bold)))
+		(line (pt 32 80)(pt 32 76)(line_width 1)))
+	(port (pt 0 24)(input)(text "D"(rect 14 20 19 32)(font "Courier New"(bold)))(text "D"(rect 14 20 19 32)(font "Courier New"(bold)))
+		(line (pt 0 24)(pt 12 24)(line_width 1)))
+	(port (pt 0 40)(input)(text "CLK"(rect 2 28 7 40)(font "Courier New"(bold))(invisible))(text "CLK"(rect 2 28 17 40)(font "Courier New"(bold))(invisible))
+		(line (pt 0 40)(pt 12 40)(line_width 1)))
+	(port (pt 0 56)(input)(text "ENA"(rect 14 50 19 62)(font "Courier New"(bold)))(text "ENA"(rect 14 50 29 62)(font "Courier New"(bold)))
+		(line (pt 0 56)(pt 12 56)(line_width 1)))
+	(port (pt 64 24)(output)(text "Q"(rect 44 20 49 32)(font "Courier New"(bold)))(text "Q"(rect 44 20 49 32)(font "Courier New"(bold)))
+		(line (pt 53 24)(pt 64 24)(line_width 1)))
+	(drawing 
+		(line (pt 12 68)(pt 52 68)(line_width 1))
+		(line (pt 12 12)(pt 52 12)(line_width 1))
+		(line (pt 52 68)(pt 52 12)(line_width 1))
+		(line (pt 12 68)(pt 12 12)(line_width 1))
+		(line (pt 12 34)(pt 19 41)(line_width 1))
+		(line (pt 18 41)(pt 12 47)(line_width 1))(circle (rect 28 4 36 12)(line_width 1))(circle (rect 28 68 36 76)(line_width 1)))
+)
+(connector
+	(text "DIN[1]" (rect 530 556 578 567)(font "Arial" ))
+	(pt 528 568)
+	(pt 560 568)
+	(bus)
+)
+(connector
+	(text "ENA" (rect 530 588 554 599)(font "Arial" ))
+	(pt 528 600)
+	(pt 560 600)
+	
+)
+(connector
+	(text "CLK" (rect 530 572 554 583)(font "Arial" ))
+	(pt 528 584)
+	(pt 560 584)
+	
+)
+(connector
+	(text "RST_N" (rect 594 612 634 623)(font "Arial" ))
+	(pt 592 656)
+	(pt 592 624)
+	
+)
+(connector
+	(text "JEDAN" (rect 594 500 634 511)(font "Arial" ))
+	(pt 592 512)
+	(pt 592 544)
+	
+)
+(connector
+	(text "Q[1]" (rect 626 556 658 567)(font "Arial" ))
+	(pt 656 568)
+	(pt 624 568)
+	(bus)
+)
+(symbol
+	(rect 560 768 624 848)
+	(text "DFFE" (rect 5 0 80 12)(font "Arial" ))
+	(text "BIT2" (rect 8 64 40 76)(font "Arial" ))
+	(port (pt 32 0)(input)(text "PRN"(rect 24 13 29 25)(font "Courier New"(bold)))(text "PRN"(rect 24 11 39 23)(font "Courier New"(bold)))
+		(line (pt 32 4)(pt 32 0)(line_width 1)))
+	(port (pt 32 80)(input)(text "CLRN"(rect 21 59 26 71)(font "Courier New"(bold)))(text "CLRN"(rect 21 58 41 70)(font "Courier New"(bold)))
+		(line (pt 32 80)(pt 32 76)(line_width 1)))
+	(port (pt 0 24)(input)(text "D"(rect 14 20 19 32)(font "Courier New"(bold)))(text "D"(rect 14 20 19 32)(font "Courier New"(bold)))
+		(line (pt 0 24)(pt 12 24)(line_width 1)))
+	(port (pt 0 40)(input)(text "CLK"(rect 2 28 7 40)(font "Courier New"(bold))(invisible))(text "CLK"(rect 2 28 17 40)(font "Courier New"(bold))(invisible))
+		(line (pt 0 40)(pt 12 40)(line_width 1)))
+	(port (pt 0 56)(input)(text "ENA"(rect 14 50 19 62)(font "Courier New"(bold)))(text "ENA"(rect 14 50 29 62)(font "Courier New"(bold)))
+		(line (pt 0 56)(pt 12 56)(line_width 1)))
+	(port (pt 64 24)(output)(text "Q"(rect 44 20 49 32)(font "Courier New"(bold)))(text "Q"(rect 44 20 49 32)(font "Courier New"(bold)))
+		(line (pt 53 24)(pt 64 24)(line_width 1)))
+	(drawing 
+		(line (pt 12 68)(pt 52 68)(line_width 1))
+		(line (pt 12 12)(pt 52 12)(line_width 1))
+		(line (pt 52 68)(pt 52 12)(line_width 1))
+		(line (pt 12 68)(pt 12 12)(line_width 1))
+		(line (pt 12 34)(pt 19 41)(line_width 1))
+		(line (pt 18 41)(pt 12 47)(line_width 1))(circle (rect 28 4 36 12)(line_width 1))(circle (rect 28 68 36 76)(line_width 1)))
+)
+(connector
+	(text "DIN[2]" (rect 530 780 578 791)(font "Arial" ))
+	(pt 528 792)
+	(pt 560 792)
+	(bus)
+)
+(connector
+	(text "ENA" (rect 530 812 554 823)(font "Arial" ))
+	(pt 528 824)
+	(pt 560 824)
+	
+)
+(connector
+	(text "CLK" (rect 530 796 554 807)(font "Arial" ))
+	(pt 528 808)
+	(pt 560 808)
+	
+)
+(connector
+	(text "RST_N" (rect 594 836 634 847)(font "Arial" ))
+	(pt 592 880)
+	(pt 592 848)
+	
+)
+(connector
+	(text "JEDAN" (rect 594 724 634 735)(font "Arial" ))
+	(pt 592 736)
+	(pt 592 768)
+	
+)
+(connector
+	(text "Q[2]" (rect 626 780 658 791)(font "Arial" ))
+	(pt 656 792)
+	(pt 624 792)
+	(bus)
+)
+(symbol
+	(rect 560 992 624 1072)
+	(text "DFFE" (rect 5 0 80 12)(font "Arial" ))
+	(text "BIT3" (rect 8 64 40 76)(font "Arial" ))
+	(port (pt 32 0)(input)(text "PRN"(rect 24 13 29 25)(font "Courier New"(bold)))(text "PRN"(rect 24 11 39 23)(font "Courier New"(bold)))
+		(line (pt 32 4)(pt 32 0)(line_width 1)))
+	(port (pt 32 80)(input)(text "CLRN"(rect 21 59 26 71)(font "Courier New"(bold)))(text "CLRN"(rect 21 58 41 70)(font "Courier New"(bold)))
+		(line (pt 32 80)(pt 32 76)(line_width 1)))
+	(port (pt 0 24)(input)(text "D"(rect 14 20 19 32)(font "Courier New"(bold)))(text "D"(rect 14 20 19 32)(font "Courier New"(bold)))
+		(line (pt 0 24)(pt 12 24)(line_width 1)))
+	(port (pt 0 40)(input)(text "CLK"(rect 2 28 7 40)(font "Courier New"(bold))(invisible))(text "CLK"(rect 2 28 17 40)(font "Courier New"(bold))(invisible))
+		(line (pt 0 40)(pt 12 40)(line_width 1)))
+	(port (pt 0 56)(input)(text "ENA"(rect 14 50 19 62)(font "Courier New"(bold)))(text "ENA"(rect 14 50 29 62)(font "Courier New"(bold)))
+		(line (pt 0 56)(pt 12 56)(line_width 1)))
+	(port (pt 64 24)(output)(text "Q"(rect 44 20 49 32)(font "Courier New"(bold)))(text "Q"(rect 44 20 49 32)(font "Courier New"(bold)))
+		(line (pt 53 24)(pt 64 24)(line_width 1)))
+	(drawing 
+		(line (pt 12 68)(pt 52 68)(line_width 1))
+		(line (pt 12 12)(pt 52 12)(line_width 1))
+		(line (pt 52 68)(pt 52 12)(line_width 1))
+		(line (pt 12 68)(pt 12 12)(line_width 1))
+		(line (pt 12 34)(pt 19 41)(line_width 1))
+		(line (pt 18 41)(pt 12 47)(line_width 1))(circle (rect 28 4 36 12)(line_width 1))(circle (rect 28 68 36 76)(line_width 1)))
+)
+(connector
+	(text "DIN[3]" (rect 530 1004 578 1015)(font "Arial" ))
+	(pt 528 1016)
+	(pt 560 1016)
+	(bus)
+)
+(connector
+	(text "ENA" (rect 530 1036 554 1047)(font "Arial" ))
+	(pt 528 1048)
+	(pt 560 1048)
+	
+)
+(connector
+	(text "CLK" (rect 530 1020 554 1031)(font "Arial" ))
+	(pt 528 1032)
+	(pt 560 1032)
+	
+)
+(connector
+	(text "RST_N" (rect 594 1060 634 1071)(font "Arial" ))
+	(pt 592 1104)
+	(pt 592 1072)
+	
+)
+(connector
+	(text "JEDAN" (rect 594 948 634 959)(font "Arial" ))
+	(pt 592 960)
+	(pt 592 992)
+	
+)
+(connector
+	(text "Q[3]" (rect 626 1004 658 1015)(font "Arial" ))
+	(pt 656 1016)
+	(pt 624 1016)
+	(bus)
+)
+(symbol
+	(rect 560 1216 624 1296)
+	(text "DFFE" (rect 5 0 80 12)(font "Arial" ))
+	(text "BIT4" (rect 8 64 40 76)(font "Arial" ))
+	(port (pt 32 0)(input)(text "PRN"(rect 24 13 29 25)(font "Courier New"(bold)))(text "PRN"(rect 24 11 39 23)(font "Courier New"(bold)))
+		(line (pt 32 4)(pt 32 0)(line_width 1)))
+	(port (pt 32 80)(input)(text "CLRN"(rect 21 59 26 71)(font "Courier New"(bold)))(text "CLRN"(rect 21 58 41 70)(font "Courier New"(bold)))
+		(line (pt 32 80)(pt 32 76)(line_width 1)))
+	(port (pt 0 24)(input)(text "D"(rect 14 20 19 32)(font "Courier New"(bold)))(text "D"(rect 14 20 19 32)(font "Courier New"(bold)))
+		(line (pt 0 24)(pt 12 24)(line_width 1)))
+	(port (pt 0 40)(input)(text "CLK"(rect 2 28 7 40)(font "Courier New"(bold))(invisible))(text "CLK"(rect 2 28 17 40)(font "Courier New"(bold))(invisible))
+		(line (pt 0 40)(pt 12 40)(line_width 1)))
+	(port (pt 0 56)(input)(text "ENA"(rect 14 50 19 62)(font "Courier New"(bold)))(text "ENA"(rect 14 50 29 62)(font "Courier New"(bold)))
+		(line (pt 0 56)(pt 12 56)(line_width 1)))
+	(port (pt 64 24)(output)(text "Q"(rect 44 20 49 32)(font "Courier New"(bold)))(text "Q"(rect 44 20 49 32)(font "Courier New"(bold)))
+		(line (pt 53 24)(pt 64 24)(line_width 1)))
+	(drawing 
+		(line (pt 12 68)(pt 52 68)(line_width 1))
+		(line (pt 12 12)(pt 52 12)(line_width 1))
+		(line (pt 52 68)(pt 52 12)(line_width 1))
+		(line (pt 12 68)(pt 12 12)(line_width 1))
+		(line (pt 12 34)(pt 19 41)(line_width 1))
+		(line (pt 18 41)(pt 12 47)(line_width 1))(circle (rect 28 4 36 12)(line_width 1))(circle (rect 28 68 36 76)(line_width 1)))
+)
+(connector
+	(text "DIN[4]" (rect 530 1228 578 1239)(font "Arial" ))
+	(pt 528 1240)
+	(pt 560 1240)
+	(bus)
+)
+(connector
+	(text "ENA" (rect 530 1260 554 1271)(font "Arial" ))
+	(pt 528 1272)
+	(pt 560 1272)
+	
+)
+(connector
+	(text "CLK" (rect 530 1244 554 1255)(font "Arial" ))
+	(pt 528 1256)
+	(pt 560 1256)
+	
+)
+(connector
+	(text "RST_N" (rect 594 1284 634 1295)(font "Arial" ))
+	(pt 592 1328)
+	(pt 592 1296)
+	
+)
+(connector
+	(text "JEDAN" (rect 594 1172 634 1183)(font "Arial" ))
+	(pt 592 1184)
+	(pt 592 1216)
+	
+)
+(connector
+	(text "Q[4]" (rect 626 1228 658 1239)(font "Arial" ))
+	(pt 656 1240)
+	(pt 624 1240)
+	(bus)
+)
+(symbol
+	(rect 560 1440 624 1520)
+	(text "DFFE" (rect 5 0 80 12)(font "Arial" ))
+	(text "BIT5" (rect 8 64 40 76)(font "Arial" ))
+	(port (pt 32 0)(input)(text "PRN"(rect 24 13 29 25)(font "Courier New"(bold)))(text "PRN"(rect 24 11 39 23)(font "Courier New"(bold)))
+		(line (pt 32 4)(pt 32 0)(line_width 1)))
+	(port (pt 32 80)(input)(text "CLRN"(rect 21 59 26 71)(font "Courier New"(bold)))(text "CLRN"(rect 21 58 41 70)(font "Courier New"(bold)))
+		(line (pt 32 80)(pt 32 76)(line_width 1)))
+	(port (pt 0 24)(input)(text "D"(rect 14 20 19 32)(font "Courier New"(bold)))(text "D"(rect 14 20 19 32)(font "Courier New"(bold)))
+		(line (pt 0 24)(pt 12 24)(line_width 1)))
+	(port (pt 0 40)(input)(text "CLK"(rect 2 28 7 40)(font "Courier New"(bold))(invisible))(text "CLK"(rect 2 28 17 40)(font "Courier New"(bold))(invisible))
+		(line (pt 0 40)(pt 12 40)(line_width 1)))
+	(port (pt 0 56)(input)(text "ENA"(rect 14 50 19 62)(font "Courier New"(bold)))(text "ENA"(rect 14 50 29 62)(font "Courier New"(bold)))
+		(line (pt 0 56)(pt 12 56)(line_width 1)))
+	(port (pt 64 24)(output)(text "Q"(rect 44 20 49 32)(font "Courier New"(bold)))(text "Q"(rect 44 20 49 32)(font "Courier New"(bold)))
+		(line (pt 53 24)(pt 64 24)(line_width 1)))
+	(drawing 
+		(line (pt 12 68)(pt 52 68)(line_width 1))
+		(line (pt 12 12)(pt 52 12)(line_width 1))
+		(line (pt 52 68)(pt 52 12)(line_width 1))
+		(line (pt 12 68)(pt 12 12)(line_width 1))
+		(line (pt 12 34)(pt 19 41)(line_width 1))
+		(line (pt 18 41)(pt 12 47)(line_width 1))(circle (rect 28 4 36 12)(line_width 1))(circle (rect 28 68 36 76)(line_width 1)))
+)
+(connector
+	(text "DIN[5]" (rect 530 1452 578 1463)(font "Arial" ))
+	(pt 528 1464)
+	(pt 560 1464)
+	(bus)
+)
+(connector
+	(text "ENA" (rect 530 1484 554 1495)(font "Arial" ))
+	(pt 528 1496)
+	(pt 560 1496)
+	
+)
+(connector
+	(text "CLK" (rect 530 1468 554 1479)(font "Arial" ))
+	(pt 528 1480)
+	(pt 560 1480)
+	
+)
+(connector
+	(text "RST_N" (rect 594 1508 634 1519)(font "Arial" ))
+	(pt 592 1552)
+	(pt 592 1520)
+	
+)
+(connector
+	(text "JEDAN" (rect 594 1396 634 1407)(font "Arial" ))
+	(pt 592 1408)
+	(pt 592 1440)
+	
+)
+(connector
+	(text "Q[5]" (rect 626 1452 658 1463)(font "Arial" ))
+	(pt 656 1464)
+	(pt 624 1464)
+	(bus)
+)
+(symbol
+	(rect 560 1664 624 1744)
+	(text "DFFE" (rect 5 0 80 12)(font "Arial" ))
+	(text "BIT6" (rect 8 64 40 76)(font "Arial" ))
+	(port (pt 32 0)(input)(text "PRN"(rect 24 13 29 25)(font "Courier New"(bold)))(text "PRN"(rect 24 11 39 23)(font "Courier New"(bold)))
+		(line (pt 32 4)(pt 32 0)(line_width 1)))
+	(port (pt 32 80)(input)(text "CLRN"(rect 21 59 26 71)(font "Courier New"(bold)))(text "CLRN"(rect 21 58 41 70)(font "Courier New"(bold)))
+		(line (pt 32 80)(pt 32 76)(line_width 1)))
+	(port (pt 0 24)(input)(text "D"(rect 14 20 19 32)(font "Courier New"(bold)))(text "D"(rect 14 20 19 32)(font "Courier New"(bold)))
+		(line (pt 0 24)(pt 12 24)(line_width 1)))
+	(port (pt 0 40)(input)(text "CLK"(rect 2 28 7 40)(font "Courier New"(bold))(invisible))(text "CLK"(rect 2 28 17 40)(font "Courier New"(bold))(invisible))
+		(line (pt 0 40)(pt 12 40)(line_width 1)))
+	(port (pt 0 56)(input)(text "ENA"(rect 14 50 19 62)(font "Courier New"(bold)))(text "ENA"(rect 14 50 29 62)(font "Courier New"(bold)))
+		(line (pt 0 56)(pt 12 56)(line_width 1)))
+	(port (pt 64 24)(output)(text "Q"(rect 44 20 49 32)(font "Courier New"(bold)))(text "Q"(rect 44 20 49 32)(font "Courier New"(bold)))
+		(line (pt 53 24)(pt 64 24)(line_width 1)))
+	(drawing 
+		(line (pt 12 68)(pt 52 68)(line_width 1))
+		(line (pt 12 12)(pt 52 12)(line_width 1))
+		(line (pt 52 68)(pt 52 12)(line_width 1))
+		(line (pt 12 68)(pt 12 12)(line_width 1))
+		(line (pt 12 34)(pt 19 41)(line_width 1))
+		(line (pt 18 41)(pt 12 47)(line_width 1))(circle (rect 28 4 36 12)(line_width 1))(circle (rect 28 68 36 76)(line_width 1)))
+)
+(connector
+	(text "DIN[6]" (rect 530 1676 578 1687)(font "Arial" ))
+	(pt 528 1688)
+	(pt 560 1688)
+	(bus)
+)
+(connector
+	(text "ENA" (rect 530 1708 554 1719)(font "Arial" ))
+	(pt 528 1720)
+	(pt 560 1720)
+	
+)
+(connector
+	(text "CLK" (rect 530 1692 554 1703)(font "Arial" ))
+	(pt 528 1704)
+	(pt 560 1704)
+	
+)
+(connector
+	(text "RST_N" (rect 594 1732 634 1743)(font "Arial" ))
+	(pt 592 1776)
+	(pt 592 1744)
+	
+)
+(connector
+	(text "JEDAN" (rect 594 1620 634 1631)(font "Arial" ))
+	(pt 592 1632)
+	(pt 592 1664)
+	
+)
+(connector
+	(text "Q[6]" (rect 626 1676 658 1687)(font "Arial" ))
+	(pt 656 1688)
+	(pt 624 1688)
+	(bus)
+)
+(symbol
+	(rect 560 1888 624 1968)
+	(text "DFFE" (rect 5 0 80 12)(font "Arial" ))
+	(text "BIT7" (rect 8 64 40 76)(font "Arial" ))
+	(port (pt 32 0)(input)(text "PRN"(rect 24 13 29 25)(font "Courier New"(bold)))(text "PRN"(rect 24 11 39 23)(font "Courier New"(bold)))
+		(line (pt 32 4)(pt 32 0)(line_width 1)))
+	(port (pt 32 80)(input)(text "CLRN"(rect 21 59 26 71)(font "Courier New"(bold)))(text "CLRN"(rect 21 58 41 70)(font "Courier New"(bold)))
+		(line (pt 32 80)(pt 32 76)(line_width 1)))
+	(port (pt 0 24)(input)(text "D"(rect 14 20 19 32)(font "Courier New"(bold)))(text "D"(rect 14 20 19 32)(font "Courier New"(bold)))
+		(line (pt 0 24)(pt 12 24)(line_width 1)))
+	(port (pt 0 40)(input)(text "CLK"(rect 2 28 7 40)(font "Courier New"(bold))(invisible))(text "CLK"(rect 2 28 17 40)(font "Courier New"(bold))(invisible))
+		(line (pt 0 40)(pt 12 40)(line_width 1)))
+	(port (pt 0 56)(input)(text "ENA"(rect 14 50 19 62)(font "Courier New"(bold)))(text "ENA"(rect 14 50 29 62)(font "Courier New"(bold)))
+		(line (pt 0 56)(pt 12 56)(line_width 1)))
+	(port (pt 64 24)(output)(text "Q"(rect 44 20 49 32)(font "Courier New"(bold)))(text "Q"(rect 44 20 49 32)(font "Courier New"(bold)))
+		(line (pt 53 24)(pt 64 24)(line_width 1)))
+	(drawing 
+		(line (pt 12 68)(pt 52 68)(line_width 1))
+		(line (pt 12 12)(pt 52 12)(line_width 1))
+		(line (pt 52 68)(pt 52 12)(line_width 1))
+		(line (pt 12 68)(pt 12 12)(line_width 1))
+		(line (pt 12 34)(pt 19 41)(line_width 1))
+		(line (pt 18 41)(pt 12 47)(line_width 1))(circle (rect 28 4 36 12)(line_width 1))(circle (rect 28 68 36 76)(line_width 1)))
+)
+(connector
+	(text "DIN[7]" (rect 530 1900 578 1911)(font "Arial" ))
+	(pt 528 1912)
+	(pt 560 1912)
+	(bus)
+)
+(connector
+	(text "ENA" (rect 530 1932 554 1943)(font "Arial" ))
+	(pt 528 1944)
+	(pt 560 1944)
+	
+)
+(connector
+	(text "CLK" (rect 530 1916 554 1927)(font "Arial" ))
+	(pt 528 1928)
+	(pt 560 1928)
+	
+)
+(connector
+	(text "RST_N" (rect 594 1956 634 1967)(font "Arial" ))
+	(pt 592 2000)
+	(pt 592 1968)
+	
+)
+(connector
+	(text "JEDAN" (rect 594 1844 634 1855)(font "Arial" ))
+	(pt 592 1856)
+	(pt 592 1888)
+	
+)
+(connector
+	(text "Q[7]" (rect 626 1900 658 1911)(font "Arial" ))
+	(pt 656 1912)
+	(pt 624 1912)
+	(bus)
+)

@@ -55,7 +55,163 @@ set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 
 set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
 set_instance_assignment -name FAST_INPUT_REGISTER ON -to *dq_reg*
 
-set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
+set_global_assignment -name SOURCE_FILE Components/mx2x1_16.cmp
+set_global_assignment -name QIP_FILE Components/mx2x1_16.qip
+set_global_assignment -name VHDL_FILE Components/mx2x1_16.vhd
+set_global_assignment -name VHDL_FILE Components/mx2x1_22.vhd
+set_global_assignment -name QIP_FILE Components/mx2x1_22.qip
+set_global_assignment -name SOURCE_FILE Components/mx2x1_22.cmp
+set_global_assignment -name BDF_FILE Memory/Arbitrator.bdf
+set_global_assignment -name BDF_FILE Memory/sdram_arb.bdf
+set_global_assignment -name QIP_FILE CPU/pc_register.qip
+set_global_assignment -name QIP_FILE CPU/alu_adder.qip
+set_global_assignment -name QIP_FILE CPU/alu_compare.qip
+set_global_assignment -name QIP_FILE CPU/alu_compare_u.qip
+set_global_assignment -name QIP_FILE CPU/alu_shift.qip
+set_global_assignment -name QIP_FILE CPU/alu_sra.qip
+set_global_assignment -name QIP_FILE CPU/alu_mux.qip
+set_global_assignment -name QIP_FILE CPU/mux4_32.qip
+set_global_assignment -name QIP_FILE CPU/alu_src_mux_ip.qip
+set_global_assignment -name QIP_FILE CPU/mux2_5.qip
+set_global_assignment -name QIP_FILE CPU/mux4_5.qip
+set_global_assignment -name QIP_FILE CPU/mux8_1.qip
+set_global_assignment -name QIP_FILE CPU/reg_mem_a.qip
+set_global_assignment -name QIP_FILE CPU/control_rom.qip
+set_global_assignment -name BDF_FILE CPU/register_file.bdf
+set_global_assignment -name BDF_FILE CPU/imm_gen.bdf
+set_global_assignment -name BDF_FILE CPU/alu.bdf
+set_global_assignment -name BDF_FILE CPU/pc_next.bdf
+set_global_assignment -name BDF_FILE CPU/pc.bdf
+set_global_assignment -name BDF_FILE CPU/instruction.bdf
+set_global_assignment -name BDF_FILE CPU/alu_src_mux.bdf
+set_global_assignment -name BDF_FILE CPU/data_mem.bdf
+set_global_assignment -name BDF_FILE CPU/instruction_decoder.bdf
+set_global_assignment -name BDF_FILE CPU/tetris_cpu.bdf
+set_global_assignment -name MIF_FILE CPU/control_rom.mif
+set_global_assignment -name SOURCE_FILE Memory/sys_pll.cmp
+set_global_assignment -name BDF_FILE Memory/sdram_init.bdf
+set_global_assignment -name BDF_FILE Memory/sdram_ctrl.bdf
+set_global_assignment -name VHDL_FILE Memory/raf_cnt.vhd
+set_global_assignment -name QIP_FILE Memory/raf_cnt.qip
+set_global_assignment -name QIP_FILE Memory/pixel_cnt.qip
+set_global_assignment -name VHDL_FILE Memory/lpm_mux6.vhd
+set_global_assignment -name QIP_FILE Memory/lpm_mux6.qip
+set_global_assignment -name VHDL_FILE Memory/lpm_mux5.vhd
+set_global_assignment -name QIP_FILE Memory/lpm_mux5.qip
+set_global_assignment -name VHDL_FILE Memory/lpm_mux4.vhd
+set_global_assignment -name QIP_FILE Memory/lpm_mux4.qip
+set_global_assignment -name VHDL_FILE Memory/lpm_mux3.vhd
+set_global_assignment -name QIP_FILE Memory/lpm_mux3.qip
+set_global_assignment -name VHDL_FILE Memory/lpm_mux1.vhd
+set_global_assignment -name QIP_FILE Memory/lpm_mux1.qip
+set_global_assignment -name SOURCE_FILE Memory/lpm_mux1.cmp
+set_global_assignment -name VHDL_FILE Memory/lpm_constant400.vhd
+set_global_assignment -name QIP_FILE Memory/lpm_constant400.qip
+set_global_assignment -name VHDL_FILE Memory/lpm_constant223.vhd
+set_global_assignment -name QIP_FILE Memory/lpm_constant223.qip
+set_global_assignment -name VHDL_FILE Memory/lpm_constant0.vhd
+set_global_assignment -name QIP_FILE Memory/lpm_constant0.qip
+set_global_assignment -name SOURCE_FILE Memory/lpm_constant0.cmp
+set_global_assignment -name VHDL_FILE Memory/init_rom.vhd
+set_global_assignment -name QIP_FILE Memory/init_rom.qip
+set_global_assignment -name VHDL_FILE Memory/ctrl_rom.vhd
+set_global_assignment -name QIP_FILE Memory/ctrl_rom.qip
+set_global_assignment -name VHDL_FILE Memory/ctrl_cnt.vhd
+set_global_assignment -name QIP_FILE Memory/ctrl_cnt.qip
+set_global_assignment -name VHDL_FILE Memory/rom.vhd
+set_global_assignment -name QIP_FILE Memory/rom.qip
+set_global_assignment -name VHDL_FILE Memory/ram.vhd
+set_global_assignment -name QIP_FILE Memory/ram.qip
+set_global_assignment -name BDF_FILE Memory/mem_top.bdf
+set_global_assignment -name BDF_FILE KbController/CodeDetector.bdf
+set_global_assignment -name BDF_FILE Components/RisingEdgeDetector.bdf
+set_global_assignment -name BDF_FILE Components/Register.bdf
+set_global_assignment -name VHDL_FILE Components/read_mux.vhd
+set_global_assignment -name QIP_FILE Components/read_mux.qip
+set_global_assignment -name BDF_FILE Components/Debouncer.bdf
+set_global_assignment -name BDF_FILE Components/DC2.bdf
+set_global_assignment -name VHDL_FILE Components/const_sdram.vhd
+set_global_assignment -name QIP_FILE Components/const_sdram.qip
+set_global_assignment -name QIP_FILE Memory/sys_pll.qip
+set_global_assignment -name SIP_FILE Memory/sys_pll.sip
+set_global_assignment -name QIP_FILE Memory/refresh_cnt.qip
+set_global_assignment -name QIP_FILE Memory/line_buf.qip
+set_global_assignment -name QIP_FILE Memory/init_wait_cnt.qip
+set_global_assignment -name BDF_FILE Tetris.bdf
+set_global_assignment -name QIP_FILE Memory/gfx_add12.qip
+set_global_assignment -name QIP_FILE Memory/gfx_cmp10.qip
+set_global_assignment -name QIP_FILE Memory/gfx_cmp13s.qip
+set_global_assignment -name QIP_FILE Memory/gfx_cmp9.qip
+set_global_assignment -name QIP_FILE Memory/gfx_mux10.qip
+set_global_assignment -name QIP_FILE Memory/gfx_mux12.qip
+set_global_assignment -name QIP_FILE Memory/gfx_mux9.qip
+set_global_assignment -name QIP_FILE Memory/gfx_sub12.qip
+set_global_assignment -name QIP_FILE Memory/gfx_xcnt.qip
+set_global_assignment -name QIP_FILE Memory/gfx_ycnt.qip
+set_global_assignment -name QIP_FILE Memory/lpm_decode0.qip
+set_global_assignment -name QIP_FILE Memory/mmio_rd_mux.qip
+set_global_assignment -name QIP_FILE Memory/seq_cnt.qip
+set_global_assignment -name QIP_FILE Memory/timer_cnt.qip
+set_global_assignment -name QIP_FILE Memory/timer_pre.qip
+set_global_assignment -name QIP_FILE Memory/zero32.qip
+set_global_assignment -name BDF_FILE Memory/mmio_regs.bdf
+set_global_assignment -name BDF_FILE Memory/gfx_engine.bdf
+set_global_assignment -name BDF_FILE Memory/reg12.bdf
+set_global_assignment -name BDF_FILE Memory/reg16.bdf
+set_global_assignment -name SDC_FILE tetris.sdc
+set_global_assignment -name BDF_FILE Components/CD2.bdf
+set_global_assignment -name BDF_FILE CPU/bus_adapter.bdf
+set_global_assignment -name QIP_FILE Components/seg7_rom.qip
+set_global_assignment -name BDF_FILE Components/seg7_display.bdf
+set_global_assignment -name MIF_FILE Components/seg7_rom.mif
+set_global_assignment -name MIF_FILE Memory/rom_init.mif
+set_global_assignment -name QIP_FILE GPU/vga_add10.qip
+set_global_assignment -name BDF_FILE Components/irq_ctrl.bdf
+set_global_assignment -name BDF_FILE Components/reg8_en.bdf
+set_global_assignment -name BDF_FILE MouseController/mouse_ps2.bdf
+set_global_assignment -name QIP_FILE MouseController/ms_dly.qip
+set_global_assignment -name QIP_FILE MouseController/ms_wait.qip
+set_global_assignment -name QIP_FILE MouseController/ms_cnt12.qip
+set_global_assignment -name QIP_FILE MouseController/ms_cnt11.qip
+set_global_assignment -name QIP_FILE MouseController/ms_pstate.qip
+set_global_assignment -name QIP_FILE MouseController/ms_tx.qip
+set_global_assignment -name QIP_FILE MouseController/ms_rx.qip
+
+# Pinovi ploce DE0-CV
+
+# Pinovi ploce DE0-CV
+
+# Pinovi ploce DE0-CV
+
+# Pinovi ploce DE0-CV
+
+# Pinovi ploce DE0-CV
+
+set_global_assignment -name BDF_FILE KbController/kb_keys.bdf
+
+# Pinovi ploce DE0-CV
+
+# Pinovi ploce DE0-CV
+
+set_global_assignment -name BDF_FILE GPU/vga_kolege.bdf
+set_global_assignment -name QIP_FILE GPU/vga_cmp10.qip
+
+# Pinovi ploce DE0-CV
+
+# Pinovi ploce DE0-CV
+
+set_global_assignment -name QIP_FILE GPU/ctrl_xcnt.qip
+set_global_assignment -name QIP_FILE GPU/ctrl_ycnt.qip
+set_global_assignment -name QIP_FILE GPU/ctrl_cmp11.qip
+set_global_assignment -name QIP_FILE GPU/ctrl_cmp10.qip
+set_global_assignment -name QIP_FILE GPU/vga_add11.qip
+
+# Pinovi ploce DE0-CV
+
+# Pinovi ploce DE0-CV
+
+set_global_assignment -name BDF_FILE Components/line_sync.bdf
+set_global_assignment -name BDF_FILE GPU/Controller.bdf
 
 # Pinovi ploce DE0-CV
 
@@ -77,6 +233,22 @@ set_location_assignment PIN_U12 -to DRAM_LDQM
 set_location_assignment PIN_N8 -to DRAM_UDQM
 set_location_assignment PIN_T7 -to DRAM_BA[0]
 set_location_assignment PIN_AB7 -to DRAM_BA[1]
+set_location_assignment PIN_E2 -to PS2_CLK2
+set_location_assignment PIN_G1 -to PS2_DAT2
+set_location_assignment PIN_H8 -to VGA_HS
+set_location_assignment PIN_G8 -to VGA_VS
+set_location_assignment PIN_A9 -to VGA_R[0]
+set_location_assignment PIN_B10 -to VGA_R[1]
+set_location_assignment PIN_C9 -to VGA_R[2]
+set_location_assignment PIN_A5 -to VGA_R[3]
+set_location_assignment PIN_L7 -to VGA_G[0]
+set_location_assignment PIN_K7 -to VGA_G[1]
+set_location_assignment PIN_J7 -to VGA_G[2]
+set_location_assignment PIN_J8 -to VGA_G[3]
+set_location_assignment PIN_B6 -to VGA_B[0]
+set_location_assignment PIN_B7 -to VGA_B[1]
+set_location_assignment PIN_A8 -to VGA_B[2]
+set_location_assignment PIN_A7 -to VGA_B[3]
 set_location_assignment PIN_AA2 -to LEDR[0]
 set_location_assignment PIN_AA1 -to LEDR[1]
 set_location_assignment PIN_W2 -to LEDR[2]
@@ -175,6 +347,22 @@ set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_LDQM
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_UDQM
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_BA[0]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_BA[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to PS2_CLK2
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to PS2_DAT2
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_HS
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_VS
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_R[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_R[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_R[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_R[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_G[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_G[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_G[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_G[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_B[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_B[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_B[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_B[3]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LEDR[0]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LEDR[1]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LEDR[2]
@@ -257,155 +445,4 @@ set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[13]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[14]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[15]
 
-set_global_assignment -name BDF_FILE GPU/GPU.bdf
-set_global_assignment -name BDF_FILE GPU/Controller.bdf
-set_global_assignment -name SOURCE_FILE Components/mx2x1_16.cmp
-set_global_assignment -name QIP_FILE Components/mx2x1_16.qip
-set_global_assignment -name VHDL_FILE Components/mx2x1_16.vhd
-set_global_assignment -name VHDL_FILE Components/mx2x1_22.vhd
-set_global_assignment -name QIP_FILE Components/mx2x1_22.qip
-set_global_assignment -name SOURCE_FILE Components/mx2x1_22.cmp
-set_global_assignment -name BDF_FILE Memory/Arbitrator.bdf
-set_global_assignment -name BDF_FILE Memory/sdram_arb.bdf
-set_global_assignment -name VHDL_FILE GPU/ram2port.vhd
-set_global_assignment -name QIP_FILE GPU/ram2port.qip
-set_global_assignment -name SOURCE_FILE GPU/ram2port.cmp
-set_global_assignment -name VHDL_FILE GPU/ram_2port.vhd
-set_global_assignment -name QIP_FILE GPU/ram_2port.qip
-set_global_assignment -name SOURCE_FILE GPU/ram_2port.cmp
-set_global_assignment -name QIP_FILE CPU/pc_register.qip
-set_global_assignment -name QIP_FILE CPU/alu_adder.qip
-set_global_assignment -name QIP_FILE CPU/alu_compare.qip
-set_global_assignment -name QIP_FILE CPU/alu_compare_u.qip
-set_global_assignment -name QIP_FILE CPU/alu_shift.qip
-set_global_assignment -name QIP_FILE CPU/alu_sra.qip
-set_global_assignment -name QIP_FILE CPU/alu_mux.qip
-set_global_assignment -name QIP_FILE CPU/mux4_32.qip
-set_global_assignment -name QIP_FILE CPU/alu_src_mux_ip.qip
-set_global_assignment -name QIP_FILE CPU/mux2_5.qip
-set_global_assignment -name QIP_FILE CPU/mux4_5.qip
-set_global_assignment -name QIP_FILE CPU/mux8_1.qip
-set_global_assignment -name QIP_FILE CPU/reg_mem_a.qip
-set_global_assignment -name QIP_FILE CPU/control_rom.qip
-set_global_assignment -name BDF_FILE CPU/register_file.bdf
-set_global_assignment -name BDF_FILE CPU/imm_gen.bdf
-set_global_assignment -name BDF_FILE CPU/alu.bdf
-set_global_assignment -name BDF_FILE CPU/pc_next.bdf
-set_global_assignment -name BDF_FILE CPU/pc.bdf
-set_global_assignment -name BDF_FILE CPU/instruction.bdf
-set_global_assignment -name BDF_FILE CPU/alu_src_mux.bdf
-set_global_assignment -name BDF_FILE CPU/data_mem.bdf
-set_global_assignment -name BDF_FILE CPU/instruction_decoder.bdf
-set_global_assignment -name BDF_FILE CPU/tetris_cpu.bdf
-set_global_assignment -name MIF_FILE CPU/control_rom.mif
-set_global_assignment -name BDF_FILE Components/reg11_sr_ld.bdf
-set_global_assignment -name BDF_FILE Components/reg8_sr_ld.bdf
-set_global_assignment -name BDF_FILE Components/reg4_sr_ld.bdf
-set_global_assignment -name BDF_FILE Components/reg2_sr_ld.bdf
-set_global_assignment -name SOURCE_FILE Memory/sys_pll.cmp
-set_global_assignment -name BDF_FILE Memory/sdram_init.bdf
-set_global_assignment -name BDF_FILE Memory/sdram_ctrl.bdf
-set_global_assignment -name VHDL_FILE Memory/raf_cnt.vhd
-set_global_assignment -name QIP_FILE Memory/raf_cnt.qip
-set_global_assignment -name QIP_FILE Memory/pixel_cnt.qip
-set_global_assignment -name VHDL_FILE Memory/lpm_mux6.vhd
-set_global_assignment -name QIP_FILE Memory/lpm_mux6.qip
-set_global_assignment -name VHDL_FILE Memory/lpm_mux5.vhd
-set_global_assignment -name QIP_FILE Memory/lpm_mux5.qip
-set_global_assignment -name VHDL_FILE Memory/lpm_mux4.vhd
-set_global_assignment -name QIP_FILE Memory/lpm_mux4.qip
-set_global_assignment -name VHDL_FILE Memory/lpm_mux3.vhd
-set_global_assignment -name QIP_FILE Memory/lpm_mux3.qip
-set_global_assignment -name VHDL_FILE Memory/lpm_mux1.vhd
-set_global_assignment -name QIP_FILE Memory/lpm_mux1.qip
-set_global_assignment -name SOURCE_FILE Memory/lpm_mux1.cmp
-set_global_assignment -name VHDL_FILE Memory/lpm_constant400.vhd
-set_global_assignment -name QIP_FILE Memory/lpm_constant400.qip
-set_global_assignment -name VHDL_FILE Memory/lpm_constant223.vhd
-set_global_assignment -name QIP_FILE Memory/lpm_constant223.qip
-set_global_assignment -name VHDL_FILE Memory/lpm_constant0.vhd
-set_global_assignment -name QIP_FILE Memory/lpm_constant0.qip
-set_global_assignment -name SOURCE_FILE Memory/lpm_constant0.cmp
-set_global_assignment -name VHDL_FILE Memory/init_rom.vhd
-set_global_assignment -name QIP_FILE Memory/init_rom.qip
-set_global_assignment -name VHDL_FILE Memory/ctrl_rom.vhd
-set_global_assignment -name QIP_FILE Memory/ctrl_rom.qip
-set_global_assignment -name VHDL_FILE Memory/ctrl_cnt.vhd
-set_global_assignment -name QIP_FILE Memory/ctrl_cnt.qip
-set_global_assignment -name VHDL_FILE Components/CMP32.vhd
-set_global_assignment -name QIP_FILE Components/CMP32.qip
-set_global_assignment -name SOURCE_FILE Components/CMP32.cmp
-set_global_assignment -name VHDL_FILE Components/CMP8.vhd
-set_global_assignment -name QIP_FILE Components/CMP8.qip
-set_global_assignment -name SOURCE_FILE Components/CMP8.cmp
-set_global_assignment -name BDF_FILE MouseController/MouseController.bdf
-set_global_assignment -name VHDL_FILE Memory/rom.vhd
-set_global_assignment -name QIP_FILE Memory/rom.qip
-set_global_assignment -name VHDL_FILE Memory/ram.vhd
-set_global_assignment -name QIP_FILE Memory/ram.qip
-set_global_assignment -name BDF_FILE Memory/mem_top.bdf
-set_global_assignment -name BDF_FILE KbController/CodeInterpeter.bdf
-set_global_assignment -name BDF_FILE KbController/KbController.bdf
-set_global_assignment -name BDF_FILE KbController/CodeDetector.bdf
-set_global_assignment -name BDF_FILE Components/RisingEdgeDetector.bdf
-set_global_assignment -name VHDL_FILE Components/RegisterX.vhd
-set_global_assignment -name BDF_FILE Components/Register.bdf
-set_global_assignment -name VHDL_FILE Components/read_mux.vhd
-set_global_assignment -name QIP_FILE Components/read_mux.qip
-set_global_assignment -name VHDL_FILE Components/MultiplexerX.vhd
-set_global_assignment -name BDF_FILE Components/Debouncer.bdf
-set_global_assignment -name BDF_FILE Components/DC2.bdf
-set_global_assignment -name VHDL_FILE Components/ConstantX.vhd
-set_global_assignment -name VHDL_FILE Components/const_sdram.vhd
-set_global_assignment -name QIP_FILE Components/const_sdram.qip
-set_global_assignment -name VHDL_FILE Components/const_mmio.vhd
-set_global_assignment -name QIP_FILE Components/const_mmio.qip
-set_global_assignment -name VHDL_FILE Components/ComparatorX.vhd
-set_global_assignment -name VHDL_FILE Components/ClockDivider.vhd
-set_global_assignment -name VHDL_FILE Components/CLK_DIVIDER.vhd
-set_global_assignment -name BDF_FILE Components/CD16.bdf
-set_global_assignment -name BDF_FILE Components/CD8.bdf
-set_global_assignment -name VHDL_FILE Components/Binary2BCD.vhd
-set_global_assignment -name VHDL_FILE Components/ALUX.vhd
-set_global_assignment -name VHDL_FILE Components/7_segment_digit_interface.vhd
-set_global_assignment -name QIP_FILE Memory/sys_pll.qip
-set_global_assignment -name SIP_FILE Memory/sys_pll.sip
-set_global_assignment -name QIP_FILE Memory/refresh_cnt.qip
-set_global_assignment -name QIP_FILE Memory/line_buf.qip
-set_global_assignment -name QIP_FILE Memory/init_wait_cnt.qip
-set_global_assignment -name BDF_FILE Components/mx2x1.bdf
-set_global_assignment -name BDF_FILE Tetris.bdf
-set_global_assignment -name QIP_FILE Components/cmp2_3.qip
-set_global_assignment -name QIP_FILE Components/add10.qip
-set_global_assignment -name QIP_FILE Components/cmp10.qip
-set_global_assignment -name QIP_FILE Components/cmp10_uns.qip
-set_global_assignment -name QIP_FILE Components/sub10_m_ctrl.qip
-set_global_assignment -name QIP_FILE Memory/gfx_add12.qip
-set_global_assignment -name QIP_FILE Memory/gfx_cmp10.qip
-set_global_assignment -name QIP_FILE Memory/gfx_cmp13s.qip
-set_global_assignment -name QIP_FILE Memory/gfx_cmp9.qip
-set_global_assignment -name QIP_FILE Memory/gfx_mux10.qip
-set_global_assignment -name QIP_FILE Memory/gfx_mux12.qip
-set_global_assignment -name QIP_FILE Memory/gfx_mux9.qip
-set_global_assignment -name QIP_FILE Memory/gfx_sub12.qip
-set_global_assignment -name QIP_FILE Memory/gfx_xcnt.qip
-set_global_assignment -name QIP_FILE Memory/gfx_ycnt.qip
-set_global_assignment -name QIP_FILE Memory/lpm_decode0.qip
-set_global_assignment -name QIP_FILE Memory/mmio_rd_mux.qip
-set_global_assignment -name QIP_FILE Memory/seq_cnt.qip
-set_global_assignment -name QIP_FILE Memory/timer_cnt.qip
-set_global_assignment -name QIP_FILE Memory/timer_pre.qip
-set_global_assignment -name QIP_FILE Memory/zero32.qip
-set_global_assignment -name BDF_FILE Memory/mmio_regs.bdf
-set_global_assignment -name BDF_FILE Memory/gfx_engine.bdf
-set_global_assignment -name BDF_FILE Memory/reg12.bdf
-set_global_assignment -name BDF_FILE Memory/reg16.bdf
-set_global_assignment -name VHDL_FILE Components/cmp13.vhd
-set_global_assignment -name QIP_FILE Components/mx4x1.qip
-set_global_assignment -name SDC_FILE tetris.sdc
-set_global_assignment -name BDF_FILE Components/CD2.bdf
-set_global_assignment -name BDF_FILE CPU/bus_adapter.bdf
-set_global_assignment -name QIP_FILE Components/seg7_rom.qip
-set_global_assignment -name BDF_FILE Components/seg7_display.bdf
-set_global_assignment -name MIF_FILE Components/seg7_rom.mif
-set_global_assignment -name MIF_FILE Memory/rom_init.mif
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

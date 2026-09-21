@@ -6,6 +6,8 @@
 #include "timer.h"
 #include "score.h"
 #include "mathutil.h"
+#include "theme.h"
+#include "mouse.h"
 
 static dword_t rngState;
 
@@ -41,6 +43,7 @@ static dword_t linesUntilLevelUp;
 
 static dword_t gravityLastTick = 0;
 static bool_t gameOver = FALSE;
+static bool_t paused = FALSE;
 
 #define NO_PIECE 0xFFu
 
@@ -48,10 +51,11 @@ static dword_t nextType=0;
 static dword_t holdType=NO_PIECE;
 static bool_t holdUsed=FALSE;
 
-#define PREVIEW_CELL 16
+/* slika u memoriji je 400x300, pa su kutije manje */
+#define PREVIEW_CELL 10
 #define PREVIEW_BOX  (4 * PREVIEW_CELL + 8)
-#define HOLD_BOX_X   (BOARD_ORIGIN_X - 30 - PREVIEW_BOX)
-#define NEXT_BOX_X   (BOARD_ORIGIN_X + BOARD_COLS * CELL_SIZE + 30)
+#define HOLD_BOX_X   (BOARD_ORIGIN_X - 16 - PREVIEW_BOX)
+#define NEXT_BOX_X   (BOARD_ORIGIN_X + BOARD_COLS * CELL_SIZE + 16)
 #define PREVIEW_BOX_Y BOARD_ORIGIN_Y
 
 
@@ -70,7 +74,7 @@ static void drawBorder(void)
     dword_t x1 = BOARD_ORIGIN_X + BOARD_COLS * CELL_SIZE + 1;
     dword_t y1 = BOARD_ORIGIN_Y + BOARD_ROWS * CELL_SIZE + 1;
 
-    gfxDrawRect(x0, y0, x1, y1, COLOR_BORDER);
+    gfxDrawRect(x0, y0, x1, y1, themeBorder());
 }
 
 static dword_t pieceColorForCell(byte_t cellValue)
@@ -84,7 +88,7 @@ static void drawPreview(dword_t bx, dword_t by, dword_t type)
 
     /* redraw svaki frejm, kao i tabla (dupli bafer) */
     gfxFillRect(bx, by, bx + PREVIEW_BOX - 1, by + PREVIEW_BOX - 1, COLOR_BG);
-    gfxDrawRect(bx, by, bx + PREVIEW_BOX - 1, by + PREVIEW_BOX - 1, COLOR_BORDER);
+    gfxDrawRect(bx, by, bx + PREVIEW_BOX - 1, by + PREVIEW_BOX - 1, themeBorder());
 
     if (type == NO_PIECE)
         return;
@@ -138,6 +142,7 @@ static void drawBoardContents(void)
             }
         }
     }
+    drawBorder();
     drawPreview(HOLD_BOX_X, PREVIEW_BOX_Y, holdType);
     drawPreview(NEXT_BOX_X, PREVIEW_BOX_Y, nextType);
 }
@@ -197,6 +202,13 @@ static void tryMove(sdword_t dRow, sdword_t dCol)
     }
 }
 
+static void hardDrop(void)
+{
+    while (!boardCollides(curType, curRotation, curRow + 1, curCol))
+        curRow++;
+    lockCurrentPiece();
+}
+
 static void tryRotate(void)
 {
     dword_t newRot = (curRotation + 1) & 3u;
@@ -235,6 +247,7 @@ void gameInit(void)
     level = 0;
     linesUntilLevelUp = 10;
     gameOver = FALSE;
+    paused = FALSE;
     scoreSetValue(0);
 
     holdType = NO_PIECE;
@@ -243,10 +256,10 @@ void gameInit(void)
 
     spawnPiece();
 
-    gfxFillRect(0, 0, SCREEN_W - 1, SCREEN_H - 1, COLOR_BG);
+    gfxClear(COLOR_BG);
     gfxWaitVsync();
     gfxSwapBuffers();
-    gfxFillRect(0, 0, SCREEN_W - 1, SCREEN_H - 1, COLOR_BG);
+    gfxClear(COLOR_BG);
     drawBorder();
     gfxWaitVsync();
     gfxSwapBuffers();
@@ -260,30 +273,48 @@ bool_t gameIsOver(void)
     return gameOver;
 }
 
+/* temu boja menja levi (sledeca) ili desni (prethodna) taster misa, kao i taster T */
+static void handleTheme(void)
+{
+    mouseRead();
+    if (inputPressed(KEY_THEME_BIT) || mouseLeftPressed())
+        themeNext();
+    else if (mouseRightPressed())
+        themePrev();
+}
+
 void gameUpdate(void)
 {
     inputRead();
+    handleTheme();
 
     if (gameOver)
     {
-        if (inputPressed(KEY_ROTATE_BIT))
+        if (inputPressed(KEY_ROTATE_BIT) || inputPressed(KEY_DROP_BIT))
             gameInit();
     }
     else
     {
 
-        if (inputRepeat(KEY_LEFT_BIT,  170, 50)) tryMove(0, -1);
-        if (inputRepeat(KEY_RIGHT_BIT, 170, 50)) tryMove(0, 1);
-        if (inputPressed(KEY_ROTATE_BIT)) tryRotate();
-        if (inputPressed(KEY_UP_BIT)) tryHold();
+        if (inputPressed(KEY_PAUSE_BIT))
+            paused = !paused;
 
+        if (!paused)
         {
-            dword_t interval = GRAVITY_MS[level];
-            if (inputHeld(KEY_DOWN_BIT) && SOFT_DROP_MS < interval)
-                interval = SOFT_DROP_MS;
+            if (inputRepeat(KEY_LEFT_BIT,  170, 50)) tryMove(0, -1);
+            if (inputRepeat(KEY_RIGHT_BIT, 170, 50)) tryMove(0, 1);
+            if (inputPressed(KEY_ROTATE_BIT)) tryRotate();
+            if (inputPressed(KEY_UP_BIT)) tryHold();
+            if (inputPressed(KEY_DROP_BIT)) hardDrop();
 
-            if (timerElapsed(&gravityLastTick, interval))
-                tryMove(1, 0);
+            {
+                dword_t interval = GRAVITY_MS[level];
+                if (inputHeld(KEY_DOWN_BIT) && SOFT_DROP_MS < interval)
+                    interval = SOFT_DROP_MS;
+
+                if (timerElapsed(&gravityLastTick, interval))
+                    tryMove(1, 0);
+            }
         }
     }
 

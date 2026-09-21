@@ -1,4 +1,5 @@
 #include "tetromino.h"
+#include "theme.h"
 
 static const word_t SHAPES[PIECE_COUNT][4] = {
     /* I */ { 0x0F00, 0x2222, 0x0F00, 0x2222 },
@@ -10,22 +11,13 @@ static const word_t SHAPES[PIECE_COUNT][4] = {
     /* L */ { 0x2E00, 0x4460, 0x0E80, 0xC440 },
 };
 
-static const dword_t COLORS[PIECE_COUNT] = {
-    0x0FF, // I - svetloplava (cyan)
-    0xFF0, // O - zuta
-    0x90F, // T - ljubicasta
-    0x0F0, // S - zelena
-    0xF00, // Z - crvena
-    0x00F, // J - plava
-    0xF80, // L - narandzasta
-};
-
 word_t tetrominoShape(dword_t pieceType, dword_t rotation)
 {
     return SHAPES[pieceType][rotation & 3u];
 }
 
+/* boje su u theme.c, da bi mis i taster T mogli da menjaju temu */
 dword_t tetrominoColor(dword_t pieceType)
 {
-    return COLORS[pieceType];
+    return themeColor(pieceType);
 }

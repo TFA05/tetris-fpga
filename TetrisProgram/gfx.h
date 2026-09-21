@@ -12,5 +12,7 @@ void gfxDrawRect(dword_t x0, dword_t y0, dword_t x1, dword_t y1, dword_t color);
 void gfxFillRect(dword_t x0, dword_t y0, dword_t x1, dword_t y1, dword_t color);
 
 void gfxSwapBuffers(void);
+void gfxDrawFront(bool_t on);
+void gfxClear(dword_t color);
 
 #endif
