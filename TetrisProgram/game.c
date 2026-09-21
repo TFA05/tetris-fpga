@@ -30,6 +30,7 @@ static dword_t randomPieceType(void)
 #define SPAWN_ROW 0
 #define SPAWN_COL 3
 
+
 static dword_t curType;
 static dword_t curRotation;
 static sdword_t curRow, curCol;
@@ -40,6 +41,18 @@ static dword_t linesUntilLevelUp;
 
 static dword_t gravityLastTick = 0;
 static bool_t gameOver = FALSE;
+
+#define NO_PIECE 0xFFu
+
+static dword_t nextType=0;
+static dword_t holdType=NO_PIECE;
+static bool_t holdUsed=FALSE;
+
+#define PREVIEW_CELL 16
+#define PREVIEW_BOX  (4 * PREVIEW_CELL + 8)
+#define HOLD_BOX_X   (BOARD_ORIGIN_X - 30 - PREVIEW_BOX)
+#define NEXT_BOX_X   (BOARD_ORIGIN_X + BOARD_COLS * CELL_SIZE + 30)
+#define PREVIEW_BOX_Y BOARD_ORIGIN_Y
 
 
 static const dword_t GRAVITY_MS[10] = {
@@ -65,7 +78,29 @@ static dword_t pieceColorForCell(byte_t cellValue)
     return tetrominoColor(cellValue - 1);
 }
 
+static void drawPreview(dword_t bx, dword_t by, dword_t type)
+{
+    int i;
 
+    /* redraw svaki frejm, kao i tabla (dupli bafer) */
+    gfxFillRect(bx, by, bx + PREVIEW_BOX - 1, by + PREVIEW_BOX - 1, COLOR_BG);
+    gfxDrawRect(bx, by, bx + PREVIEW_BOX - 1, by + PREVIEW_BOX - 1, COLOR_BORDER);
+
+    if (type == NO_PIECE)
+        return;
+
+    word_t shape = tetrominoShape(type, 0);
+    for (i = 0; i < 16; i++)
+    {
+        if (shape & (0x8000u >> i))
+        {
+            dword_t px = bx + 4 + (i & 3) * PREVIEW_CELL;
+            dword_t py = by + 4 + (i >> 2) * PREVIEW_CELL;
+            gfxFillRect(px, py, px + PREVIEW_CELL - 2, py + PREVIEW_CELL - 2,
+                        tetrominoColor(type));
+        }
+    }
+}
 static void drawBoardContents(void)
 {
     dword_t r, c;
@@ -81,6 +116,7 @@ static void drawBoardContents(void)
             dword_t py = BOARD_ORIGIN_Y + r * CELL_SIZE;
             dword_t color = (v == 0) ? COLOR_EMPTY : pieceColorForCell(v);
             gfxFillRect(px, py, px + CELL_SIZE - 2, py + CELL_SIZE - 2, color);
+
         }
     }
 
@@ -102,11 +138,14 @@ static void drawBoardContents(void)
             }
         }
     }
+    drawPreview(HOLD_BOX_X, PREVIEW_BOX_Y, holdType);
+    drawPreview(NEXT_BOX_X, PREVIEW_BOX_Y, nextType);
 }
 
 static void spawnPiece(void)
 {
-    curType = randomPieceType();
+    curType = nextType;
+    nextType = randomPieceType();
     curRotation = 0;
     curRow = SPAWN_ROW;
     curCol = SPAWN_COL;
@@ -139,6 +178,7 @@ static void lockCurrentPiece(void)
     }
 
     spawnPiece();
+    holdUsed = FALSE;
 }
 
 static void tryMove(sdword_t dRow, sdword_t dCol)
@@ -163,7 +203,29 @@ static void tryRotate(void)
     if (!boardCollides(curType, newRot, curRow, curCol))
         curRotation = newRot;
 }
+static void tryHold(void)
+{
+    if (holdUsed)
+        return;
 
+    if (holdType == NO_PIECE)
+    {
+        holdType = curType;
+        spawnPiece();              /* uzima nextType */
+    }
+    else
+    {
+        dword_t tmp = curType;
+        curType = holdType;
+        holdType = tmp;
+        curRotation = 0;
+        curRow = SPAWN_ROW;
+        curCol = SPAWN_COL;
+        if (boardCollides(curType, curRotation, curRow, curCol))
+            gameOver = TRUE;
+    }
+    holdUsed = TRUE;
+}
 void gameInit(void)
 {
     boardClear();
@@ -174,6 +236,10 @@ void gameInit(void)
     linesUntilLevelUp = 10;
     gameOver = FALSE;
     scoreSetValue(0);
+
+    holdType = NO_PIECE;
+    holdUsed = FALSE;
+    nextType = randomPieceType();
 
     spawnPiece();
 
@@ -209,6 +275,7 @@ void gameUpdate(void)
         if (inputRepeat(KEY_LEFT_BIT,  170, 50)) tryMove(0, -1);
         if (inputRepeat(KEY_RIGHT_BIT, 170, 50)) tryMove(0, 1);
         if (inputPressed(KEY_ROTATE_BIT)) tryRotate();
+        if (inputPressed(KEY_UP_BIT)) tryHold();
 
         {
             dword_t interval = GRAVITY_MS[level];
