@@ -1529,11 +1529,6 @@ applicable agreement for further details.
 	(bus)
 )
 (connector
-	(text "enableA" (rect 1164 768 1204 780)(font "Arial" ))
-	(pt 1232 784)
-	(pt 1156 784)
-)
-(connector
 	(text "CLK" (rect 920 616 941 628)(font "Arial" ))
 	(pt 944 632)
 	(pt 912 632)
@@ -1686,6 +1681,11 @@ applicable agreement for further details.
 	(pt 1768 664)
 	(pt 1848 664)
 	(bus)
+)
+(connector
+	(text "enableB" (rect 1164 768 1202 780)(font "Arial" ))
+	(pt 1232 784)
+	(pt 1156 784)
 )
 (text "Input/Output" (rect 632 496 725 513)(font "Arial" (font_size 11)))
 (text "Misc" (rect 360 848 395 865)(font "Arial" (font_size 11)))
