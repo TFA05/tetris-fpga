@@ -31,16 +31,19 @@ typedef unsigned int   bool_t;
 
 /* Mis je na istom registru kao gornja polovina tastature (PS2_HI):
    bitovi 2..0 tasteri (levi, desni, srednji), 10..3 pomeraj po x,
-   18..11 pomeraj po y, 19 mis je odgovorio na naredbu. */
+   18..11 pomeraj po y, 19 se menja na svaki primljen paket od tri bajta.
+   Kontroler pamti samo poslednji pomeraj, pa program po bitu 19 prepoznaje
+   da je stigao nov paket i tek tada sabira pomeraj. */
 #define REG_MOUSE_STATUS REG_PS2_HI
 
 #define MOUSE_BTN_LEFT     0x1u
 #define MOUSE_BTN_RIGHT    0x2u
 #define MOUSE_BTN_MIDDLE   0x4u
+#define MOUSE_BTN_MASK     0x7u
 #define MOUSE_DX_SHIFT     3
 #define MOUSE_DY_SHIFT     11
 #define MOUSE_MOVE_MASK    0xFFu
-#define MOUSE_ACKED_MASK   (1u << 19)
+#define MOUSE_PKT_MASK     (1u << 19)
 
 #define STATUS_VSYNC_MASK    0x1u
 #define STATUS_GFX_BUSY_MASK 0x2u

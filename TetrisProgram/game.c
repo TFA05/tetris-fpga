@@ -58,6 +58,17 @@ static bool_t holdUsed=FALSE;
 #define NEXT_BOX_X   (BOARD_ORIGIN_X + BOARD_COLS * CELL_SIZE + 16)
 #define PREVIEW_BOX_Y BOARD_ORIGIN_Y
 
+/* traka stanja uz desnu ivicu polja: visina pokazuje nivo, boja stanje igre */
+#define BAR_X0  (BOARD_ORIGIN_X + BOARD_COLS * CELL_SIZE + 4)
+#define BAR_X1  (BAR_X0 + 6)
+#define BAR_Y0  BOARD_ORIGIN_Y
+#define BAR_Y1  (BOARD_ORIGIN_Y + BOARD_ROWS * CELL_SIZE - 1)
+#define BAR_H   (BAR_Y1 - BAR_Y0 + 1)
+
+#define COLOR_PLAYING 0x0F0
+#define COLOR_PAUSED  0xFF0
+#define COLOR_OVER    0xF00
+
 
 static const dword_t GRAVITY_MS[10] = {
     800, 700, 600, 500, 400, 350, 300, 250, 200, 150
@@ -105,6 +116,19 @@ static void drawPreview(dword_t bx, dword_t by, dword_t type)
         }
     }
 }
+/* zelena = igra traje, zuta = pauza, crvena = kraj igre;
+   visina obojenog dela je nivo (od 1 do 10 desetina) */
+static void drawStatusBar(void)
+{
+    dword_t color = gameOver ? COLOR_OVER : (paused ? COLOR_PAUSED : COLOR_PLAYING);
+    dword_t h = (level + 1) * (BAR_H / 10);
+    dword_t top = BAR_Y1 + 1 - h;
+
+    gfxFillRect(BAR_X0, BAR_Y0, BAR_X1, BAR_Y1, COLOR_EMPTY);
+    gfxFillRect(BAR_X0, top, BAR_X1, BAR_Y1, color);
+    gfxDrawRect(BAR_X0 - 1, BAR_Y0 - 1, BAR_X1 + 1, BAR_Y1 + 1, themeBorder());
+}
+
 static void drawBoardContents(void)
 {
     dword_t r, c;
@@ -143,8 +167,13 @@ static void drawBoardContents(void)
         }
     }
     drawBorder();
+    drawStatusBar();
     drawPreview(HOLD_BOX_X, PREVIEW_BOX_Y, holdType);
     drawPreview(NEXT_BOX_X, PREVIEW_BOX_Y, nextType);
+
+    /* kursor se crta poslednji, da bi bio preko svega */
+    if (mouseReady())
+        mouseDrawCursor(themeBorder());
 }
 
 static void spawnPiece(void)
