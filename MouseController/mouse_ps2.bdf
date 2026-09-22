@@ -637,7 +637,7 @@ applicable agreement for further details.
 	
 )
 (connector
-	(text "NPWR" (rect 546 852 578 863)(font "Arial" ))
+	(text "PWR_EN" (rect 546 852 594 863)(font "Arial" ))
 	(pt 544 864)
 	(pt 640 864)
 	
@@ -1103,8 +1103,15 @@ applicable agreement for further details.
 )
 (symbol
 	(rect 1080 1520 1224 1616)
-	(text "ms_cnt12" (rect 5 0 80 12)(font "Arial" ))
+	(text "ms_txcnt" (rect 5 0 80 12)(font "Arial" ))
 	(text "TX_BROJAC" (rect 8 80 40 92)(font "Arial" ))
+	(port
+		(pt 0 16)
+		(input)
+		(text "sclr" (rect 0 0 21 14)(font "Arial" (font_size 8)))
+		(text "sclr" (rect 20 9 36 22)(font "Arial" (font_size 8)))
+		(line (pt 0 16)(pt 16 16))
+	)
 	(port
 		(pt 0 32)
 		(input)
@@ -1152,6 +1159,11 @@ applicable agreement for further details.
 		(line (pt 0 0)(pt 0 0))
 	)
 
+)
+(connector
+	(text "RST" (rect 1002 1524 1026 1535)(font "Arial" ))
+	(pt 1000 1536)
+	(pt 1080 1536)
 )
 (connector
 	(text "CLK" (rect 986 1540 1010 1551)(font "Arial" ))
@@ -2755,4 +2767,57 @@ applicable agreement for further details.
 	(text "P_CLR" (rect 1146 4252 1222 4263)(font "Arial" ))
 	(pt 1224 4264)
 	(pt 1144 4264)
+)
+(symbol
+	(rect 800 4000 848 4032)
+	(text "NOT" (rect 5 0 80 12)(font "Arial" ))
+	(text "inst106" (rect 8 16 40 28)(font "Arial" ))
+	(port (pt 0 16)(input)(text "IN"(rect 2 7 12 19)(font "Courier New"(bold))(invisible))(text "IN"(rect 2 7 12 19)(font "Courier New"(bold))(invisible))
+		(line (pt 0 16)(pt 13 16)(line_width 1)))
+	(port (pt 48 16)(output)(text "OUT"(rect 32 7 47 19)(font "Courier New"(bold))(invisible))(text "OUT"(rect 32 7 47 19)(font "Courier New"(bold))(invisible))
+		(line (pt 39 16)(pt 48 16)(line_width 1)))
+	(drawing
+		(line (pt 13 25)(pt 13 7)(line_width 1))
+		(line (pt 13 7)(pt 31 16)(line_width 1))
+		(line (pt 13 25)(pt 31 16)(line_width 1))(circle (rect 31 12 39 20)(line_width 1)))
+)
+(connector
+	(text "RST_N" (rect 722 4004 798 4015)(font "Arial" ))
+	(pt 720 4016)
+	(pt 800 4016)
+)
+(connector
+	(text "RST" (rect 850 4004 926 4015)(font "Arial" ))
+	(pt 928 4016)
+	(pt 848 4016)
+)
+(symbol
+	(rect 1080 4360 1144 4408)
+	(text "AND2" (rect 5 0 80 12)(font "Arial" ))
+	(text "inst107" (rect 8 32 40 44)(font "Arial" ))
+	(port (pt 0 16)(input)(text "IN1"(rect 2 7 17 19)(font "Courier New"(bold))(invisible))(text "IN1"(rect 2 7 17 19)(font "Courier New"(bold))(invisible))
+		(line (pt 0 16)(pt 16 16)(line_width 1)))
+	(port (pt 0 32)(input)(text "IN2"(rect 2 23 17 35)(font "Courier New"(bold))(invisible))(text "IN2"(rect 2 23 17 35)(font "Courier New"(bold))(invisible))
+		(line (pt 0 32)(pt 16 32)(line_width 1)))
+	(port (pt 64 24)(output)(text "OUT"(rect 48 15 63 27)(font "Courier New"(bold))(invisible))(text "OUT"(rect 48 15 63 27)(font "Courier New"(bold))(invisible))
+		(line (pt 43 24)(pt 64 24)(line_width 1)))
+	(drawing
+		(line (pt 16 12)(pt 31 12)(line_width 1))
+		(line (pt 16 37)(pt 31 37)(line_width 1))
+		(line (pt 16 12)(pt 16 37)(line_width 1))(arc (pt 31 36) (pt 31 12) (rect 19 12 44 37) (line_width 1)))
+)
+(connector
+	(text "NPWR" (rect 1002 4364 1078 4375)(font "Arial" ))
+	(pt 1000 4376)
+	(pt 1080 4376)
+)
+(connector
+	(text "RST_N" (rect 1002 4380 1078 4391)(font "Arial" ))
+	(pt 1000 4392)
+	(pt 1080 4392)
+)
+(connector
+	(text "PWR_EN" (rect 1146 4372 1222 4383)(font "Arial" ))
+	(pt 1224 4384)
+	(pt 1144 4384)
 )
