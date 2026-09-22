@@ -1,3 +1,9 @@
+-- NAPOMENA (namerna rucna izmena): adresa citanja je u taktu VGA bloka,
+-- pa je address_reg_b postavljen na "CLOCK1" (outclock), a ne na "CLOCK0".
+-- Sa "CLOCK0" bi se PIX_X iz takta od 40 MHz uzorkovao taktom od 50 MHz,
+-- sto povremeno daje pogresan piksel (titranje slike).
+-- Ako se blok ponovo napravi u wizardu, ovu vrednost treba vratiti rucno.
+
 -- megafunction wizard: %RAM: 2-PORT%
 -- GENERATION: STANDARD
 -- VERSION: WM1.0
@@ -63,7 +69,7 @@ BEGIN
 	altsyncram_component : altsyncram
 	GENERIC MAP (
 		address_aclr_b => "NONE",
-		address_reg_b => "CLOCK0",
+		address_reg_b => "CLOCK1",
 		clock_enable_input_a => "BYPASS",
 		clock_enable_input_b => "BYPASS",
 		clock_enable_output_b => "BYPASS",
@@ -160,7 +166,7 @@ END SYN;
 -- Retrieval info: PRIVATE: rden NUMERIC "0"
 -- Retrieval info: LIBRARY: altera_mf altera_mf.altera_mf_components.all
 -- Retrieval info: CONSTANT: ADDRESS_ACLR_B STRING "NONE"
--- Retrieval info: CONSTANT: ADDRESS_REG_B STRING "CLOCK0"
+-- Retrieval info: CONSTANT: ADDRESS_REG_B STRING "CLOCK1"
 -- Retrieval info: CONSTANT: CLOCK_ENABLE_INPUT_A STRING "BYPASS"
 -- Retrieval info: CONSTANT: CLOCK_ENABLE_INPUT_B STRING "BYPASS"
 -- Retrieval info: CONSTANT: CLOCK_ENABLE_OUTPUT_B STRING "BYPASS"
