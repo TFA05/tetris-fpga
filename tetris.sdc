@@ -23,6 +23,18 @@ set sdram_out [get_ports {DRAM_DQ[*] DRAM_ADDR[*] DRAM_BA[*] DRAM_CAS_N DRAM_CKE
 set_output_delay -clock DRAM_CLK_PIN -max  1.9 $sdram_out
 set_output_delay -clock DRAM_CLK_PIN -min -1.2 $sdram_out
 
+# ---------------------------------------------------------------- dva takta iz PLL-a
+# Sistemski takt (50 MHz) i takt piksela (40 MHz) izlaze iz istog PLL-a, pa ih
+# TimeQuest analizira kao povezane: najgori odnos ivica je samo 5 ns. Signali koji
+# prelaze iz jednog u drugi (LINE_REQ, VSYNC, LINE_Y) idu kroz dva flip-flopa u
+# `line_sync` i stoje mnogo duze od takta, a bafer linije `line_buf` od sada cita
+# adresu taktom VGA bloka, pa preko granice ne ide nijedan put kome treba tacno
+# vreme. Zato se ti putevi ne analiziraju.
+set clk_sys {PLL|sys_pll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk}
+set clk_vga {PLL|sys_pll_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk}
+set_false_path -from [get_clocks $clk_vga] -to [get_clocks $clk_sys]
+set_false_path -from [get_clocks $clk_sys] -to [get_clocks $clk_vga]
+
 # ---------------------------------------------------------------- ostali izlazi i ulazi
 # Tasteri i PS/2 linije nisu u ritmu takta, a izlazi na displej, LED i VGA
 # nemaju zahtev prema spoljasnjem uredjaju, pa se ti putevi ne analiziraju.

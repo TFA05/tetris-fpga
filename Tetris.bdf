@@ -101,7 +101,7 @@ applicable agreement for further details.
 	)
 )
 (connector
-	(text "LOCKED,MTXOK,MRXT,PC_DBG[5..2],MBTN[2..0]" (rect 3554 -4 3882 7)(font "Arial" ))
+	(text "LOCKED,MTXOK,MPKT,PC_DBG[5..2],MBTN[2..0]" (rect 3554 -4 3882 7)(font "Arial" ))
 	(pt 3552 8)
 	(pt 3600 8)
 	(bus)
@@ -1267,7 +1267,7 @@ applicable agreement for further details.
 	(bus)
 )
 (connector
-	(text "NULA32[31..19],MDY[7..0],MDX[7..0],MBTN[2..0]" (rect 1802 388 2162 399)(font "Arial" ))
+	(text "NULA32[31..20],MPKT,MDY[7..0],MDX[7..0],MBTN[2..0]" (rect 1802 388 2210 399)(font "Arial" ))
 	(pt 1800 400)
 	(pt 2000 400)
 	(bus)
@@ -1382,7 +1382,7 @@ applicable agreement for further details.
 )
 (symbol
 	(rect 2000 2000 2288 2192)
-	(text "vga_kolege" (rect 5 0 80 12)(font "Arial" ))
+	(text "vga" (rect 5 0 80 12)(font "Arial" ))
 	(text "VGA" (rect 8 176 40 188)(font "Arial" ))
 	(port
 		(pt 0 32)
@@ -1848,8 +1848,8 @@ applicable agreement for further details.
 	(port
 		(pt 240 128)
 		(output)
-		(text "RX_TOGGLE" (rect 0 0 72 12)(font "Arial" ))
-		(text "RX_TOGGLE" (rect 147 123 219 135)(font "Arial" ))
+		(text "PKT_TOGGLE" (rect 0 0 80 12)(font "Arial" ))
+		(text "PKT_TOGGLE" (rect 139 123 219 135)(font "Arial" ))
 		(line (pt 240 128)(pt 224 128)(line_width 1))
 	)
 	(drawing
@@ -1918,7 +1918,7 @@ applicable agreement for further details.
 	
 )
 (connector
-	(text "MRXT" (rect 642 2116 674 2127)(font "Arial" ))
+	(text "MPKT" (rect 642 2116 674 2127)(font "Arial" ))
 	(pt 800 2128)
 	(pt 640 2128)
 	
@@ -2138,7 +2138,7 @@ applicable agreement for further details.
 )
 (symbol
 	(rect 400 1296 576 1392)
-	(text "CodeDetector" (rect 5 0 80 12)(font "Arial" ))
+	(text "kb_ps2" (rect 5 0 80 12)(font "Arial" ))
 	(text "KB_DETEKTOR" (rect 8 80 40 92)(font "Arial" ))
 	(port
 		(pt 0 32)

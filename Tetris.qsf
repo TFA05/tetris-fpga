@@ -123,7 +123,7 @@ set_global_assignment -name QIP_FILE Memory/rom.qip
 set_global_assignment -name VHDL_FILE Memory/ram.vhd
 set_global_assignment -name QIP_FILE Memory/ram.qip
 set_global_assignment -name BDF_FILE Memory/mem_top.bdf
-set_global_assignment -name BDF_FILE KbController/CodeDetector.bdf
+set_global_assignment -name BDF_FILE KbController/kb_ps2.bdf
 set_global_assignment -name BDF_FILE Components/RisingEdgeDetector.bdf
 set_global_assignment -name BDF_FILE Components/Register.bdf
 set_global_assignment -name VHDL_FILE Components/read_mux.vhd
@@ -176,6 +176,7 @@ set_global_assignment -name QIP_FILE MouseController/ms_cnt11.qip
 set_global_assignment -name QIP_FILE MouseController/ms_pstate.qip
 set_global_assignment -name QIP_FILE MouseController/ms_tx.qip
 set_global_assignment -name QIP_FILE MouseController/ms_rx.qip
+set_global_assignment -name QIP_FILE MouseController/ms_idle.qip
 
 # Pinovi ploce DE0-CV
 
@@ -193,7 +194,7 @@ set_global_assignment -name BDF_FILE KbController/kb_keys.bdf
 
 # Pinovi ploce DE0-CV
 
-set_global_assignment -name BDF_FILE GPU/vga_kolege.bdf
+set_global_assignment -name BDF_FILE GPU/vga.bdf
 set_global_assignment -name QIP_FILE GPU/vga_cmp10.qip
 
 # Pinovi ploce DE0-CV
@@ -211,7 +212,7 @@ set_global_assignment -name QIP_FILE GPU/vga_add11.qip
 # Pinovi ploce DE0-CV
 
 set_global_assignment -name BDF_FILE Components/line_sync.bdf
-set_global_assignment -name BDF_FILE GPU/Controller.bdf
+set_global_assignment -name BDF_FILE GPU/vga_timing.bdf
 
 # Pinovi ploce DE0-CV
 
