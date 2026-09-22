@@ -1,7 +1,7 @@
 #ifndef COMMON_H
 #define COMMON_H
 
-//Tipovi podataka 32-bitni jer svaki registar je 32-bitni
+//Procesor ima samo lw/sw, pa svi tipovi moraju biti 32-bitni
 typedef unsigned int   byte_t;
 typedef unsigned int   word_t;
 typedef unsigned int   dword_t;
