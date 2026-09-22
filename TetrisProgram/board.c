@@ -22,7 +22,7 @@ void boardSet(dword_t row, dword_t col, byte_t value)
 {
     grid[row][col] = value;
 }
-
+//Uzima celu matricu fifgure i proverava da li se sudara sa zidom ili drugom figurom 
 bool_t boardCollides(dword_t pieceType, dword_t rotation, sdword_t boardRow, sdword_t boardCol)
 {
     word_t shape = tetrominoShape(pieceType, rotation);
@@ -47,7 +47,7 @@ bool_t boardCollides(dword_t pieceType, dword_t rotation, sdword_t boardRow, sdw
     }
     return FALSE;
 }
-
+//Kada figura sleti upisuje je u matricu mape
 void boardLockPiece(dword_t pieceType, dword_t rotation, sdword_t boardRow, sdword_t boardCol)
 {
     word_t shape = tetrominoShape(pieceType, rotation);
