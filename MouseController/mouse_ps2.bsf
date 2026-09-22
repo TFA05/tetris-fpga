@@ -96,8 +96,8 @@ applicable agreement for further details.
 	(port
 		(pt 240 128)
 		(output)
-		(text "RX_TOGGLE" (rect 0 0 72 12)(font "Arial" ))
-		(text "RX_TOGGLE" (rect 147 123 219 135)(font "Arial" ))
+		(text "PKT_TOGGLE" (rect 0 0 80 12)(font "Arial" ))
+		(text "PKT_TOGGLE" (rect 139 123 219 135)(font "Arial" ))
 		(line (pt 240 128)(pt 224 128)(line_width 1))
 	)
 	(drawing

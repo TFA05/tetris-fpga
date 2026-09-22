@@ -4,7 +4,7 @@
 -- MODULE: LPM_COUNTER 
 
 -- ============================================================
--- File Name: ms_dly.vhd
+-- File Name: ms_idle.vhd
 -- Megafunction Name(s):
 -- 			LPM_COUNTER
 --
@@ -39,21 +39,22 @@ USE ieee.std_logic_1164.all;
 LIBRARY lpm;
 USE lpm.all;
 
-ENTITY ms_dly IS
+ENTITY ms_idle IS
 	PORT
 	(
 		clock		: IN STD_LOGIC ;
 		cnt_en		: IN STD_LOGIC ;
+		sclr		: IN STD_LOGIC ;
 		cout		: OUT STD_LOGIC ;
-		q		: OUT STD_LOGIC_VECTOR (22 DOWNTO 0)
+		q		: OUT STD_LOGIC_VECTOR (17 DOWNTO 0)
 	);
-END ms_dly;
+END ms_idle;
 
 
-ARCHITECTURE SYN OF ms_dly IS
+ARCHITECTURE SYN OF ms_idle IS
 
 	SIGNAL sub_wire0	: STD_LOGIC ;
-	SIGNAL sub_wire1	: STD_LOGIC_VECTOR (22 DOWNTO 0);
+	SIGNAL sub_wire1	: STD_LOGIC_VECTOR (17 DOWNTO 0);
 
 
 
@@ -67,26 +68,28 @@ ARCHITECTURE SYN OF ms_dly IS
 	);
 	PORT (
 			clock	: IN STD_LOGIC ;
+			sclr	: IN STD_LOGIC ;
 			cnt_en	: IN STD_LOGIC ;
 			cout	: OUT STD_LOGIC ;
-			q	: OUT STD_LOGIC_VECTOR (22 DOWNTO 0)
+			q	: OUT STD_LOGIC_VECTOR (17 DOWNTO 0)
 	);
 	END COMPONENT;
 
 BEGIN
 	cout    <= sub_wire0;
-	q    <= sub_wire1(22 DOWNTO 0);
+	q    <= sub_wire1(17 DOWNTO 0);
 
 	LPM_COUNTER_component : LPM_COUNTER
 	GENERIC MAP (
 		lpm_direction => "UP",
-		lpm_modulus => 8000000,
+		lpm_modulus => 262144,
 		lpm_port_updown => "PORT_UNUSED",
 		lpm_type => "LPM_COUNTER",
-		lpm_width => 23
+		lpm_width => 18
 	)
 	PORT MAP (
 		clock => clock,
+		sclr => sclr,
 		cnt_en => cnt_en,
 		cout => sub_wire0,
 		q => sub_wire1
@@ -110,30 +113,32 @@ END SYN;
 -- Retrieval info: PRIVATE: Direction NUMERIC "0"
 -- Retrieval info: PRIVATE: INTENDED_DEVICE_FAMILY STRING "Cyclone V"
 -- Retrieval info: PRIVATE: ModulusCounter NUMERIC "1"
--- Retrieval info: PRIVATE: ModulusValue NUMERIC "8000000"
--- Retrieval info: PRIVATE: SCLR NUMERIC "0"
+-- Retrieval info: PRIVATE: ModulusValue NUMERIC "262144"
+-- Retrieval info: PRIVATE: SCLR NUMERIC "1"
 -- Retrieval info: PRIVATE: SLOAD NUMERIC "0"
 -- Retrieval info: PRIVATE: SSET NUMERIC "0"
 -- Retrieval info: PRIVATE: SSET_ALL1 NUMERIC "1"
 -- Retrieval info: PRIVATE: SYNTH_WRAPPER_GEN_POSTFIX STRING "0"
--- Retrieval info: PRIVATE: nBit NUMERIC "23"
+-- Retrieval info: PRIVATE: nBit NUMERIC "18"
 -- Retrieval info: PRIVATE: new_diagram STRING "1"
 -- Retrieval info: LIBRARY: lpm lpm.lpm_components.all
 -- Retrieval info: CONSTANT: LPM_DIRECTION STRING "UP"
--- Retrieval info: CONSTANT: LPM_MODULUS NUMERIC "8000000"
+-- Retrieval info: CONSTANT: LPM_MODULUS NUMERIC "262144"
 -- Retrieval info: CONSTANT: LPM_PORT_UPDOWN STRING "PORT_UNUSED"
 -- Retrieval info: CONSTANT: LPM_TYPE STRING "LPM_COUNTER"
--- Retrieval info: CONSTANT: LPM_WIDTH NUMERIC "23"
+-- Retrieval info: CONSTANT: LPM_WIDTH NUMERIC "18"
 -- Retrieval info: USED_PORT: clock 0 0 0 0 INPUT NODEFVAL "clock"
 -- Retrieval info: USED_PORT: cnt_en 0 0 0 0 INPUT NODEFVAL "cnt_en"
 -- Retrieval info: USED_PORT: cout 0 0 0 0 OUTPUT NODEFVAL "cout"
--- Retrieval info: USED_PORT: q 0 0 23 0 OUTPUT NODEFVAL "q[22..0]"
+-- Retrieval info: USED_PORT: q 0 0 18 0 OUTPUT NODEFVAL "q[17..0]"
+-- Retrieval info: USED_PORT: sclr 0 0 0 0 INPUT NODEFVAL "sclr"
 -- Retrieval info: CONNECT: @clock 0 0 0 0 clock 0 0 0 0
 -- Retrieval info: CONNECT: @cnt_en 0 0 0 0 cnt_en 0 0 0 0
+-- Retrieval info: CONNECT: @sclr 0 0 0 0 sclr 0 0 0 0
 -- Retrieval info: CONNECT: cout 0 0 0 0 @cout 0 0 0 0
--- Retrieval info: CONNECT: q 0 0 23 0 @q 0 0 23 0
--- Retrieval info: GEN_FILE: TYPE_NORMAL ms_dly.vhd TRUE
--- Retrieval info: GEN_FILE: TYPE_NORMAL ms_dly.inc FALSE
--- Retrieval info: GEN_FILE: TYPE_NORMAL ms_dly.cmp TRUE
--- Retrieval info: GEN_FILE: TYPE_NORMAL ms_dly.bsf TRUE
--- Retrieval info: GEN_FILE: TYPE_NORMAL ms_dly_inst.vhd TRUE
+-- Retrieval info: CONNECT: q 0 0 18 0 @q 0 0 18 0
+-- Retrieval info: GEN_FILE: TYPE_NORMAL ms_idle.vhd TRUE
+-- Retrieval info: GEN_FILE: TYPE_NORMAL ms_idle.inc FALSE
+-- Retrieval info: GEN_FILE: TYPE_NORMAL ms_idle.cmp TRUE
+-- Retrieval info: GEN_FILE: TYPE_NORMAL ms_idle.bsf TRUE
+-- Retrieval info: GEN_FILE: TYPE_NORMAL ms_idle_inst.vhd TRUE
