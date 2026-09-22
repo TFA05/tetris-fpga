@@ -54,26 +54,46 @@ applicable agreement for further details.
 	(text "VCC" (rect 128 7 148 16)(font "Arial" (font_size 6)))
 )
 (pin
-	(input)
-	(rect 0 64 168 80)
-	(text "INPUT" (rect 125 0 153 9)(font "Arial" (font_size 6)))
-	(text "PS2_CLK" (rect 5 0 90 11)(font "Arial" ))
-	(pt 168 8)
+	(bidir)
+	(rect 0 64 184 80)
+	(text "BIDIR" (rect 157 0 181 10)(font "Arial" (font_size 6)))
+	(text "PS2_CLK" (rect 6 0 90 12)(font "Arial" ))
+	(pt 184 8)
 	(drawing
-		(line (pt 84 12)(pt 109 12))
-		(line (pt 84 4)(pt 109 4))
-		(line (pt 113 8)(pt 168 8))
-		(line (pt 84 12)(pt 84 4))
-		(line (pt 109 4)(pt 113 8))
-		(line (pt 109 12)(pt 113 8))
+		(line (pt 126 4)(pt 104 4))
+		(line (pt 182 8)(pt 130 8))
+		(line (pt 126 12)(pt 104 12))
+		(line (pt 104 4)(pt 100 8))
+		(line (pt 104 12)(pt 100 8))
+		(line (pt 126 4)(pt 130 8))
+		(line (pt 130 8)(pt 126 12))
 	)
-	(text "VCC" (rect 128 7 148 16)(font "Arial" (font_size 6)))
+	(flipy)
+	(text "VCC" (rect 158 7 178 17)(font "Arial" (font_size 6)))
+)
+(pin
+	(bidir)
+	(rect 0 96 184 112)
+	(text "BIDIR" (rect 157 0 181 10)(font "Arial" (font_size 6)))
+	(text "PS2_DAT" (rect 6 0 90 12)(font "Arial" ))
+	(pt 184 8)
+	(drawing
+		(line (pt 126 4)(pt 104 4))
+		(line (pt 182 8)(pt 130 8))
+		(line (pt 126 12)(pt 104 12))
+		(line (pt 104 4)(pt 100 8))
+		(line (pt 104 12)(pt 100 8))
+		(line (pt 126 4)(pt 130 8))
+		(line (pt 130 8)(pt 126 12))
+	)
+	(flipy)
+	(text "VCC" (rect 158 7 178 17)(font "Arial" (font_size 6)))
 )
 (pin
 	(input)
-	(rect 0 96 168 112)
+	(rect 0 128 168 144)
 	(text "INPUT" (rect 125 0 153 9)(font "Arial" (font_size 6)))
-	(text "PS2_DAT" (rect 5 0 90 11)(font "Arial" ))
+	(text "SW9" (rect 5 0 90 11)(font "Arial" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -101,7 +121,7 @@ applicable agreement for further details.
 	)
 )
 (connector
-	(text "LOCKED,MTXOK,MPKT,PC_DBG[5..2],MBTN[2..0]" (rect 3554 -4 3882 7)(font "Arial" ))
+	(text "LOCKED,MTXOK,MPKT,SW9,PC_DBG[4..2],MBTN[2..0]" (rect 3554 -4 3912 7)(font "Arial" ))
 	(pt 3552 8)
 	(pt 3600 8)
 	(bus)
@@ -426,42 +446,6 @@ applicable agreement for further details.
 	(rect 3600 1120 3784 1136)
 	(text "BIDIR" (rect 157 0 181 10)(font "Arial" (font_size 6)))
 	(text "DRAM_DQ[15..0]" (rect 6 0 90 12)(font "Arial" ))
-	(pt 184 8)
-	(drawing
-		(line (pt 126 4)(pt 104 4))
-		(line (pt 182 8)(pt 130 8))
-		(line (pt 126 12)(pt 104 12))
-		(line (pt 104 4)(pt 100 8))
-		(line (pt 104 12)(pt 100 8))
-		(line (pt 126 4)(pt 130 8))
-		(line (pt 130 8)(pt 126 12))
-	)
-	(flipy)
-	(text "VCC" (rect 158 7 178 17)(font "Arial" (font_size 6)))
-)
-(pin
-	(bidir)
-	(rect 3600 1152 3784 1168)
-	(text "BIDIR" (rect 157 0 181 10)(font "Arial" (font_size 6)))
-	(text "PS2_CLK2" (rect 6 0 90 12)(font "Arial" ))
-	(pt 184 8)
-	(drawing
-		(line (pt 126 4)(pt 104 4))
-		(line (pt 182 8)(pt 130 8))
-		(line (pt 126 12)(pt 104 12))
-		(line (pt 104 4)(pt 100 8))
-		(line (pt 104 12)(pt 100 8))
-		(line (pt 126 4)(pt 130 8))
-		(line (pt 130 8)(pt 126 12))
-	)
-	(flipy)
-	(text "VCC" (rect 158 7 178 17)(font "Arial" (font_size 6)))
-)
-(pin
-	(bidir)
-	(rect 3600 1184 3784 1200)
-	(text "BIDIR" (rect 157 0 181 10)(font "Arial" (font_size 6)))
-	(text "PS2_DAT2" (rect 6 0 90 12)(font "Arial" ))
 	(pt 184 8)
 	(drawing
 		(line (pt 126 4)(pt 104 4))
@@ -1736,7 +1720,7 @@ applicable agreement for further details.
 	
 )
 (connector
-	(text "KB_INTR" (rect 1842 2652 1898 2663)(font "Arial" ))
+	(text "KB_INTR_G" (rect 1842 2652 1914 2663)(font "Arial" ))
 	(pt 1840 2664)
 	(pt 2000 2664)
 	
@@ -1864,19 +1848,19 @@ applicable agreement for further details.
 	
 )
 (connector
-	(text "RST_N" (rect 242 2036 282 2047)(font "Arial" ))
+	(text "MRST_N" (rect 242 2036 298 2047)(font "Arial" ))
 	(pt 240 2048)
 	(pt 400 2048)
 	
 )
 (connector
-	(text "PS2_CLK2" (rect 242 2052 306 2063)(font "Arial" ))
+	(text "PS2_CLK" (rect 242 2052 300 2063)(font "Arial" ))
 	(pt 240 2064)
 	(pt 400 2064)
 	
 )
 (connector
-	(text "PS2_DAT2" (rect 242 2068 306 2079)(font "Arial" ))
+	(text "PS2_DAT" (rect 242 2068 300 2079)(font "Arial" ))
 	(pt 240 2080)
 	(pt 400 2080)
 	
@@ -1993,7 +1977,7 @@ applicable agreement for further details.
 	
 )
 (connector
-	(text "PS2_CLK2" (rect 1450 2004 1514 2015)(font "Arial" ))
+	(text "PS2_CLK" (rect 1450 2004 1508 2015)(font "Arial" ))
 	(pt 1488 2016)
 	(pt 1448 2016)
 	
@@ -2018,7 +2002,7 @@ applicable agreement for further details.
 	
 )
 (connector
-	(text "PS2_DAT2" (rect 1450 2164 1514 2175)(font "Arial" ))
+	(text "PS2_DAT" (rect 1450 2164 1508 2175)(font "Arial" ))
 	(pt 1488 2176)
 	(pt 1448 2176)
 	
@@ -2267,7 +2251,7 @@ applicable agreement for further details.
 	
 )
 (connector
-	(text "KB_INTR" (rect 938 1348 994 1359)(font "Arial" ))
+	(text "KB_INTR_G" (rect 938 1348 1010 1359)(font "Arial" ))
 	(pt 936 1360)
 	(pt 1000 1360)
 	
@@ -2283,4 +2267,89 @@ applicable agreement for further details.
 	(pt 1288 1328)
 	(pt 1224 1328)
 	(bus)
+)
+(text "SW9 bira koji je uredjaj u PS/2 portu: dole = tastatura, gore = mis." (rect 320 3380 900 3398)(font "Arial" (font_size 10)))
+(text "Oba bloka slusaju iste linije, pa je onaj koji se ne koristi ugasen." (rect 320 3404 900 3422)(font "Arial" (font_size 10)))
+(symbol
+	(rect 400 3440 448 3472)
+	(text "NOT" (rect 5 0 80 12)(font "Arial" ))
+	(text "inst40" (rect 8 16 40 28)(font "Arial" ))
+	(port (pt 0 16)(input)(text "IN"(rect 2 7 12 19)(font "Courier New"(bold))(invisible))(text "IN"(rect 2 7 12 19)(font "Courier New"(bold))(invisible))
+		(line (pt 0 16)(pt 13 16)(line_width 1)))
+	(port (pt 48 16)(output)(text "OUT"(rect 32 7 47 19)(font "Courier New"(bold))(invisible))(text "OUT"(rect 32 7 47 19)(font "Courier New"(bold))(invisible))
+		(line (pt 39 16)(pt 48 16)(line_width 1)))
+	(drawing
+		(line (pt 13 25)(pt 13 7)(line_width 1))
+		(line (pt 13 7)(pt 31 16)(line_width 1))
+		(line (pt 13 25)(pt 31 16)(line_width 1))(circle (rect 31 12 39 20)(line_width 1)))
+)
+(connector
+	(text "SW9" (rect 322 3444 398 3455)(font "Arial" ))
+	(pt 320 3456)
+	(pt 400 3456)
+)
+(connector
+	(text "NSW9" (rect 450 3444 526 3455)(font "Arial" ))
+	(pt 528 3456)
+	(pt 448 3456)
+)
+(symbol
+	(rect 700 3432 764 3480)
+	(text "AND2" (rect 5 0 80 12)(font "Arial" ))
+	(text "inst41" (rect 8 32 40 44)(font "Arial" ))
+	(port (pt 0 16)(input)(text "IN1"(rect 2 7 17 19)(font "Courier New"(bold))(invisible))(text "IN1"(rect 2 7 17 19)(font "Courier New"(bold))(invisible))
+		(line (pt 0 16)(pt 16 16)(line_width 1)))
+	(port (pt 0 32)(input)(text "IN2"(rect 2 23 17 35)(font "Courier New"(bold))(invisible))(text "IN2"(rect 2 23 17 35)(font "Courier New"(bold))(invisible))
+		(line (pt 0 32)(pt 16 32)(line_width 1)))
+	(port (pt 64 24)(output)(text "OUT"(rect 48 15 63 27)(font "Courier New"(bold))(invisible))(text "OUT"(rect 48 15 63 27)(font "Courier New"(bold))(invisible))
+		(line (pt 43 24)(pt 64 24)(line_width 1)))
+	(drawing
+		(line (pt 16 12)(pt 31 12)(line_width 1))
+		(line (pt 16 37)(pt 31 37)(line_width 1))
+		(line (pt 16 12)(pt 16 37)(line_width 1))(arc (pt 31 36) (pt 31 12) (rect 19 12 44 37) (line_width 1)))
+)
+(connector
+	(text "RST_N" (rect 622 3436 698 3447)(font "Arial" ))
+	(pt 620 3448)
+	(pt 700 3448)
+)
+(connector
+	(text "SW9" (rect 622 3452 698 3463)(font "Arial" ))
+	(pt 620 3464)
+	(pt 700 3464)
+)
+(connector
+	(text "MRST_N" (rect 766 3444 842 3455)(font "Arial" ))
+	(pt 844 3456)
+	(pt 764 3456)
+)
+(symbol
+	(rect 700 3560 764 3608)
+	(text "AND2" (rect 5 0 80 12)(font "Arial" ))
+	(text "inst42" (rect 8 32 40 44)(font "Arial" ))
+	(port (pt 0 16)(input)(text "IN1"(rect 2 7 17 19)(font "Courier New"(bold))(invisible))(text "IN1"(rect 2 7 17 19)(font "Courier New"(bold))(invisible))
+		(line (pt 0 16)(pt 16 16)(line_width 1)))
+	(port (pt 0 32)(input)(text "IN2"(rect 2 23 17 35)(font "Courier New"(bold))(invisible))(text "IN2"(rect 2 23 17 35)(font "Courier New"(bold))(invisible))
+		(line (pt 0 32)(pt 16 32)(line_width 1)))
+	(port (pt 64 24)(output)(text "OUT"(rect 48 15 63 27)(font "Courier New"(bold))(invisible))(text "OUT"(rect 48 15 63 27)(font "Courier New"(bold))(invisible))
+		(line (pt 43 24)(pt 64 24)(line_width 1)))
+	(drawing
+		(line (pt 16 12)(pt 31 12)(line_width 1))
+		(line (pt 16 37)(pt 31 37)(line_width 1))
+		(line (pt 16 12)(pt 16 37)(line_width 1))(arc (pt 31 36) (pt 31 12) (rect 19 12 44 37) (line_width 1)))
+)
+(connector
+	(text "KB_INTR" (rect 622 3564 698 3575)(font "Arial" ))
+	(pt 620 3576)
+	(pt 700 3576)
+)
+(connector
+	(text "NSW9" (rect 622 3580 698 3591)(font "Arial" ))
+	(pt 620 3592)
+	(pt 700 3592)
+)
+(connector
+	(text "KB_INTR_G" (rect 766 3572 842 3583)(font "Arial" ))
+	(pt 844 3584)
+	(pt 764 3584)
 )

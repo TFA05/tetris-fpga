@@ -171,12 +171,12 @@ set_global_assignment -name BDF_FILE Components/reg8_en.bdf
 set_global_assignment -name BDF_FILE MouseController/mouse_ps2.bdf
 set_global_assignment -name QIP_FILE MouseController/ms_dly.qip
 set_global_assignment -name QIP_FILE MouseController/ms_wait.qip
-set_global_assignment -name QIP_FILE MouseController/ms_cnt12.qip
 set_global_assignment -name QIP_FILE MouseController/ms_cnt11.qip
 set_global_assignment -name QIP_FILE MouseController/ms_pstate.qip
 set_global_assignment -name QIP_FILE MouseController/ms_tx.qip
 set_global_assignment -name QIP_FILE MouseController/ms_rx.qip
 set_global_assignment -name QIP_FILE MouseController/ms_idle.qip
+set_global_assignment -name QIP_FILE MouseController/ms_txcnt.qip
 
 # Pinovi ploce DE0-CV
 
@@ -223,6 +223,7 @@ set_location_assignment PIN_W9 -to KEY[1]
 set_location_assignment PIN_M7 -to KEY[2]
 set_location_assignment PIN_M6 -to KEY[3]
 set_location_assignment PIN_D3 -to PS2_CLK
+set_location_assignment PIN_AB12 -to SW9
 set_location_assignment PIN_G2 -to PS2_DAT
 set_location_assignment PIN_AB11 -to DRAM_CLK
 set_location_assignment PIN_R6 -to DRAM_CKE
@@ -234,8 +235,6 @@ set_location_assignment PIN_U12 -to DRAM_LDQM
 set_location_assignment PIN_N8 -to DRAM_UDQM
 set_location_assignment PIN_T7 -to DRAM_BA[0]
 set_location_assignment PIN_AB7 -to DRAM_BA[1]
-set_location_assignment PIN_E2 -to PS2_CLK2
-set_location_assignment PIN_G1 -to PS2_DAT2
 set_location_assignment PIN_H8 -to VGA_HS
 set_location_assignment PIN_G8 -to VGA_VS
 set_location_assignment PIN_A9 -to VGA_R[0]
@@ -337,6 +336,11 @@ set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to KEY[1]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to KEY[2]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to KEY[3]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to PS2_CLK
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW9
+# PS/2 linije su tipa otvoreni kolektor; kontroler misa ih spusta na nulu,
+# pa unutrasnji slabi pull-up daje jedinicu kada niko ne vuce liniju.
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to PS2_CLK
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to PS2_DAT
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to PS2_DAT
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_CLK
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_CKE
@@ -348,8 +352,6 @@ set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_LDQM
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_UDQM
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_BA[0]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_BA[1]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to PS2_CLK2
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to PS2_DAT2
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_HS
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_VS
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_R[0]

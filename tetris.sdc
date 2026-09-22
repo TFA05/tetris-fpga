@@ -36,10 +36,9 @@ set_false_path -from [get_clocks $clk_vga] -to [get_clocks $clk_sys]
 set_false_path -from [get_clocks $clk_sys] -to [get_clocks $clk_vga]
 
 # ---------------------------------------------------------------- ostali izlazi i ulazi
-# Tasteri i PS/2 linije nisu u ritmu takta, a izlazi na displej, LED i VGA
+# Tasteri, prekidac i PS/2 linije nisu u ritmu takta, a izlazi na displej, LED i VGA
 # nemaju zahtev prema spoljasnjem uredjaju, pa se ti putevi ne analiziraju.
-set_false_path -from [get_ports {KEY[*] PS2_CLK PS2_DAT}]
-set_false_path -from [get_ports {PS2_CLK2 PS2_DAT2}]
-set_false_path -to   [get_ports {PS2_CLK2 PS2_DAT2}]
+set_false_path -from [get_ports {KEY[*] SW9 PS2_CLK PS2_DAT}]
+set_false_path -to   [get_ports {PS2_CLK PS2_DAT}]
 set_false_path -to   [get_ports {HEX0[*] HEX1[*] HEX2[*] HEX3[*] HEX4[*] HEX5[*] LEDR[*]}]
 set_false_path -to   [get_ports {VGA_R[*] VGA_G[*] VGA_B[*] VGA_HS VGA_VS}]
