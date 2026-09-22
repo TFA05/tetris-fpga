@@ -10,7 +10,7 @@
 #include "mouse.h"
 
 static dword_t rngState;
-
+//Algoritam pseudo-slucajnih brojeva za stvaranje nasumicne figure
 static dword_t rngNext(void)
 {
     dword_t x = rngState;
@@ -20,7 +20,7 @@ static dword_t rngNext(void)
     rngState = x;
     return x;
 }
-
+//Deljenje slucajnog broja sa 7 i dobijanje indexa figure
 static dword_t randomPieceType(void)
 {
     dword_t rem;
@@ -28,7 +28,7 @@ static dword_t randomPieceType(void)
     return rem;
 }
 
-
+//Postavljanje da se figure stvore na sredini
 #define SPAWN_ROW 0
 #define SPAWN_COL 3
 
@@ -51,19 +51,19 @@ static dword_t nextType=0;
 static dword_t holdType=NO_PIECE;
 static bool_t holdUsed=FALSE;
 
-/* slika u memoriji je 400x300, pa su kutije manje */
+// slika u memoriji je 400x300, pa su kutije manje 
 #define PREVIEW_CELL 10
 #define PREVIEW_BOX  (4 * PREVIEW_CELL + 8)
 #define HOLD_BOX_X   (BOARD_ORIGIN_X - 16 - PREVIEW_BOX)
 #define NEXT_BOX_X   (BOARD_ORIGIN_X + BOARD_COLS * CELL_SIZE + 16)
 #define PREVIEW_BOX_Y BOARD_ORIGIN_Y
 
-
+//Brzina kojom se figura spusta
 static const dword_t GRAVITY_MS[10] = {
     800, 700, 600, 500, 400, 350, 300, 250, 200, 150
 };
 #define SOFT_DROP_MS 50
-
+//Bodovi u odnosu na koliko se redova ocisti
 static const dword_t LINE_SCORE[5] = { 0, 100, 300, 500, 800 };
 
 
@@ -82,17 +82,18 @@ static dword_t pieceColorForCell(byte_t cellValue)
     return tetrominoColor(cellValue - 1);
 }
 
+//Crta okvir za prikazivanje sledece figure kao i tu figuru
 static void drawPreview(dword_t bx, dword_t by, dword_t type)
 {
     int i;
 
-    /* redraw svaki frejm, kao i tabla (dupli bafer) */
+   //crtanje okvira
     gfxFillRect(bx, by, bx + PREVIEW_BOX - 1, by + PREVIEW_BOX - 1, COLOR_BG);
     gfxDrawRect(bx, by, bx + PREVIEW_BOX - 1, by + PREVIEW_BOX - 1, themeBorder());
 
     if (type == NO_PIECE)
         return;
-
+    //crtanje figure
     word_t shape = tetrominoShape(type, 0);
     for (i = 0; i < 16; i++)
     {
@@ -105,12 +106,13 @@ static void drawPreview(dword_t bx, dword_t by, dword_t type)
         }
     }
 }
+//Funkcija crta tablu i figuru koja je trenutno
 static void drawBoardContents(void)
 {
     dword_t r, c;
     word_t shape;
     int i;
-
+    //deo koj crta tablu
     for (r = 0; r < BOARD_ROWS; r++)
     {
         for (c = 0; c < BOARD_COLS; c++)
@@ -123,7 +125,7 @@ static void drawBoardContents(void)
 
         }
     }
-
+    //deo koj crta figuru koja  je trenutno u igri
     if (!gameOver)
     {
         shape = tetrominoShape(curType, curRotation);
@@ -142,6 +144,7 @@ static void drawBoardContents(void)
             }
         }
     }
+    //crta figuru koja se drzi i koja je sledeca
     drawBorder();
     drawPreview(HOLD_BOX_X, PREVIEW_BOX_Y, holdType);
     drawPreview(NEXT_BOX_X, PREVIEW_BOX_Y, nextType);
@@ -215,6 +218,7 @@ static void tryRotate(void)
     if (!boardCollides(curType, newRot, curRow, curCol))
         curRotation = newRot;
 }
+//Sacuva trenutnu figuru i stvara sledecu na tablu
 static void tryHold(void)
 {
     if (holdUsed)
@@ -223,7 +227,7 @@ static void tryHold(void)
     if (holdType == NO_PIECE)
     {
         holdType = curType;
-        spawnPiece();              /* uzima nextType */
+        spawnPiece();              
     }
     else
     {
@@ -238,6 +242,7 @@ static void tryHold(void)
     }
     holdUsed = TRUE;
 }
+//Zapocinje igru
 void gameInit(void)
 {
     boardClear();
@@ -282,7 +287,7 @@ static void handleTheme(void)
     else if (mouseRightPressed())
         themePrev();
 }
-
+//Proverava inpute od korisnika i updateuje tablu na osnovu toga
 void gameUpdate(void)
 {
     inputRead();
