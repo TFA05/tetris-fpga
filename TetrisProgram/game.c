@@ -145,10 +145,6 @@ static void drawBoardContents(void)
     drawBorder();
     drawPreview(HOLD_BOX_X, PREVIEW_BOX_Y, holdType);
     drawPreview(NEXT_BOX_X, PREVIEW_BOX_Y, nextType);
-
-    /* kursor se crta poslednji, da bi bio preko svega */
-    if (mouseReady())
-        mouseDrawCursor(themeBorder());
 }
 
 static void spawnPiece(void)
