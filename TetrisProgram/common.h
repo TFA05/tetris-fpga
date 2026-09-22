@@ -1,7 +1,7 @@
 #ifndef COMMON_H
 #define COMMON_H
 
-/* Procesor ima samo lw i sw (nema lb/lh/sb/sh), pa su svi tipovi 32-bitni. */
+//Tipovi podataka 32-bitni jer svaki registar je 32-bitni
 typedef unsigned int   byte_t;
 typedef unsigned int   word_t;
 typedef unsigned int   dword_t;
@@ -11,7 +11,7 @@ typedef unsigned int   bool_t;
 
 #define TRUE  1
 #define FALSE 0
-
+//Pocetna adresa registra + pomeraj
 #define MMIO_BASE 0x08000000u
 
 #define REG_STATUS      (MMIO_BASE + 0x00)
@@ -29,11 +29,7 @@ typedef unsigned int   bool_t;
 #define REG_SEG7        (MMIO_BASE + 0x30)
 #define REG_TIMER       (MMIO_BASE + 0x34)
 
-/* Mis je na istom registru kao gornja polovina tastature (PS2_HI):
-   bitovi 2..0 tasteri (levi, desni, srednji), 10..3 pomeraj po x,
-   18..11 pomeraj po y, 19 se menja na svaki primljen paket od tri bajta.
-   Kontroler pamti samo poslednji pomeraj, pa program po bitu 19 prepoznaje
-   da je stigao nov paket i tek tada sabira pomeraj. */
+//Registar za mis i PS2_HI su isti
 #define REG_MOUSE_STATUS REG_PS2_HI
 
 #define MOUSE_BTN_LEFT     0x1u
@@ -48,31 +44,32 @@ typedef unsigned int   bool_t;
 #define STATUS_VSYNC_MASK    0x1u
 #define STATUS_GFX_BUSY_MASK 0x2u
 
-/* kodovi naredbi grafike (isti kao funct3 kod instrukcija crtanja);
-   okvira nema kao naredbu, pa se crta od cetiri linije */
+
 #define GFX_CMD_POINT     1
 #define GFX_CMD_LINE      2
 #define GFX_CMD_FILLRECT  3
 
-/* prekidi */
+// prekidi 
 #define IRQ_KEYBOARD 0x1u
 #define IRQ_VSYNC    0x2u
 
-/* VGA_CTRL: bit 0 zamenjuje bafere, bit 1 crta u bafer koji se prikazuje */
+// VGA_CTRL: bit 0 zamenjuje bafere, bit 1 crta u bafer koji se prikazuje 
 #define VGA_CTRL_SWAP       0x1u
 #define VGA_CTRL_DRAW_FRONT 0x2u
 
-/* Memorija dovlaci vrstu od 640 piksela, pa se toliko i brise. */
+// Memorija dovlaci vrstu od 640 piksela, pa se toliko i brise. 
 #define FB_ROW_W 640
 
-/* Slika u memoriji je 400x300; VGA blok je uvecava dvostruko na 800x600. */
+// Slika u memoriji je 400x300; VGA blok je uvecava dvostruko na 800x600.
 #define SCREEN_W 400
 #define SCREEN_H 300
 
+// Velicina table za igru
 #define BOARD_COLS 10
 #define BOARD_ROWS 20
 #define CELL_SIZE  12
 
+// Granice  table centrirane
 #define BOARD_ORIGIN_X ((SCREEN_W - BOARD_COLS * CELL_SIZE) / 2)
 #define BOARD_ORIGIN_Y ((SCREEN_H - BOARD_ROWS * CELL_SIZE) / 2)
 
@@ -80,6 +77,8 @@ typedef unsigned int   bool_t;
 #define COLOR_BORDER 0x888
 #define COLOR_EMPTY  0x111
 
+   
+//Figure
 #define PIECE_I 0
 #define PIECE_O 1
 #define PIECE_T 2
