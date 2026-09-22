@@ -2,7 +2,7 @@
 #include "tetromino.h"
 
 
-//20x10 Matrix board
+//20x10 Matrica table
 static byte_t grid[BOARD_ROWS][BOARD_COLS];
 
 void boardClear(void)
@@ -22,7 +22,7 @@ void boardSet(dword_t row, dword_t col, byte_t value)
 {
     grid[row][col] = value;
 }
-//Uzima celu matricu fifgure i proverava da li se sudara sa zidom ili drugom figurom 
+//Uzima celu matricu figure i proverava da li se sudara sa zidom ili drugom figurom 
 bool_t boardCollides(dword_t pieceType, dword_t rotation, sdword_t boardRow, sdword_t boardCol)
 {
     word_t shape = tetrominoShape(pieceType, rotation);
