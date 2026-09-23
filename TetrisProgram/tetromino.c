@@ -16,7 +16,6 @@ word_t tetrominoShape(dword_t pieceType, dword_t rotation)
     return SHAPES[pieceType][rotation & 3u];
 }
 
-/* boje su u theme.c, da bi mis i taster T mogli da menjaju temu */
 dword_t tetrominoColor(dword_t pieceType)
 {
     return themeColor(pieceType);
