@@ -2,19 +2,11 @@
 #include "io.h"
 #include "gfx.h"
 
-/* Kontroler misa daje tastere i pomeraj iz poslednjeg paketa (8 bita sa znakom),
-   a bit 19 menja vrednost na svaki primljen paket. Polozaj kursora se sabira
-   ovde i drzi unutar slike.
-
-   Prvo sto mis posalje posle naredbe 0xF4 je potvrda (0xFA), koja nije paket.
-   Zato se tasteri i pomeraj uzimaju tek od prvog pravog paketa, da potvrda ne bi
-   izgledala kao pritisnut taster. */
-
-static dword_t g_btn = 0;         /* tasteri iz poslednjeg paketa */
+static dword_t g_btn = 0;
 static dword_t g_btnPrev = 0;
-static dword_t g_toggle = 0;      /* bit 19 iz prethodnog citanja */
+static dword_t g_toggle = 0;
 static bool_t g_haveToggle = FALSE;
-static bool_t g_ready = FALSE;    /* stigao bar jedan ceo paket */
+static bool_t g_ready = FALSE;
 static bool_t g_newPacket = FALSE;
 
 static sdword_t g_x = SCREEN_W / 2;
@@ -31,7 +23,7 @@ static void pomeri(dword_t status)
     sdword_t dy = saZnakom((status >> MOUSE_DY_SHIFT) & MOUSE_MOVE_MASK);
 
     g_x += dx;
-    g_y -= dy;                      /* mis broji nagore, ekran nadole */
+    g_y -= dy;
 
     if (g_x < 0) g_x = 0;
     if (g_y < 0) g_y = 0;
@@ -62,7 +54,6 @@ void mouseRead(void)
 
     if (!g_ready)
     {
-        /* prvi paket samo postavlja pocetno stanje, bez ivice na tasterima */
         g_ready = TRUE;
         g_btn = status & MOUSE_BTN_MASK;
         g_btnPrev = g_btn;
