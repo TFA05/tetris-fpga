@@ -3,7 +3,6 @@
 
 #include "common.h"
 
-/* Citanje stanja misa; poziva se jednom po frejmu. */
 void mouseRead(void);
 
 dword_t mouseX(void);
@@ -12,9 +11,8 @@ bool_t mouseLeftDown(void);
 bool_t mouseRightDown(void);
 bool_t mouseLeftPressed(void);
 bool_t mouseRightPressed(void);
-bool_t mouseChanged(void);   /* stigao nov paket u ovom citanju */
-bool_t mouseReady(void);     /* mis se javio bar jednim paketom */
-
+bool_t mouseChanged(void);
+bool_t mouseReady(void);
 void mouseDrawCursor(dword_t color);
 
-#endif // MOUSE_H
+#endif
