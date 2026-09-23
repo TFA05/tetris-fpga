@@ -1,16 +1,9 @@
-/* Tetris na plocici DE0-CV.
-
-   Tastatura: strelice levo/desno pomeraju, strelica dole ubrzava pad,
-   Z ili strelica gore okrecu tetrominu, razmak je trenutni pad, P pauzira.
-   Temu boja menja levi (sledeca) ili desni (prethodna) taster misa, kao i taster T.
-   Broj poena se ispisuje na HEX displeju ploce. */
 
 #include "common.h"
 #include "io.h"
 #include "gfx.h"
 #include "game.h"
 
-/* brojaci koje uvecava prekidna rutina */
 volatile dword_t g_keyEvents = 0;
 volatile dword_t g_frames = 0;
 
@@ -27,7 +20,7 @@ void __attribute__((interrupt)) _isr(void)
 int main(void)
 {
     gfxDrawFront(FALSE);
-    asm volatile("csrsi mstatus, 8");    /* dozvola prekida */
+    asm volatile("csrsi mstatus, 8");
 
     gameInit();
     for (;;)
