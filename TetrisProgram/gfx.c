@@ -18,15 +18,12 @@ void gfxSwapBuffers(void)
     out(REG_VGA_CTRL, VGA_CTRL_SWAP);
 }
 
-/* bit 1 bira da li se crta u bafer koji se prikazuje */
 void gfxDrawFront(bool_t on)
 {
     gfxWaitReady();
     out(REG_VGA_CTRL, on ? VGA_CTRL_DRAW_FRONT : 0);
 }
 
-/* Brise se cela vrsta koju memorija dovlaci, a ne samo sirina slike, da se iza
-   desne ivice ne bi videlo ono sto je ranije bilo u memoriji. */
 void gfxClear(dword_t color)
 {
     gfxFillRect(0, 0, FB_ROW_W - 1, SCREEN_H - 1, color);
@@ -52,7 +49,6 @@ void gfxDrawLine(dword_t x0, dword_t y0, dword_t x1, dword_t y1, dword_t color)
     out(REG_GFX_CMD, GFX_CMD_LINE);
 }
 
-/* grafika crta tacku, liniju i pun pravougaonik, pa je okvir od cetiri linije */
 void gfxDrawRect(dword_t x0, dword_t y0, dword_t x1, dword_t y1, dword_t color)
 {
     gfxDrawLine(x0, y0, x1, y0, color);
