@@ -1,13 +1,3 @@
-/* Cetvrta proba: nepokretna slika sa lenjirom.
-
-   - cela vrsta koju memorija dovlaci (0..639) se farba zeleno, ne samo 0..399,
-     da se vidi da li sarene linije sa strane dolaze odatle
-   - crvene tacke u mrezi na svakih 16 piksela slike: svaka je tacno JEDAN piksel
-     slike, dakle kvadratic 2x2 na ekranu -- to je lenjir za velicinu
-   - bele uspravne crte na 399 i 400 pokazuju gde se slika zavrsava
-   - beo okvir kao u igri, pa se vidi da li su coskovi krivi i kad slika stoji
-
-   Posle crtanja se ne upisuje vise nista.  */
 
 #include "common.h"
 #include "io.h"
@@ -38,7 +28,6 @@ int main(void)
         ;
 }
 
-/* prekidi se u ovoj probi ne koriste, ali rutina mora da postoji */
 void __attribute__((interrupt)) _isr(void)
 {
     out(REG_IRQ_CLEAR, in(REG_IRQ_STATUS));
