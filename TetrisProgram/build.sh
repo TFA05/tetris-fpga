@@ -1,8 +1,6 @@
 #!/bin/sh
-# Prevodi program igre i pravi Memory/rom_init.mif koji Quartus ucitava u ROM.
 set -e
 
-# prefiks alata (radi i sa riscv64-linux-gnu- i sa riscv64-unknown-elf-)
 PREFIX=riscv64-linux-gnu-
 command -v ${PREFIX}gcc >/dev/null 2>&1 || PREFIX=riscv64-unknown-elf-
 RISCV_GCC=${PREFIX}gcc
@@ -19,7 +17,6 @@ $RISCV_GCC -Os -Wall -Wextra -march=rv32i -mabi=ilp32 -mstrict-align \
 
 $RISCV_OBJDUMP -d -s tetris.elf > tetris.s
 
-# Procesor nema pristup bajtu i polureci, ni mnozenje i deljenje.
 if grep -qE '^\s+[0-9a-f]+:.*\b(lb|lbu|lh|lhu|sb|sh|mul|mulh|mulhu|div|divu|rem|remu)\b' tetris.s; then
     echo "GRESKA: program koristi instrukciju koju procesor nema:"
     grep -nE '^\s+[0-9a-f]+:.*\b(lb|lbu|lh|lhu|sb|sh|mul|mulh|mulhu|div|divu|rem|remu)\b' tetris.s | head
