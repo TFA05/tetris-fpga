@@ -278,7 +278,7 @@ bool_t gameIsOver(void)
     return gameOver;
 }
 
-/* temu boja menja levi (sledeca) ili desni (prethodna) taster misa, kao i taster T */
+//Temu boja menja levi (sledeca) ili desni (prethodna) taster misa, kao i taster T
 static void handleTheme(void)
 {
     mouseRead();
