@@ -8,9 +8,9 @@
 #define KEY_LEFT_BIT    5
 #define KEY_DOWN_BIT    4
 #define KEY_RIGHT_BIT   3
-#define KEY_THEME_BIT   2   /* T      */
-#define KEY_DROP_BIT    1   /* razmak */
-#define KEY_PAUSE_BIT   0   /* P      */
+#define KEY_THEME_BIT   2
+#define KEY_DROP_BIT    1 
+#define KEY_PAUSE_BIT   0 
 
 void inputRead(void);
 
